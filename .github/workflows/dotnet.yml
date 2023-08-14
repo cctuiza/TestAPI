@@ -19,7 +19,7 @@ jobs:
 
     - name: Restore NuGet Packages
       run: nuget restore PaloUpAPI.sln
-
+      
     - name: Build
       run: msbuild /p:Configuration=Release PaloUpAPI.csproj
 
