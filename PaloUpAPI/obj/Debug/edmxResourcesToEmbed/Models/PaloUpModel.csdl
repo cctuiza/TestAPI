@@ -1,0 +1,2333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PALOUPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PALOUPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="core_employee" EntityType="PALOUPModel.core_employee" />
+    <EntitySet Name="tokens" EntityType="PALOUPModel.token" />
+    <EntitySet Name="core_attachments" EntityType="PALOUPModel.core_attachments" />
+    <EntitySet Name="core_drivepath" EntityType="PALOUPModel.core_drivepath" />
+    <EntitySet Name="core_temp_attachment" EntityType="PALOUPModel.core_temp_attachment" />
+    <EntitySet Name="core_users" EntityType="PALOUPModel.core_users" />
+    <EntitySet Name="core_system" EntityType="PALOUPModel.core_system" />
+    <EntitySet Name="core_appsystem" EntityType="PALOUPModel.core_appsystem" />
+    <EntitySet Name="core_link" EntityType="PALOUPModel.core_link" />
+    <EntitySet Name="core_UserMenuList" EntityType="PALOUPModel.core_UserMenuList" />
+    <EntitySet Name="core_vAdminMenu" EntityType="PALOUPModel.core_vAdminMenu" />
+    <EntitySet Name="core_vParentMenu" EntityType="PALOUPModel.core_vParentMenu" />
+    <EntitySet Name="core_appmenu" EntityType="PALOUPModel.core_appmenu" />
+    <EntitySet Name="core_appmenuuser" EntityType="PALOUPModel.core_appmenuuser" />
+    <EntitySet Name="core_appsystemuser" EntityType="PALOUPModel.core_appsystemuser" />
+    <EntitySet Name="ole_examinee" EntityType="PALOUPModel.ole_examinee" />
+    <AssociationSet Name="FK_core_appmenu_core_appsystem" Association="PALOUPModel.FK_core_appmenu_core_appsystem">
+      <End Role="core_appsystem" EntitySet="core_appsystem" />
+      <End Role="core_appmenu" EntitySet="core_appmenu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_core_appmenuuser_core_users" Association="PALOUPModel.FK_core_appmenuuser_core_users">
+      <End Role="core_users" EntitySet="core_users" />
+      <End Role="core_appmenuuser" EntitySet="core_appmenuuser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_core_appsystemuser_core_users" Association="PALOUPModel.FK_core_appsystemuser_core_users">
+      <End Role="core_users" EntitySet="core_users" />
+      <End Role="core_appsystemuser" EntitySet="core_appsystemuser" />
+    </AssociationSet>
+    <EntitySet Name="core_branchmst" EntityType="PALOUPModel.core_branchmst" />
+    <EntitySet Name="core_district" EntityType="PALOUPModel.core_district" />
+    <EntitySet Name="core_userswarehouse" EntityType="PALOUPModel.core_userswarehouse" />
+    <EntitySet Name="core_vEmployeeNotUser" EntityType="PALOUPModel.core_vEmployeeNotUser" />
+    <AssociationSet Name="FK_core_userswarehouse_core_appsystem" Association="PALOUPModel.FK_core_userswarehouse_core_appsystem">
+      <End Role="core_appsystem" EntitySet="core_appsystem" />
+      <End Role="core_userswarehouse" EntitySet="core_userswarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_core_branchmst__core_district" Association="PALOUPModel.FK_core_branchmst__core_district">
+      <End Role="core_district" EntitySet="core_district" />
+      <End Role="core_branchmst" EntitySet="core_branchmst" />
+    </AssociationSet>
+    <AssociationSet Name="FK_core_userswarehouse_core_users" Association="PALOUPModel.FK_core_userswarehouse_core_users">
+      <End Role="core_users" EntitySet="core_users" />
+      <End Role="core_userswarehouse" EntitySet="core_userswarehouse" />
+    </AssociationSet>
+    <EntitySet Name="core_appsettings" EntityType="PALOUPModel.core_appsettings" />
+    <EntitySet Name="core_confirmation" EntityType="PALOUPModel.core_confirmation" />
+    <EntitySet Name="core_derictory" EntityType="PALOUPModel.core_derictory" />
+    <EntitySet Name="apps_file_map" EntityType="PALOUPModel.apps_file_map" />
+    <EntitySet Name="rms_useranalysisgroupaccess" EntityType="PALOUPModel.rms_useranalysisgroupaccess" />
+    <AssociationSet Name="FK_pism_useranalysisgroupaccess_core_users" Association="PALOUPModel.FK_pism_useranalysisgroupaccess_core_users">
+      <End Role="core_users" EntitySet="core_users" />
+      <End Role="rms_useranalysisgroupaccess" EntitySet="rms_useranalysisgroupaccess" />
+    </AssociationSet>
+    <EntitySet Name="wms_userserverwarehouse" EntityType="PALOUPModel.wms_userserverwarehouse" />
+    <AssociationSet Name="FK_wms_userserverwarehouse_core_users" Association="PALOUPModel.FK_wms_userserverwarehouse_core_users">
+      <End Role="core_users" EntitySet="core_users" />
+      <End Role="wms_userserverwarehouse" EntitySet="wms_userserverwarehouse" />
+    </AssociationSet>
+    <EntitySet Name="wms_serverwarehouses" EntityType="PALOUPModel.wms_serverwarehouses" />
+    <AssociationSet Name="FK_wms_userserverwarehouse_wms_serverwarehouses" Association="PALOUPModel.FK_wms_userserverwarehouse_wms_serverwarehouses">
+      <End Role="wms_serverwarehouses" EntitySet="wms_serverwarehouses" />
+      <End Role="wms_userserverwarehouse" EntitySet="wms_userserverwarehouse" />
+    </AssociationSet>
+    <EntitySet Name="wms_servers" EntityType="PALOUPModel.wms_servers" />
+    <AssociationSet Name="FK_wms_serverwarehouses_wms_servers" Association="PALOUPModel.FK_wms_serverwarehouses_wms_servers">
+      <End Role="wms_servers" EntitySet="wms_servers" />
+      <End Role="wms_serverwarehouses" EntitySet="wms_serverwarehouses" />
+    </AssociationSet>
+    <EntitySet Name="app_control_no" EntityType="PALOUPModel.app_control_no" />
+    <EntitySet Name="fpma_member" EntityType="PALOUPModel.fpma_member" />
+    <EntitySet Name="mifs_attendance" EntityType="PALOUPModel.mifs_attendance" />
+    <EntitySet Name="mifs_meeting" EntityType="PALOUPModel.mifs_meeting" />
+    <EntitySet Name="mifs_members" EntityType="PALOUPModel.mifs_members" />
+    <EntitySet Name="mifs_respondent" EntityType="PALOUPModel.mifs_respondent" />
+    <EntitySet Name="mifs_response" EntityType="PALOUPModel.mifs_response" />
+    <EntitySet Name="mifs_topicgroup" EntityType="PALOUPModel.mifs_topicgroup" />
+    <EntitySet Name="mifs_topicmembers" EntityType="PALOUPModel.mifs_topicmembers" />
+    <EntitySet Name="mifs_ladder" EntityType="PALOUPModel.mifs_ladder" />
+    <EntitySet Name="mifs_parking" EntityType="PALOUPModel.mifs_parking" />
+    <EntitySet Name="mifs_Analytics" EntityType="PALOUPModel.mifs_Analytics" />
+    <EntitySet Name="mifs_AnalyticsWithResponse" EntityType="PALOUPModel.mifs_AnalyticsWithResponse" />
+    <EntitySet Name="Mifs_DailyUtilization" EntityType="PALOUPModel.Mifs_DailyUtilization" />
+    <EntitySet Name="mifs_FollowUpOpen" EntityType="PALOUPModel.mifs_FollowUpOpen" />
+    <EntitySet Name="mifs_SumOfIssues" EntityType="PALOUPModel.mifs_SumOfIssues" />
+    <EntitySet Name="mifs_vAccountValidation" EntityType="PALOUPModel.mifs_vAccountValidation" />
+    <EntitySet Name="mifs_vClosedPerResponsible" EntityType="PALOUPModel.mifs_vClosedPerResponsible" />
+    <EntitySet Name="mifs_vFirmAttendance" EntityType="PALOUPModel.mifs_vFirmAttendance" />
+    <EntitySet Name="mifs_vIssueClosedPerEmployeeX" EntityType="PALOUPModel.mifs_vIssueClosedPerEmployeeX" />
+    <EntitySet Name="mifs_vIssueCount" EntityType="PALOUPModel.mifs_vIssueCount" />
+    <EntitySet Name="mifs_vIssueForAcknowledgement" EntityType="PALOUPModel.mifs_vIssueForAcknowledgement" />
+    <EntitySet Name="mifs_vIssuePerBranchPerTopic" EntityType="PALOUPModel.mifs_vIssuePerBranchPerTopic" />
+    <EntitySet Name="mifs_vIssuePerWeekPerStatus" EntityType="PALOUPModel.mifs_vIssuePerWeekPerStatus" />
+    <EntitySet Name="mifs_vIssueReport" EntityType="PALOUPModel.mifs_vIssueReport" />
+    <EntitySet Name="mifs_vIssues" EntityType="PALOUPModel.mifs_vIssues" />
+    <EntitySet Name="mifs_vIssueTrendMonthly" EntityType="PALOUPModel.mifs_vIssueTrendMonthly" />
+    <EntitySet Name="mifs_vMeeting" EntityType="PALOUPModel.mifs_vMeeting" />
+    <EntitySet Name="mifs_vMeetingSchedule" EntityType="PALOUPModel.mifs_vMeetingSchedule" />
+    <EntitySet Name="mifs_vNotMember" EntityType="PALOUPModel.mifs_vNotMember" />
+    <EntitySet Name="mifs_vOpenIssuePerWeek" EntityType="PALOUPModel.mifs_vOpenIssuePerWeek" />
+    <EntitySet Name="mifs_vParking" EntityType="PALOUPModel.mifs_vParking" />
+    <EntitySet Name="mifs_vResponse" EntityType="PALOUPModel.mifs_vResponse" />
+    <EntitySet Name="mifs_vTopicLevel" EntityType="PALOUPModel.mifs_vTopicLevel" />
+    <EntitySet Name="mifs_vTopicMembers" EntityType="PALOUPModel.mifs_vTopicMembers" />
+    <AssociationSet Name="FK_mifs_attendance_mifs_meeting" Association="PALOUPModel.FK_mifs_attendance_mifs_meeting">
+      <End Role="mifs_meeting" EntitySet="mifs_meeting" />
+      <End Role="mifs_attendance" EntitySet="mifs_attendance" />
+    </AssociationSet>
+    <FunctionImport Name="Sproc_CoreSetAppMenuUser">
+      <Parameter Name="menuId" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+      <Parameter Name="canadd" Mode="In" Type="Boolean" />
+      <Parameter Name="canedit" Mode="In" Type="Boolean" />
+      <Parameter Name="candelete" Mode="In" Type="Boolean" />
+      <Parameter Name="canview" Mode="In" Type="Boolean" />
+      <Parameter Name="canopen" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_CoreSetAppSystem">
+      <Parameter Name="sysId" Mode="In" Type="Int32" />
+      <Parameter Name="syscode" Mode="In" Type="String" />
+      <Parameter Name="sysname" Mode="In" Type="String" />
+      <Parameter Name="sysdescription" Mode="In" Type="String" />
+      <Parameter Name="isactive" Mode="In" Type="Boolean" />
+      <Parameter Name="about" Mode="In" Type="String" />
+      <Parameter Name="showwebapps" Mode="In" Type="Boolean" />
+      <Parameter Name="showusermenu" Mode="In" Type="Boolean" />
+      <Parameter Name="ismaintenance" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_CoreSetAppSystemUser">
+      <Parameter Name="sysId" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+      <Parameter Name="createdby" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_FPMADailyTaskFunction">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="EmployeeId" Mode="In" Type="String" />
+      <Parameter Name="TaskTodayID" Mode="In" Type="Int32" />
+      <Parameter Name="Task" Mode="In" Type="String" />
+      <Parameter Name="PlannedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ActualStartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AccomplishedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ProjectId" Mode="In" Type="Int32" />
+      <Parameter Name="ActivityId" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="Remarks" Mode="In" Type="String" />
+      <Parameter Name="PlannedDateEnd" Mode="In" Type="DateTime" />
+      <Parameter Name="site" Mode="In" Type="String" />
+      <Parameter Name="createdby" Mode="In" Type="String" />
+      <Parameter Name="source" Mode="In" Type="String" />
+      <Parameter Name="isImpediment" Mode="In" Type="Byte" />
+      <Parameter Name="action" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_mifsClosureChart" ReturnType="Collection(PALOUPModel.Sproc_mifsClosureChart_Result)">
+      <Parameter Name="useremail" Mode="In" Type="String" />
+      <Parameter Name="param" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_mifsGetCommitment" />
+    <FunctionImport Name="Sproc_mifsGetMemberSeparated" ReturnType="Collection(PALOUPModel.Sproc_mifsGetMemberSeparated_Result)">
+      <Parameter Name="itype" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_mifsIssuesCategoryGraph" ReturnType="Collection(PALOUPModel.Sproc_mifsIssuesCategoryGraph_Result)">
+      <Parameter Name="useremail" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_mifsLadderize" />
+    <FunctionImport Name="Sproc_mifsRemapEmail" />
+    <FunctionImport Name="Sproc_mifsResumeParking" />
+    <FunctionImport Name="Sproc_mifsSelectAttendees" ReturnType="Collection(PALOUPModel.Sproc_mifsSelectAttendees_Result)" />
+    <FunctionImport Name="Sproc_mifsSetAttendance" ReturnType="Collection(Decimal)">
+      <Parameter Name="attendanceId" Mode="In" Type="Int32" />
+      <Parameter Name="meetingId" Mode="In" Type="Int32" />
+      <Parameter Name="attendeeempid" Mode="In" Type="String" />
+      <Parameter Name="attendeename" Mode="In" Type="String" />
+      <Parameter Name="attendeemail" Mode="In" Type="String" />
+      <Parameter Name="attendeephone" Mode="In" Type="String" />
+      <Parameter Name="ismember" Mode="In" Type="Byte" />
+      <Parameter Name="ispresent" Mode="In" Type="Byte" />
+      <Parameter Name="created_by" Mode="In" Type="String" />
+      <Parameter Name="create_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_mifsSetMeeting" ReturnType="Collection(Decimal)">
+      <Parameter Name="meetingId" Mode="In" Type="Int32" />
+      <Parameter Name="hashcode" Mode="In" Type="String" />
+      <Parameter Name="topicId" Mode="In" Type="Int32" />
+      <Parameter Name="agenda" Mode="In" Type="String" />
+      <Parameter Name="datestart" Mode="In" Type="DateTime" />
+      <Parameter Name="dateend" Mode="In" Type="DateTime" />
+      <Parameter Name="venue" Mode="In" Type="String" />
+      <Parameter Name="facilitator" Mode="In" Type="String" />
+      <Parameter Name="created_by" Mode="In" Type="String" />
+      <Parameter Name="create_date" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="scheduledatestart" Mode="In" Type="DateTime" />
+      <Parameter Name="scheduledateend" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_mifsSetMembers" ReturnType="Collection(Decimal)">
+      <Parameter Name="memberId" Mode="In" Type="String" />
+      <Parameter Name="fullname" Mode="In" Type="String" />
+      <Parameter Name="emailaddress" Mode="In" Type="String" />
+      <Parameter Name="mobileno" Mode="In" Type="String" />
+      <Parameter Name="created_by" Mode="In" Type="String" />
+      <Parameter Name="create_date" Mode="In" Type="DateTime" />
+      <Parameter Name="nickname" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_mifsSetResponse" ReturnType="Collection(Decimal)">
+      <Parameter Name="responseId" Mode="In" Type="Int32" />
+      <Parameter Name="issueId" Mode="In" Type="Int32" />
+      <Parameter Name="messagedetails" Mode="In" Type="String" />
+      <Parameter Name="responseby" Mode="In" Type="String" />
+      <Parameter Name="responsebyempid" Mode="In" Type="String" />
+      <Parameter Name="responsedate" Mode="In" Type="DateTime" />
+      <Parameter Name="responsebyemail" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_mifsSetTopic" ReturnType="Collection(Decimal)">
+      <Parameter Name="topicId" Mode="In" Type="Int32" />
+      <Parameter Name="hashcode" Mode="In" Type="String" />
+      <Parameter Name="aliascode" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="topiclevel" Mode="In" Type="Int32" />
+      <Parameter Name="fupfrequency" Mode="In" Type="Int32" />
+      <Parameter Name="created_by" Mode="In" Type="String" />
+      <Parameter Name="create_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_mifsTransferIssue" ReturnType="Collection(String)">
+      <Parameter Name="transferfrom" Mode="In" Type="String" />
+      <Parameter Name="transferto" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_SendSms">
+      <Parameter Name="phonenum" Mode="In" Type="String" />
+      <Parameter Name="smsmessage" Mode="In" Type="String" />
+      <Parameter Name="smssource" Mode="In" Type="String" />
+      <Parameter Name="smssender" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sproc_SyncEmployee" />
+    <EntitySet Name="mifs_topic" EntityType="PALOUPModel.mifs_topic" />
+    <AssociationSet Name="FK_mifs_meeting_mifs_sourcetype" Association="PALOUPModel.FK_mifs_meeting_mifs_sourcetype">
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+      <End Role="mifs_meeting" EntitySet="mifs_meeting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_sourcemembers_mifs_source" Association="PALOUPModel.FK_mifs_sourcemembers_mifs_source">
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+      <End Role="mifs_topicmembers" EntitySet="mifs_topicmembers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_topic_mifs_topicgroup" Association="PALOUPModel.FK_mifs_topic_mifs_topicgroup">
+      <End Role="mifs_topicgroup" EntitySet="mifs_topicgroup" />
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+    </AssociationSet>
+    <FunctionImport Name="Sproc_mifsSetIssues" ReturnType="Collection(Decimal)">
+      <Parameter Name="issueId" Mode="In" Type="Int32" />
+      <Parameter Name="hashcode" Mode="In" Type="String" />
+      <Parameter Name="topicId" Mode="In" Type="Int32" />
+      <Parameter Name="issuedetails" Mode="In" Type="String" />
+      <Parameter Name="actionplan" Mode="In" Type="String" />
+      <Parameter Name="issuedate" Mode="In" Type="DateTime" />
+      <Parameter Name="fromtopicId" Mode="In" Type="Int32" />
+      <Parameter Name="targetcompletiondate" Mode="In" Type="DateTime" />
+      <Parameter Name="raisedby" Mode="In" Type="String" />
+      <Parameter Name="raisedbyemail" Mode="In" Type="String" />
+      <Parameter Name="raisedbyempid" Mode="In" Type="String" />
+      <Parameter Name="raisedbyphone" Mode="In" Type="String" />
+      <Parameter Name="responsible" Mode="In" Type="String" />
+      <Parameter Name="responemail" Mode="In" Type="String" />
+      <Parameter Name="responempid" Mode="In" Type="String" />
+      <Parameter Name="responphone" Mode="In" Type="String" />
+      <Parameter Name="followfrequency" Mode="In" Type="Int32" />
+      <Parameter Name="followmail" Mode="In" Type="Byte" />
+      <Parameter Name="followsms" Mode="In" Type="Byte" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="newstatus" Mode="In" Type="String" />
+      <Parameter Name="acknowledgedbysource" Mode="In" Type="Byte" />
+      <Parameter Name="acknowledgesourcedate" Mode="In" Type="DateTime" />
+      <Parameter Name="acknowledgebyrespondent" Mode="In" Type="Byte" />
+      <Parameter Name="acknowledgerespondentdate" Mode="In" Type="DateTime" />
+      <Parameter Name="fupcounter" Mode="In" Type="Int32" />
+      <Parameter Name="parkdate" Mode="In" Type="DateTime" />
+      <Parameter Name="resumedate" Mode="In" Type="DateTime" />
+      <Parameter Name="lastsenddate" Mode="In" Type="DateTime" />
+      <Parameter Name="statchangefupcounter" Mode="In" Type="Int32" />
+      <Parameter Name="meetingId" Mode="In" Type="Int32" />
+      <Parameter Name="reference" Mode="In" Type="String" />
+      <Parameter Name="sourcetype" Mode="In" Type="String" />
+      <Parameter Name="created_by" Mode="In" Type="String" />
+      <Parameter Name="create_date" Mode="In" Type="DateTime" />
+      <Parameter Name="collaboratorname" Mode="In" Type="String" />
+      <Parameter Name="collaboratoremail" Mode="In" Type="String" />
+      <Parameter Name="pflag" Mode="In" Type="Byte" />
+      <Parameter Name="issuetype" Mode="In" Type="Byte" />
+      <Parameter Name="issuecategory" Mode="In" Type="String" />
+      <Parameter Name="branchcode" Mode="In" Type="String" />
+      <Parameter Name="districtcode" Mode="In" Type="String" />
+      <Parameter Name="quadrant" Mode="In" Type="String" />
+      <Parameter Name="fromissueid" Mode="In" Type="Int32" />
+      <Parameter Name="subkpi" Mode="In" Type="String" />
+      <Parameter Name="reviewlevel" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="mifs_dropdown" EntityType="PALOUPModel.mifs_dropdown" />
+    <EntitySet Name="mifs_dropdowngroup" EntityType="PALOUPModel.mifs_dropdowngroup" />
+    <EntitySet Name="mifs_issues" EntityType="PALOUPModel.mifs_issues" />
+    <AssociationSet Name="FK_mifs_respondent_mifs_issues" Association="PALOUPModel.FK_mifs_respondent_mifs_issues">
+      <End Role="mifs_issues" EntitySet="mifs_issues" />
+      <End Role="mifs_respondent" EntitySet="mifs_respondent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_response_mifs_issues" Association="PALOUPModel.FK_mifs_response_mifs_issues">
+      <End Role="mifs_issues" EntitySet="mifs_issues" />
+      <End Role="mifs_response" EntitySet="mifs_response" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="core_employee">
+    <Key>
+      <PropertyRef Name="empl_id" />
+    </Key>
+    <Property Name="empl_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="employeename" Type="String" Nullable="false" MaxLength="153" FixedLength="false" Unicode="false" />
+    <Property Name="employeename2" Type="String" MaxLength="108" FixedLength="false" Unicode="false" />
+    <Property Name="lname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="birthday" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="sex" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="civilstatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="emailadd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="datehired" Type="DateTime" Precision="3" />
+    <Property Name="effectivitydate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="corporate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="corporateName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="branch" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="branchname" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="brancharea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="position" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="positionname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="department" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="departmentname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="section" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sectionname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="levelcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="levelname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="joblevelgroup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="class" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="typedescription" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="employeepresentaddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="employeehomeaddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="employeepresentcontact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="homecontact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateBDay" Type="DateTime" Precision="3" />
+    <Property Name="ImmediateStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateDHired" Type="DateTime" Precision="3" />
+    <Property Name="ImmediateSBU" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateBranch" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediatePosition" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateDepartment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateSection" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateLevel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="modifiedby" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="modifieddate" Type="DateTime" Precision="3" />
+    <Property Name="sss" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="token">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AuthToken" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IssuedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExpiresOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsExpire" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="core_attachments">
+    <Key>
+      <PropertyRef Name="attachmentId" />
+    </Key>
+    <Property Name="attachmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="transactionId" Type="Int32" Nullable="false" />
+    <Property Name="attachtype" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="filename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="newfilename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="filetype" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="uploadtype" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="core_drivepath">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="drive_path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="crea_by" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="crea_dte" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="core_temp_attachment">
+    <Key>
+      <PropertyRef Name="attachmentId" />
+    </Key>
+    <Property Name="attachmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="appId" Type="Int32" />
+    <Property Name="refmodule" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="filename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="newfilename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="extension" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="filepath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="core_users">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userrole" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="userpass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="middlename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nickname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="usertype" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="emplId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="emailaddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mobileno" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="hashcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="canaccessaquila" Type="Boolean" Nullable="false" />
+    <Property Name="ismailvalid" Type="Boolean" Nullable="false" />
+    <Property Name="isphonevalid" Type="Boolean" Nullable="false" />
+    <Property Name="isverify" Type="Boolean" />
+    <NavigationProperty Name="core_appmenuuser" Relationship="PALOUPModel.FK_core_appmenuuser_core_users" FromRole="core_users" ToRole="core_appmenuuser" />
+    <NavigationProperty Name="core_appsystemuser" Relationship="PALOUPModel.FK_core_appsystemuser_core_users" FromRole="core_users" ToRole="core_appsystemuser" />
+    <NavigationProperty Name="core_userswarehouse" Relationship="PALOUPModel.FK_core_userswarehouse_core_users" FromRole="core_users" ToRole="core_userswarehouse" />
+    <NavigationProperty Name="rms_useranalysisgroupaccess" Relationship="PALOUPModel.FK_pism_useranalysisgroupaccess_core_users" FromRole="core_users" ToRole="rms_useranalysisgroupaccess" />
+    <NavigationProperty Name="wms_userserverwarehouse" Relationship="PALOUPModel.FK_wms_userserverwarehouse_core_users" FromRole="core_users" ToRole="wms_userserverwarehouse" />
+  </EntityType>
+  <EntityType Name="core_system">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="debugpassword" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pismutilizationmonth" Type="Int32" Nullable="false" />
+    <Property Name="pismutilizationyear" Type="Int32" Nullable="false" />
+    <Property Name="mobadminpincode" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="core_appsystem">
+    <Key>
+      <PropertyRef Name="sysId" />
+    </Key>
+    <Property Name="sysId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="syscode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sysname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sysdescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="isactive" Type="Boolean" />
+    <Property Name="about" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="showwebapps" Type="Boolean" />
+    <Property Name="showusermenu" Type="Boolean" />
+    <Property Name="ismaintenance" Type="Boolean" />
+    <Property Name="emailsupport" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="core_appmenu" Relationship="PALOUPModel.FK_core_appmenu_core_appsystem" FromRole="core_appsystem" ToRole="core_appmenu" />
+    <NavigationProperty Name="core_userswarehouse" Relationship="PALOUPModel.FK_core_userswarehouse_core_appsystem" FromRole="core_appsystem" ToRole="core_userswarehouse" />
+  </EntityType>
+  <EntityType Name="core_link">
+    <Key>
+      <PropertyRef Name="linkId" />
+    </Key>
+    <Property Name="linkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uuid" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="expirydate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="isused" Type="Boolean" Nullable="false" />
+    <Property Name="recipientemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sourceapplication" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="core_UserMenuList">
+    <Key>
+      <PropertyRef Name="sysId" />
+      <PropertyRef Name="menuId" />
+      <PropertyRef Name="MENUPARENT" />
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="SUBTOTAL" />
+      <PropertyRef Name="menucode" />
+    </Key>
+    <Property Name="sysId" Type="Int32" Nullable="false" />
+    <Property Name="sysname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="menuId" Type="Int32" Nullable="false" />
+    <Property Name="menuname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MENUPARENT" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isactive" Type="Boolean" />
+    <Property Name="menuorder" Type="Int32" />
+    <Property Name="viewtype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="prtmenucode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="istransaction" Type="Boolean" />
+    <Property Name="menutype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nenunames" Type="String" MaxLength="304" FixedLength="false" Unicode="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="canadd" Type="Boolean" />
+    <Property Name="canedit" Type="Boolean" />
+    <Property Name="candelete" Type="Boolean" />
+    <Property Name="canview" Type="Boolean" />
+    <Property Name="canopen" Type="Boolean" />
+    <Property Name="Expr1" Type="Int32" Nullable="false" />
+    <Property Name="SUBTOTAL" Type="Int32" Nullable="false" />
+    <Property Name="MENUTYPEDES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="forweb" Type="Boolean" />
+    <Property Name="ParentMenuOrder" Type="Int32" />
+    <Property Name="syscode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sysdescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ParentIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChildIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="formobile" Type="Boolean" />
+    <Property Name="menucode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="core_vAdminMenu">
+    <Key>
+      <PropertyRef Name="parentId" />
+      <PropertyRef Name="sysId" />
+      <PropertyRef Name="menucode" />
+    </Key>
+    <Property Name="parentId" Type="Int32" Nullable="false" />
+    <Property Name="parentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="parentmenuorder" Type="Int32" />
+    <Property Name="parenticon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="sysId" Type="Int32" Nullable="false" />
+    <Property Name="menucode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="core_vParentMenu">
+    <Key>
+      <PropertyRef Name="parentId" />
+      <PropertyRef Name="sysId" />
+      <PropertyRef Name="menucode" />
+    </Key>
+    <Property Name="parentId" Type="Int32" Nullable="false" />
+    <Property Name="parentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="parentmenuorder" Type="Int32" />
+    <Property Name="parenticon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="sysId" Type="Int32" Nullable="false" />
+    <Property Name="menucode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="core_appmenu">
+    <Key>
+      <PropertyRef Name="menuId" />
+      <PropertyRef Name="sysId" />
+    </Key>
+    <Property Name="menuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sysId" Type="Int32" Nullable="false" />
+    <Property Name="menucode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menuname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="prtmenucode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menuorder" Type="Int32" />
+    <Property Name="isactive" Type="Boolean" />
+    <Property Name="viewtype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="istransaction" Type="Boolean" />
+    <Property Name="menutype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="accesslevel" Type="Int32" />
+    <Property Name="defaultemployee" Type="Boolean" />
+    <Property Name="defaultcustomer" Type="Boolean" />
+    <Property Name="defaultsupplier" Type="Boolean" />
+    <Property Name="formobile" Type="Boolean" />
+    <Property Name="forweb" Type="Boolean" />
+    <Property Name="classicon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="core_appsystem" Relationship="PALOUPModel.FK_core_appmenu_core_appsystem" FromRole="core_appmenu" ToRole="core_appsystem" />
+    <Property Name="mobiledefault" Type="Boolean" />
+    <Property Name="webdefault" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="core_appmenuuser">
+    <Key>
+      <PropertyRef Name="menuId" />
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="menuId" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="canadd" Type="Boolean" />
+    <Property Name="canedit" Type="Boolean" />
+    <Property Name="candelete" Type="Boolean" />
+    <Property Name="canview" Type="Boolean" />
+    <Property Name="canopen" Type="Boolean" />
+    <NavigationProperty Name="core_users" Relationship="PALOUPModel.FK_core_appmenuuser_core_users" FromRole="core_appmenuuser" ToRole="core_users" />
+  </EntityType>
+  <EntityType Name="core_appsystemuser">
+    <Key>
+      <PropertyRef Name="sysId" />
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="sysId" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="createdby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="createddate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="core_users" Relationship="PALOUPModel.FK_core_appsystemuser_core_users" FromRole="core_appsystemuser" ToRole="core_users" />
+  </EntityType>
+  <EntityType Name="ole_examinee">
+    <Key>
+      <PropertyRef Name="examineeId" />
+    </Key>
+    <Property Name="examineeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="middlename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sex" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="birthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="sbu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="branch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nickname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="chnickflag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="hashcode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="joblevel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="employeeid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_core_appmenu_core_appsystem">
+    <End Type="PALOUPModel.core_appsystem" Role="core_appsystem" Multiplicity="1" />
+    <End Type="PALOUPModel.core_appmenu" Role="core_appmenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_appsystem">
+        <PropertyRef Name="sysId" />
+      </Principal>
+      <Dependent Role="core_appmenu">
+        <PropertyRef Name="sysId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_core_appmenuuser_core_users">
+    <End Type="PALOUPModel.core_users" Role="core_users" Multiplicity="1" />
+    <End Type="PALOUPModel.core_appmenuuser" Role="core_appmenuuser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="core_appmenuuser">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_core_appsystemuser_core_users">
+    <End Type="PALOUPModel.core_users" Role="core_users" Multiplicity="1" />
+    <End Type="PALOUPModel.core_appsystemuser" Role="core_appsystemuser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="core_appsystemuser">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="core_branchmst">
+    <Key>
+      <PropertyRef Name="brancode" />
+    </Key>
+    <Property Name="brancode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="branname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="districtcode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="branchheadname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="branchheadcontact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="branalias" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="mapreference" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="branchheadid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="branchheademail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="latitude" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="longitude" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="sbu" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="withpism" Type="Byte" Nullable="false" />
+    <Property Name="withwfmsdb" Type="Boolean" Nullable="false" />
+    <Property Name="wfmsdbId" Type="Int32" />
+    <Property Name="reportflag" Type="Byte" Nullable="false" />
+    <Property Name="hrisbranchcode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="isinclude" Type="Byte" />
+    <Property Name="brancharea" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="region" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="core_district" Relationship="PALOUPModel.FK_core_branchmst__core_district" FromRole="core_branchmst" ToRole="core_district" />
+    <Property Name="matrix" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="additives" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="reliever_rd" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="projbase_bill" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="sunday_ops" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="reliever_absent" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="nonmatrix" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="projbase_notbill" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="isreportauto" Type="Byte" />
+    <Property Name="logcapturing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isnteonly" Type="Byte" Nullable="false" />
+    <Property Name="matrixam" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="matrixpm" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="nonmatrixam" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="nonmatrixpm" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="core_district">
+    <Key>
+      <PropertyRef Name="districtcode" />
+    </Key>
+    <Property Name="districtcode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="districtname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="districtheadname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="districtheadcontact" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="districtheadid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="districtheademail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="core_branchmst" Relationship="PALOUPModel.FK_core_branchmst__core_district" FromRole="core_district" ToRole="core_branchmst" />
+    <Property Name="sortorder" Type="Int32" />
+  </EntityType>
+  <EntityType Name="core_userswarehouse">
+    <Key>
+      <PropertyRef Name="brancode" />
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="sysId" />
+    </Key>
+    <Property Name="brancode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="sysId" Type="Int32" Nullable="false" />
+    <Property Name="isdefault" Type="Boolean" Nullable="false" />
+    <Property Name="created_by" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="core_appsystem" Relationship="PALOUPModel.FK_core_userswarehouse_core_appsystem" FromRole="core_userswarehouse" ToRole="core_appsystem" />
+    <NavigationProperty Name="core_users" Relationship="PALOUPModel.FK_core_userswarehouse_core_users" FromRole="core_userswarehouse" ToRole="core_users" />
+  </EntityType>
+  <EntityType Name="core_vEmployeeNotUser">
+    <Key>
+      <PropertyRef Name="empl_id" />
+      <PropertyRef Name="employeename" />
+      <PropertyRef Name="lname" />
+      <PropertyRef Name="fname" />
+      <PropertyRef Name="sex" />
+      <PropertyRef Name="civilstatus" />
+      <PropertyRef Name="effectivitydate" />
+      <PropertyRef Name="corporateName" />
+      <PropertyRef Name="branchname" />
+      <PropertyRef Name="section" />
+      <PropertyRef Name="typedescription" />
+      <PropertyRef Name="employeepresentaddress" />
+      <PropertyRef Name="employeehomeaddress" />
+    </Key>
+    <Property Name="empl_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="employeename" Type="String" Nullable="false" MaxLength="153" FixedLength="false" Unicode="false" />
+    <Property Name="employeename2" Type="String" MaxLength="108" FixedLength="false" Unicode="false" />
+    <Property Name="lname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="birthday" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="sex" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="civilstatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="emailadd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="datehired" Type="DateTime" Precision="3" />
+    <Property Name="effectivitydate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="corporate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="corporateName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="branch" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="branchname" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="brancharea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="position" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="positionname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="department" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="departmentname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="section" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sectionname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="levelcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="levelname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="joblevelgroup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="class" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="typedescription" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="employeepresentaddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="employeehomeaddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="employeepresentcontact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="homecontact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateBDay" Type="DateTime" Precision="3" />
+    <Property Name="ImmediateStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateDHired" Type="DateTime" Precision="3" />
+    <Property Name="ImmediateSBU" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateBranch" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediatePosition" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateDepartment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateSection" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImmediateLevel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="modifiedby" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="modifieddate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_core_userswarehouse_core_appsystem">
+    <End Type="PALOUPModel.core_appsystem" Role="core_appsystem" Multiplicity="1" />
+    <End Type="PALOUPModel.core_userswarehouse" Role="core_userswarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_appsystem">
+        <PropertyRef Name="sysId" />
+      </Principal>
+      <Dependent Role="core_userswarehouse">
+        <PropertyRef Name="sysId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_core_branchmst__core_district">
+    <End Type="PALOUPModel.core_district" Role="core_district" Multiplicity="1" />
+    <End Type="PALOUPModel.core_branchmst" Role="core_branchmst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_district">
+        <PropertyRef Name="districtcode" />
+      </Principal>
+      <Dependent Role="core_branchmst">
+        <PropertyRef Name="districtcode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_core_userswarehouse_core_users">
+    <End Type="PALOUPModel.core_users" Role="core_users" Multiplicity="1" />
+    <End Type="PALOUPModel.core_userswarehouse" Role="core_userswarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="core_userswarehouse">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="core_appsettings">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="appID" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="appID" Type="Int32" Nullable="false" />
+    <Property Name="SittingName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SettingDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SettingValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="core_confirmation">
+    <Key>
+      <PropertyRef Name="confirmId" />
+    </Key>
+    <Property Name="confirmId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="confirmtype" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="confirmcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="referencecode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="expirydate" Type="DateTime" Precision="3" />
+    <Property Name="isconfirm" Type="Boolean" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="core_derictory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="domain" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="crea_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="crea_dte" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="apps_file_map">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="apps_sysid" Type="Int32" />
+    <Property Name="file_path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="file_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="file_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="file_isdeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="rms_useranalysisgroupaccess">
+    <Key>
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="core_users" Relationship="PALOUPModel.FK_pism_useranalysisgroupaccess_core_users" FromRole="rms_useranalysisgroupaccess" ToRole="core_users" />
+  </EntityType>
+  <Association Name="FK_pism_useranalysisgroupaccess_core_users">
+    <End Type="PALOUPModel.core_users" Role="core_users" Multiplicity="1" />
+    <End Type="PALOUPModel.rms_useranalysisgroupaccess" Role="rms_useranalysisgroupaccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="rms_useranalysisgroupaccess">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="wms_userserverwarehouse">
+    <Key>
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="serverwarehouseId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="serverwarehouseId" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="core_users" Relationship="PALOUPModel.FK_wms_userserverwarehouse_core_users" FromRole="wms_userserverwarehouse" ToRole="core_users" />
+    <NavigationProperty Name="wms_serverwarehouses" Relationship="PALOUPModel.FK_wms_userserverwarehouse_wms_serverwarehouses" FromRole="wms_userserverwarehouse" ToRole="wms_serverwarehouses" />
+  </EntityType>
+  <Association Name="FK_wms_userserverwarehouse_core_users">
+    <End Type="PALOUPModel.core_users" Role="core_users" Multiplicity="1" />
+    <End Type="PALOUPModel.wms_userserverwarehouse" Role="wms_userserverwarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="wms_userserverwarehouse">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="wms_serverwarehouses">
+    <Key>
+      <PropertyRef Name="serverwarehouseId" />
+    </Key>
+    <Property Name="serverwarehouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="serverId" Type="Int32" Nullable="false" />
+    <Property Name="warehousecode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="brancode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="storageidentity" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="wms_userserverwarehouse" Relationship="PALOUPModel.FK_wms_userserverwarehouse_wms_serverwarehouses" FromRole="wms_serverwarehouses" ToRole="wms_userserverwarehouse" />
+    <NavigationProperty Name="wms_servers" Relationship="PALOUPModel.FK_wms_serverwarehouses_wms_servers" FromRole="wms_serverwarehouses" ToRole="wms_servers" />
+  </EntityType>
+  <Association Name="FK_wms_userserverwarehouse_wms_serverwarehouses">
+    <End Type="PALOUPModel.wms_serverwarehouses" Role="wms_serverwarehouses" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PALOUPModel.wms_userserverwarehouse" Role="wms_userserverwarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wms_serverwarehouses">
+        <PropertyRef Name="serverwarehouseId" />
+      </Principal>
+      <Dependent Role="wms_userserverwarehouse">
+        <PropertyRef Name="serverwarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="wms_servers">
+    <Key>
+      <PropertyRef Name="serverId" />
+    </Key>
+    <Property Name="serverId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="servername" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dbname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ipaddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="webaddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sqluser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sqlpass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="wms_serverwarehouses" Relationship="PALOUPModel.FK_wms_serverwarehouses_wms_servers" FromRole="wms_servers" ToRole="wms_serverwarehouses" />
+  </EntityType>
+  <Association Name="FK_wms_serverwarehouses_wms_servers">
+    <End Type="PALOUPModel.wms_servers" Role="wms_servers" Multiplicity="1" />
+    <End Type="PALOUPModel.wms_serverwarehouses" Role="wms_serverwarehouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wms_servers">
+        <PropertyRef Name="serverId" />
+      </Principal>
+      <Dependent Role="wms_serverwarehouses">
+        <PropertyRef Name="serverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="app_control_no">
+    <Key>
+      <PropertyRef Name="control_type" />
+      <PropertyRef Name="control_code" />
+    </Key>
+    <Property Name="control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="control_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="control_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="control_digit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="last_seq_no" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="last_update" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="fpma_member">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CatalystId" Type="Int32" />
+    <Property Name="IsActive" Type="Byte" />
+    <Property Name="sitecode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_attendance">
+    <Key>
+      <PropertyRef Name="attendanceId" />
+    </Key>
+    <Property Name="attendanceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="meetingId" Type="Int32" Nullable="false" />
+    <Property Name="attendeeempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="attendeename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="attendeemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="attendeephone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="ismember" Type="Byte" Nullable="false" />
+    <Property Name="ispresent" Type="Byte" Nullable="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="timein" Type="DateTime" Precision="3" />
+    <Property Name="timeout" Type="DateTime" Precision="3" />
+    <Property Name="isgenerated" Type="Byte" Nullable="false" />
+    <Property Name="isremark" Type="Byte" />
+    <Property Name="remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isgoing" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="mifs_meeting" Relationship="PALOUPModel.FK_mifs_attendance_mifs_meeting" FromRole="mifs_attendance" ToRole="mifs_meeting" />
+  </EntityType>
+  <EntityType Name="mifs_meeting">
+    <Key>
+      <PropertyRef Name="meetingId" />
+    </Key>
+    <Property Name="meetingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hashcode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="agenda" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="datestart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dateend" Type="DateTime" Precision="3" />
+    <Property Name="venue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="facilitator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="closedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="closedate" Type="DateTime" Precision="3" />
+    <Property Name="issent" Type="Byte" Nullable="false" />
+    <Property Name="isattendance" Type="Byte" Nullable="false" />
+    <Property Name="iscancel" Type="Byte" Nullable="false" />
+    <Property Name="scheduledatestart" Type="DateTime" Precision="3" />
+    <Property Name="scheduledateend" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="mifs_attendance" Relationship="PALOUPModel.FK_mifs_attendance_mifs_meeting" FromRole="mifs_meeting" ToRole="mifs_attendance" />
+    <NavigationProperty Name="mifs_topic" Relationship="PALOUPModel.FK_mifs_meeting_mifs_sourcetype" FromRole="mifs_meeting" ToRole="mifs_topic" />
+  </EntityType>
+  <EntityType Name="mifs_members">
+    <Key>
+      <PropertyRef Name="memberId" />
+    </Key>
+    <Property Name="memberId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fullname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="emailaddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mobileno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="nickname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="sysId" Type="Int32" />
+    <Property Name="systemname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_respondent">
+    <Key>
+      <PropertyRef Name="respondentId" />
+    </Key>
+    <Property Name="respondentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="responsibleemailadd" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responsiblename" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="responsiblephone" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="responsibleemplid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremailadd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratorname" Type="Binary" MaxLength="100" FixedLength="false" />
+    <Property Name="collaboratorphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremplid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="newstatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="parkdate" Type="DateTime" Precision="3" />
+    <Property Name="resumedate" Type="DateTime" Precision="3" />
+    <Property Name="firstsenddate" Type="DateTime" Precision="3" />
+    <Property Name="lastsenddate" Type="DateTime" Precision="3" />
+    <Property Name="commitmentdate" Type="DateTime" Precision="3" />
+    <Property Name="statchangeacknowledgementdate" Type="DateTime" Precision="3" />
+    <Property Name="statchangeresponsible" Type="Boolean" Nullable="false" />
+    <Property Name="statchangetollgater" Type="Boolean" Nullable="false" />
+    <Property Name="statchangefupcounter" Type="Int32" Nullable="false" />
+    <Property Name="fupcounter" Type="Int32" Nullable="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mifs_issues" Relationship="PALOUPModel.FK_mifs_respondent_mifs_issues" FromRole="mifs_respondent" ToRole="mifs_issues" />
+  </EntityType>
+  <EntityType Name="mifs_response">
+    <Key>
+      <PropertyRef Name="responseId" />
+    </Key>
+    <Property Name="responseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="messagedetails" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="responseby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responsebyempid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="responsedate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="responsebyemail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="islock" Type="Boolean" Nullable="false" />
+    <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+    <Property Name="istypeaction" Type="Boolean" />
+    <NavigationProperty Name="mifs_issues" Relationship="PALOUPModel.FK_mifs_response_mifs_issues" FromRole="mifs_response" ToRole="mifs_issues" />
+  </EntityType>
+  <EntityType Name="mifs_topicgroup">
+    <Key>
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mifs_topic" Relationship="PALOUPModel.FK_mifs_topic_mifs_topicgroup" FromRole="mifs_topicgroup" ToRole="mifs_topic" />
+  </EntityType>
+  <EntityType Name="mifs_topicmembers">
+    <Key>
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="memberId" />
+    </Key>
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="memberId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="accesslevel" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="isinclude" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="mifs_topic" Relationship="PALOUPModel.FK_mifs_sourcemembers_mifs_source" FromRole="mifs_topicmembers" ToRole="mifs_topic" />
+  </EntityType>
+  <EntityType Name="mifs_ladder">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="totalopen" />
+      <PropertyRef Name="totalclosed" />
+      <PropertyRef Name="totalparked" />
+      <PropertyRef Name="totaldropped" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="totalopen" Type="Int32" Nullable="false" />
+    <Property Name="totalclosed" Type="Int32" Nullable="false" />
+    <Property Name="totalparked" Type="Int32" Nullable="false" />
+    <Property Name="totaldropped" Type="Int32" Nullable="false" />
+    <Property Name="topicid" Type="Int32" />
+    <Property Name="topicdesc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="issuedyear" Type="Int32" />
+    <Property Name="issuedmonth" Type="Int32" />
+    <Property Name="issuedweek" Type="Int32" />
+    <Property Name="capturedyear" Type="Int32" />
+    <Property Name="capturedmonth" Type="Int32" />
+    <Property Name="capturedweek" Type="Int32" />
+    <Property Name="rundate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mifs_parking">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="parkdate" />
+      <PropertyRef Name="commitmentdate" />
+      <PropertyRef Name="rundate" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="parkdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="commitmentdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="rundate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="mifs_Analytics">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="DateIssued" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="FollowUpFrequency" />
+      <PropertyRef Name="IsFollowUpOnEmail" />
+      <PropertyRef Name="IsFollowUpOnSMS" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="IsAcknowledgeBySource" />
+      <PropertyRef Name="IsAcknowledgeByRespondent" />
+      <PropertyRef Name="FollowUpCounter" />
+      <PropertyRef Name="IssueHashcode" />
+      <PropertyRef Name="TopicHashcode" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="sourcetype" />
+      <PropertyRef Name="PriorityFlag" />
+      <PropertyRef Name="TypeOfIssue" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="TopicAlias" />
+      <PropertyRef Name="HasResponseAttachment" />
+      <PropertyRef Name="IsOverdue" />
+      <PropertyRef Name="AcknowledgementDays" />
+      <PropertyRef Name="IssueCategory" />
+    </Key>
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Details" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="actionplan" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DateIssued" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PreviousTopicId" Type="Int32" />
+    <Property Name="PreviousTopicDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="targetcompletiondate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FollowUpFrequency" Type="Int32" Nullable="false" />
+    <Property Name="IsFollowUpOnEmail" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IsFollowUpOnSMS" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IssueStatus" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="newstatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsAcknowledgeBySource" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="SourceAcknowledgeDate" Type="DateTime" Precision="3" />
+    <Property Name="IsAcknowledgeByRespondent" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="RespondentAcknowledgeDate" Type="DateTime" Precision="3" />
+    <Property Name="FollowUpCounter" Type="Int32" Nullable="false" />
+    <Property Name="IssueDateParked" Type="DateTime" Precision="3" />
+    <Property Name="IssueDateResumed" Type="DateTime" Precision="3" />
+    <Property Name="NoOfAttachment" Type="Int32" />
+    <Property Name="IssueHashcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="meetingId" Type="Int32" />
+    <Property Name="agenda" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="datestart" Type="DateTime" Precision="3" />
+    <Property Name="dateend" Type="DateTime" Precision="3" />
+    <Property Name="venue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="facilitator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TopicHashcode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="raisedby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="responsible" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="responphone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sourcetype" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="lastsenddate" Type="DateTime" Precision="3" />
+    <Property Name="NoOfResponse" Type="Int32" />
+    <Property Name="PriorityFlag" Type="Byte" Nullable="false" />
+    <Property Name="DateClosed" Type="DateTime" Precision="3" />
+    <Property Name="Collaborator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TypeOfIssue" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TopicAlias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bgcolor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratorempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HasResponseAttachment" Type="Int32" Nullable="false" />
+    <Property Name="referenceId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="referencetype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DaysElapse" Type="Int32" />
+    <Property Name="IsOverdue" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdate" Type="DateTime" Precision="3" />
+    <Property Name="LastTollgated" Type="DateTime" Precision="3" />
+    <Property Name="Responsiveness" Type="Int32" />
+    <Property Name="TollGaterResponsiveness" Type="Int32" />
+    <Property Name="AcknowledgementDays" Type="Int32" Nullable="false" />
+    <Property Name="ResponsibleImmediateHead" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="TollGaterImmediateHead" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="BranchName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateMessageByCollaborator" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateDateByCollaborator" Type="DateTime" Precision="3" />
+    <Property Name="BranchCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CorporateCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CorporateName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IssueCategory" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="JobLevelGroup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WeekCreated" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="EncoderBranch" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_AnalyticsWithResponse">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="DateIssued" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="FollowUpFrequency" />
+      <PropertyRef Name="IsFollowUpOnEmail" />
+      <PropertyRef Name="IsFollowUpOnSMS" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="IsAcknowledgeBySource" />
+      <PropertyRef Name="IsAcknowledgeByRespondent" />
+      <PropertyRef Name="FollowUpCounter" />
+      <PropertyRef Name="IssueHashcode" />
+      <PropertyRef Name="TopicHashcode" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="sourcetype" />
+      <PropertyRef Name="PriorityFlag" />
+      <PropertyRef Name="TypeOfIssue" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="TopicAlias" />
+      <PropertyRef Name="HasResponseAttachment" />
+      <PropertyRef Name="IsOverdue" />
+      <PropertyRef Name="responseId" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="messagedetails" />
+      <PropertyRef Name="responseby" />
+      <PropertyRef Name="responsedate" />
+      <PropertyRef Name="responsebyemail" />
+      <PropertyRef Name="islock" />
+      <PropertyRef Name="isdeleted" />
+      <PropertyRef Name="IssueMessageDetail" />
+    </Key>
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Details" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="actionplan" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DateIssued" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PreviousTopicId" Type="Int32" />
+    <Property Name="PreviousTopicDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="targetcompletiondate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FollowUpFrequency" Type="Int32" Nullable="false" />
+    <Property Name="IsFollowUpOnEmail" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IsFollowUpOnSMS" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IssueStatus" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="newstatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsAcknowledgeBySource" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="SourceAcknowledgeDate" Type="DateTime" Precision="3" />
+    <Property Name="IsAcknowledgeByRespondent" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="RespondentAcknowledgeDate" Type="DateTime" Precision="3" />
+    <Property Name="FollowUpCounter" Type="Int32" Nullable="false" />
+    <Property Name="IssueDateParked" Type="DateTime" Precision="3" />
+    <Property Name="IssueDateResumed" Type="DateTime" Precision="3" />
+    <Property Name="NoOfAttachment" Type="Int32" />
+    <Property Name="IssueHashcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="meetingId" Type="Int32" />
+    <Property Name="agenda" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="datestart" Type="DateTime" Precision="3" />
+    <Property Name="dateend" Type="DateTime" Precision="3" />
+    <Property Name="venue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="facilitator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TopicHashcode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="raisedby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="responsible" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="responphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="sourcetype" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="lastsenddate" Type="DateTime" Precision="3" />
+    <Property Name="NoOfResponse" Type="Int32" />
+    <Property Name="PriorityFlag" Type="Byte" Nullable="false" />
+    <Property Name="DateClosed" Type="DateTime" Precision="3" />
+    <Property Name="Collaborator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TypeOfIssue" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TopicAlias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bgcolor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratorempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HasResponseAttachment" Type="Int32" Nullable="false" />
+    <Property Name="referenceId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="referencetype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DaysElapse" Type="Int32" />
+    <Property Name="IsOverdue" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdate" Type="DateTime" Precision="3" />
+    <Property Name="LastTollgated" Type="DateTime" Precision="3" />
+    <Property Name="responseId" Type="Int32" Nullable="false" />
+    <Property Name="Expr1" Type="Int32" Nullable="false" />
+    <Property Name="messagedetails" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="responseby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responsebyempid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="responsedate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="responsebyemail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="islock" Type="Boolean" Nullable="false" />
+    <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+    <Property Name="istypeaction" Type="Boolean" />
+    <Property Name="IssueMessageDetail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TollGaterComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Mifs_DailyUtilization">
+    <Key>
+      <PropertyRef Name="CreatedBy" />
+    </Key>
+    <Property Name="IssueCaptured" Type="Int32" />
+    <Property Name="DateCaptured" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_FollowUpOpen">
+    <Key>
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="issuedetails" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="issuedate" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="followfrequency" />
+      <PropertyRef Name="followmail" />
+      <PropertyRef Name="followsms" />
+    </Key>
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="issuedetails" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="actionplan" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="issuedate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="targetcompletiondate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="lastsenddate" Type="DateTime" Precision="3" />
+    <Property Name="raisedby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="responsible" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="followfrequency" Type="Int32" Nullable="false" />
+    <Property Name="followmail" Type="Byte" Nullable="false" />
+    <Property Name="followsms" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_SumOfIssues">
+    <Key>
+      <PropertyRef Name="IssueType" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="IssueStatus" />
+    </Key>
+    <Property Name="IssueType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IssueStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SumOfIssues" Type="Int32" />
+  </EntityType>
+  <EntityType Name="mifs_vAccountValidation">
+    <Key>
+      <PropertyRef Name="empl_id" />
+    </Key>
+    <Property Name="empl_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="employeename2" Type="String" MaxLength="108" FixedLength="false" Unicode="false" />
+    <Property Name="coreEmployeeEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HRISEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CoreUsername" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CoreEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mifsMember" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ResponEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RaisedbyEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CollaboratorEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mifs_vClosedPerResponsible">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="issuedate" />
+      <PropertyRef Name="BranchName" />
+    </Key>
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="responempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="responsible" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="issuedate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WeekNumber" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="MonthNumber" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="YearNumber" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="BranchCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BranchName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_vFirmAttendance">
+    <Key>
+      <PropertyRef Name="Attendee" />
+      <PropertyRef Name="Is_member" />
+      <PropertyRef Name="Is_present" />
+    </Key>
+    <Property Name="Meeting_ID" Type="Int32" />
+    <Property Name="Topic_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Topic_Created_Date" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Attendee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Is_member" Type="Byte" Nullable="false" />
+    <Property Name="Is_present" Type="Byte" Nullable="false" />
+    <Property Name="Logdate" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="LogTime" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mifs_vIssueClosedPerEmployeeX">
+    <Key>
+      <PropertyRef Name="PaloType" />
+    </Key>
+    <Property Name="PaloType" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="TotalClosed" Type="Int32" />
+    <Property Name="EmailAdd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearClosed" Type="Int32" />
+    <Property Name="MonthClosed" Type="Int32" />
+    <Property Name="EmployeeId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_vIssueCount">
+    <Key>
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="TopicAlias" />
+    </Key>
+    <Property Name="CurrentTopicId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IssueStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TotalIssues" Type="Int32" />
+    <Property Name="responemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="TopicAlias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_vIssueForAcknowledgement">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="DateIssued" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="FollowUpFrequency" />
+      <PropertyRef Name="IsFollowUpOnEmail" />
+      <PropertyRef Name="IsFollowUpOnSMS" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="IsAcknowledgeBySource" />
+      <PropertyRef Name="IsAcknowledgeByRespondent" />
+      <PropertyRef Name="FollowUpCounter" />
+      <PropertyRef Name="IssueHashcode" />
+      <PropertyRef Name="TopicHashcode" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="sourcetype" />
+      <PropertyRef Name="PriorityFlag" />
+      <PropertyRef Name="TypeOfIssue" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="TopicAlias" />
+      <PropertyRef Name="HasResponseAttachment" />
+      <PropertyRef Name="IsOverdue" />
+      <PropertyRef Name="AcknowledgementDays" />
+    </Key>
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Details" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="actionplan" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DateIssued" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PreviousTopicId" Type="Int32" />
+    <Property Name="PreviousTopicDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="targetcompletiondate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FollowUpFrequency" Type="Int32" Nullable="false" />
+    <Property Name="IsFollowUpOnEmail" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IsFollowUpOnSMS" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IssueStatus" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="newstatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsAcknowledgeBySource" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="SourceAcknowledgeDate" Type="DateTime" Precision="3" />
+    <Property Name="IsAcknowledgeByRespondent" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="RespondentAcknowledgeDate" Type="DateTime" Precision="3" />
+    <Property Name="FollowUpCounter" Type="Int32" Nullable="false" />
+    <Property Name="IssueDateParked" Type="DateTime" Precision="3" />
+    <Property Name="IssueDateResumed" Type="DateTime" Precision="3" />
+    <Property Name="NoOfAttachment" Type="Int32" />
+    <Property Name="IssueHashcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="meetingId" Type="Int32" />
+    <Property Name="agenda" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="datestart" Type="DateTime" Precision="3" />
+    <Property Name="dateend" Type="DateTime" Precision="3" />
+    <Property Name="venue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="facilitator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TopicHashcode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="raisedby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="responsible" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="responphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="sourcetype" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="lastsenddate" Type="DateTime" Precision="3" />
+    <Property Name="NoOfResponse" Type="Int32" />
+    <Property Name="PriorityFlag" Type="Byte" Nullable="false" />
+    <Property Name="DateClosed" Type="DateTime" Precision="3" />
+    <Property Name="Collaborator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TypeOfIssue" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TopicAlias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bgcolor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratorempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HasResponseAttachment" Type="Int32" Nullable="false" />
+    <Property Name="referenceId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="referencetype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DaysElapse" Type="Int32" />
+    <Property Name="IsOverdue" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdate" Type="DateTime" Precision="3" />
+    <Property Name="LastTollgated" Type="DateTime" Precision="3" />
+    <Property Name="Responsiveness" Type="Int32" />
+    <Property Name="TollGaterResponsiveness" Type="Int32" />
+    <Property Name="AcknowledgementDays" Type="Int32" Nullable="false" />
+    <Property Name="ResponsibleImmediateHead" Type="String" MaxLength="104" FixedLength="false" Unicode="false" />
+    <Property Name="TollGaterImmediateHead" Type="String" MaxLength="104" FixedLength="false" Unicode="false" />
+    <Property Name="BranchName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateMessageByCollaborator" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateDateByCollaborator" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mifs_vIssuePerBranchPerTopic">
+    <Key>
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+    </Key>
+    <Property Name="id" Type="Int64" />
+    <Property Name="TotalOpen" Type="Int32" />
+    <Property Name="TotalClosed" Type="Int32" />
+    <Property Name="TotalParked" Type="Int32" />
+    <Property Name="TotalDropped" Type="Int32" />
+    <Property Name="CurrentTopicId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IssuedYear" Type="Int32" />
+    <Property Name="IssuedMonth" Type="Int32" />
+    <Property Name="IssuedWeek" Type="Int32" />
+    <Property Name="CurrentYear" Type="Int32" />
+    <Property Name="CurrentMonth" Type="Int32" />
+    <Property Name="CurrentWeek" Type="Int32" />
+    <Property Name="CorporateName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="BusinessGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BranchName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_vIssuePerWeekPerStatus">
+    <Key>
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+    </Key>
+    <Property Name="id" Type="Int64" />
+    <Property Name="TotalOpen" Type="Int32" />
+    <Property Name="TotalClosed" Type="Int32" />
+    <Property Name="TotalParked" Type="Int32" />
+    <Property Name="TotalDropped" Type="Int32" />
+    <Property Name="CurrentTopicId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IssuedYear" Type="Int32" />
+    <Property Name="IssuedMonth" Type="Int32" />
+    <Property Name="IssuedWeek" Type="Int32" />
+    <Property Name="CurrentYear" Type="Int32" />
+    <Property Name="CurrentMonth" Type="Int32" />
+    <Property Name="CurrentWeek" Type="Int32" />
+  </EntityType>
+  <EntityType Name="mifs_vIssueReport">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="DateIssued" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="FollowUpCounter" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="sourcetype" />
+      <PropertyRef Name="TopicAlias" />
+      <PropertyRef Name="followfrequency" />
+      <PropertyRef Name="followmail" />
+      <PropertyRef Name="acknowledgedbysource" />
+      <PropertyRef Name="acknowledgebyrespondent" />
+      <PropertyRef Name="meetingId" />
+      <PropertyRef Name="created_by" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="hashcode" />
+      <PropertyRef Name="pflag" />
+      <PropertyRef Name="issuetype" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="ResponsivenessRating" />
+    </Key>
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Details" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="actionplan" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DateIssued" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="targetcompletiondate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IssueStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FollowUpCounter" Type="Int32" Nullable="false" />
+    <Property Name="IssueDateParked" Type="DateTime" Precision="3" />
+    <Property Name="IssueDateResumed" Type="DateTime" Precision="3" />
+    <Property Name="reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="responsible" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="responphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="sourcetype" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TopicAlias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="followfrequency" Type="Int32" Nullable="false" />
+    <Property Name="followmail" Type="Byte" Nullable="false" />
+    <Property Name="newstatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="acknowledgedbysource" Type="Byte" Nullable="false" />
+    <Property Name="acknowledgesourcedate" Type="DateTime" Precision="3" />
+    <Property Name="acknowledgebyrespondent" Type="Byte" Nullable="false" />
+    <Property Name="acknowledgerespondentdate" Type="DateTime" Precision="3" />
+    <Property Name="firstsenddate" Type="DateTime" Precision="3" />
+    <Property Name="lastsenddate" Type="DateTime" Precision="3" />
+    <Property Name="statchangefupcounter" Type="Int32" />
+    <Property Name="meetingId" Type="Int32" Nullable="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="collaboratorname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratorempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hashcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pflag" Type="Byte" Nullable="false" />
+    <Property Name="issuetype" Type="Byte" Nullable="false" />
+    <Property Name="category" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="closedate" Type="DateTime" Precision="3" />
+    <Property Name="referenceId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="referencetype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DateClosed" Type="DateTime" Precision="3" />
+    <Property Name="Updates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ResponsivenessRating" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_vIssues">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="DateIssued" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="FollowUpFrequency" />
+      <PropertyRef Name="IsFollowUpOnEmail" />
+      <PropertyRef Name="IsFollowUpOnSMS" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="IsAcknowledgeBySource" />
+      <PropertyRef Name="IsAcknowledgeByRespondent" />
+      <PropertyRef Name="FollowUpCounter" />
+      <PropertyRef Name="IssueHashcode" />
+      <PropertyRef Name="TopicHashcode" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="sourcetype" />
+      <PropertyRef Name="PriorityFlag" />
+      <PropertyRef Name="TypeOfIssue" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="TopicAlias" />
+      <PropertyRef Name="HasResponseAttachment" />
+      <PropertyRef Name="statchangecounterlimit" />
+      <PropertyRef Name="topicId" />
+    </Key>
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Details" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="actionplan" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DateIssued" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PreviousTopicId" Type="Int32" />
+    <Property Name="PreviousTopicDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="targetcompletiondate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FollowUpFrequency" Type="Int32" Nullable="false" />
+    <Property Name="IsFollowUpOnEmail" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IsFollowUpOnSMS" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IssueStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="newstatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsAcknowledgeBySource" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="SourceAcknowledgeDate" Type="DateTime" Precision="3" />
+    <Property Name="IsAcknowledgeByRespondent" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="RespondentAcknowledgeDate" Type="DateTime" Precision="3" />
+    <Property Name="FollowUpCounter" Type="Int32" Nullable="false" />
+    <Property Name="IssueDateParked" Type="DateTime" Precision="3" />
+    <Property Name="IssueDateResumed" Type="DateTime" Precision="3" />
+    <Property Name="NoOfAttachment" Type="Int32" />
+    <Property Name="IssueHashcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="meetingId" Type="Int32" />
+    <Property Name="agenda" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="datestart" Type="DateTime" Precision="3" />
+    <Property Name="dateend" Type="DateTime" Precision="3" />
+    <Property Name="venue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="facilitator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TopicHashcode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="raisedby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="responsible" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="responphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="sourcetype" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="lastsenddate" Type="DateTime" Precision="3" />
+    <Property Name="NoOfResponse" Type="Int32" />
+    <Property Name="PriorityFlag" Type="Byte" Nullable="false" />
+    <Property Name="DateClosed" Type="DateTime" Precision="3" />
+    <Property Name="Collaborator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TypeOfIssue" Type="Byte" Nullable="false" />
+    <Property Name="category" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TopicAlias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bgcolor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratorempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HasResponseAttachment" Type="Int32" Nullable="false" />
+    <Property Name="referenceId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="referencetype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="statchangecounterlimit" Type="Int32" Nullable="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="statchangefupcounter" Type="Int32" />
+    <Property Name="firstsenddate" Type="DateTime" Precision="3" />
+    <Property Name="refsource" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="issuecategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="branchcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="JobLevelGroup" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="topiclevel" Type="Int32" />
+  </EntityType>
+  <EntityType Name="mifs_vIssueTrendMonthly">
+    <Key>
+      <PropertyRef Name="CurrentTopicDescription" />
+    </Key>
+    <Property Name="CurrentTopicDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IssuedYear" Type="Int32" />
+    <Property Name="IssuedMonth" Type="Int32" />
+    <Property Name="Open" Type="Int32" />
+    <Property Name="Parked" Type="Int32" />
+    <Property Name="Closed" Type="Int32" />
+    <Property Name="Dropped" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+  </EntityType>
+  <EntityType Name="mifs_vMeeting">
+    <Key>
+      <PropertyRef Name="meetingId" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="created_by" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="TotalExpectedAttendees" />
+      <PropertyRef Name="TotalActualAttendees" />
+      <PropertyRef Name="TotalMinuteCaptured" />
+    </Key>
+    <Property Name="meetingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="TopicDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="agenda" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="venue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="facilitator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TotalExpectedAttendees" Type="Int32" Nullable="false" />
+    <Property Name="TotalActualAttendees" Type="Int32" Nullable="false" />
+    <Property Name="TotalMinuteCaptured" Type="Int32" Nullable="false" />
+    <Property Name="YearNumber" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="MonthNumber" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="WeekNumber" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_vMeetingSchedule">
+    <Key>
+      <PropertyRef Name="meetingId" />
+      <PropertyRef Name="hashcode" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="datestart" />
+      <PropertyRef Name="created_by" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="memberId" />
+      <PropertyRef Name="aliascode" />
+      <PropertyRef Name="description" />
+      <PropertyRef Name="emailaddress" />
+    </Key>
+    <Property Name="meetingId" Type="Int32" Nullable="false" />
+    <Property Name="hashcode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="agenda" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="datestart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dateend" Type="DateTime" Precision="3" />
+    <Property Name="venue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="facilitator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="memberId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yr" Type="Int32" />
+    <Property Name="month" Type="Int32" />
+    <Property Name="aliascode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="followupday" Type="DateTime" Precision="3" />
+    <Property Name="followuphour" Type="DateTime" Precision="3" />
+    <Property Name="emailaddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_vNotMember">
+    <Key>
+      <PropertyRef Name="empl_id" />
+    </Key>
+    <Property Name="empl_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="employeename2" Type="String" MaxLength="108" FixedLength="false" Unicode="false" />
+    <Property Name="emailadd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="positionname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="employeepresentcontact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="corporate" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_vOpenIssuePerWeek">
+    <Key>
+      <PropertyRef Name="CurrentTopicDescription" />
+    </Key>
+    <Property Name="Total" Type="Int32" />
+    <Property Name="CurrentTopicDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IssuedYear" Type="Int32" />
+    <Property Name="IssuedMonth" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="IssuedWeek" Type="Int32" />
+    <Property Name="CurrentYear" Type="Int32" />
+    <Property Name="CurrentMonth" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentWeek" Type="Int32" />
+  </EntityType>
+  <EntityType Name="mifs_vParking">
+    <Key>
+      <PropertyRef Name="IssueId" />
+      <PropertyRef Name="TrailOfCommitment" />
+      <PropertyRef Name="TopicId" />
+      <PropertyRef Name="DateParked" />
+    </Key>
+    <Property Name="Responsible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IssueId" Type="Int32" Nullable="false" />
+    <Property Name="TrailOfCommitment" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TopicId" Type="Int32" Nullable="false" />
+    <Property Name="TopicDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Issue" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ActionPlan" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Tollgater" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Collaborator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IssueStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DateParked" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="mifs_vResponse">
+    <Key>
+      <PropertyRef Name="responseId" />
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="issuedetails" />
+      <PropertyRef Name="messagedetails" />
+      <PropertyRef Name="responsedate" />
+      <PropertyRef Name="responseby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="islock" />
+      <PropertyRef Name="isdeleted" />
+    </Key>
+    <Property Name="responseId" Type="Int32" Nullable="false" />
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="issuedetails" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="messagedetails" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="responsebyempid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="responsedate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="responseby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responsebyemail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responsible" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="responphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="NoOfAttachment" Type="Int32" />
+    <Property Name="islock" Type="Boolean" Nullable="false" />
+    <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_vTopicLevel">
+    <Key>
+      <PropertyRef Name="parent_code" />
+      <PropertyRef Name="child_code" />
+      <PropertyRef Name="levelcode" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="parent_code" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="child_code" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="levelcode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="level" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_vTopicMembers">
+    <Key>
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="memberId" />
+      <PropertyRef Name="CreateBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="accesslevel" />
+      <PropertyRef Name="isinclude" />
+    </Key>
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="TopicDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="memberId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberMobileNumber" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="MemberEmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="nickname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="fupfrequency" Type="Int32" />
+    <Property Name="sourcelevel" Type="Int32" />
+    <Property Name="hashcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="occurence" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="bgcolor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="accesslevel" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="isinclude" Type="Byte" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_mifs_attendance_mifs_meeting">
+    <End Type="PALOUPModel.mifs_meeting" Role="mifs_meeting" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PALOUPModel.mifs_attendance" Role="mifs_attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_meeting">
+        <PropertyRef Name="meetingId" />
+      </Principal>
+      <Dependent Role="mifs_attendance">
+        <PropertyRef Name="meetingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="Sproc_mifsClosureChart_Result">
+    <Property Type="String" Name="DailyPendingApproveAnalysisDate" Nullable="true" MaxLength="6" />
+    <Property Type="Int32" Name="DailyCountPendingforAcknowledgementbyRaised" Nullable="true" />
+    <Property Type="Int64" Name="RowNum" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sproc_mifsGetMemberSeparated_Result">
+    <Property Type="Int32" Name="issueId" Nullable="false" />
+    <Property Type="String" Name="STATUS" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="topicId" Nullable="false" />
+    <Property Type="String" Name="employeename" Nullable="false" MaxLength="153" />
+    <Property Type="String" Name="emailadd" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Sproc_mifsIssuesCategoryGraph_Result">
+    <Property Type="Int32" Name="CountResponOpenTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountResponClosedTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountResponParkTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountResponDropTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedOpenTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedClosedransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedParkTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedDropTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabOpenTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabClosedTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabParkTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabDropTransactional" Nullable="true" />
+    <Property Type="Int32" Name="CountResponOpenTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountResponClosedTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountResponParkTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountResponDropTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedOpenTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedclosedTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedParkTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedDropTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabOpenTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabClosedTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabParkTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabDropTactical" Nullable="true" />
+    <Property Type="Int32" Name="CountResponOpenStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountResponClosedStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountResponParkStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountResponDropStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedOpenStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedClosedStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedParkStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountRaisedDropStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabOpenStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabClosedStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabParkStrategic" Nullable="true" />
+    <Property Type="Int32" Name="CountCollabDropStrategic" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sproc_mifsSelectAttendees_Result">
+    <Property Type="Int32" Name="attendanceId" Nullable="false" />
+    <Property Type="Int32" Name="meetingId" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="agenda" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="venue" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="facilitator" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="attendeeempid" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="attendeename" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="attendeemail" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="attendeephone" Nullable="true" MaxLength="13" />
+    <Property Type="String" Name="created_by" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="isgenerated" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="mifs_topic">
+    <Key>
+      <PropertyRef Name="topicId" />
+    </Key>
+    <Property Name="topicId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="hashcode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="aliascode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="topiclevel" Type="Int32" Nullable="false" />
+    <Property Name="fupfrequency" Type="Int32" Nullable="false" />
+    <Property Name="occurence" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="topicscope" Type="Byte" Nullable="false" />
+    <Property Name="bgcolor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="classification" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="profile" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="statchangecounterlimit" Type="Int32" Nullable="false" />
+    <Property Name="branchcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="districtcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="modifiedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modifieddate" Type="DateTime" Precision="3" />
+    <Property Name="isvisible" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="mifs_meeting" Relationship="PALOUPModel.FK_mifs_meeting_mifs_sourcetype" FromRole="mifs_topic" ToRole="mifs_meeting" />
+    <NavigationProperty Name="mifs_topicmembers" Relationship="PALOUPModel.FK_mifs_sourcemembers_mifs_source" FromRole="mifs_topic" ToRole="mifs_topicmembers" />
+    <NavigationProperty Name="mifs_topicgroup" Relationship="PALOUPModel.FK_mifs_topic_mifs_topicgroup" FromRole="mifs_topic" ToRole="mifs_topicgroup" />
+  </EntityType>
+  <Association Name="FK_mifs_meeting_mifs_sourcetype">
+    <End Type="PALOUPModel.mifs_topic" Role="mifs_topic" Multiplicity="1" />
+    <End Type="PALOUPModel.mifs_meeting" Role="mifs_meeting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="mifs_meeting">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_sourcemembers_mifs_source">
+    <End Type="PALOUPModel.mifs_topic" Role="mifs_topic" Multiplicity="1" />
+    <End Type="PALOUPModel.mifs_topicmembers" Role="mifs_topicmembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="mifs_topicmembers">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_topic_mifs_topicgroup">
+    <End Type="PALOUPModel.mifs_topicgroup" Role="mifs_topicgroup" Multiplicity="1" />
+    <End Type="PALOUPModel.mifs_topic" Role="mifs_topic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topicgroup">
+        <PropertyRef Name="groupId" />
+      </Principal>
+      <Dependent Role="mifs_topic">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="mifs_dropdown">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="value" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="display" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="details" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="leadtimemin" Type="Int32" />
+    <Property Name="leadtimemax" Type="Int32" />
+    <Property Name="sortorder" Type="Int32" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modifieddate" Type="DateTime" Precision="3" />
+    <Property Name="lookup" Type="Int32" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="isdelete" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_dropdowngroup">
+    <Key>
+      <PropertyRef Name="dropid" />
+    </Key>
+    <Property Name="dropid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="showinuser" Type="Byte" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="isdelete" Type="Byte" Nullable="false" />
+    <Property Name="createdby" Type="Int32" />
+    <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedby" Type="Int32" />
+    <Property Name="modifieddate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mifs_issues">
+    <Key>
+      <PropertyRef Name="issueId" />
+    </Key>
+    <Property Name="issueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hashcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="issuedetails" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="actionplan" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="issuedate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fromtopicId" Type="Int32" />
+    <Property Name="targetcompletiondate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="raisedby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyphone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="responsible" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="responphone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="followfrequency" Type="Int32" Nullable="false" />
+    <Property Name="followmail" Type="Byte" Nullable="false" />
+    <Property Name="followsms" Type="Byte" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="newstatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="acknowledgedbysource" Type="Byte" Nullable="false" />
+    <Property Name="acknowledgesourcedate" Type="DateTime" Precision="3" />
+    <Property Name="acknowledgebyrespondent" Type="Byte" Nullable="false" />
+    <Property Name="acknowledgerespondentdate" Type="DateTime" Precision="3" />
+    <Property Name="fupcounter" Type="Int32" Nullable="false" />
+    <Property Name="parkdate" Type="DateTime" Precision="3" />
+    <Property Name="resumedate" Type="DateTime" Precision="3" />
+    <Property Name="firstsenddate" Type="DateTime" Precision="3" />
+    <Property Name="lastsenddate" Type="DateTime" Precision="3" />
+    <Property Name="statchangefupcounter" Type="Int32" />
+    <Property Name="meetingId" Type="Int32" Nullable="false" />
+    <Property Name="reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sourcetype" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="collaboratorname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratorempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="pflag" Type="Byte" Nullable="false" />
+    <Property Name="issuetype" Type="Byte" Nullable="false" />
+    <Property Name="category" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="closedate" Type="DateTime" Precision="3" />
+    <Property Name="referenceId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="referencetype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="refsource" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="issuecategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="branchcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fromissueid" Type="Int32" />
+    <Property Name="districtcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="quadrant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="subkpi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="reviewlevel" Type="Int32" />
+    <NavigationProperty Name="mifs_respondent" Relationship="PALOUPModel.FK_mifs_respondent_mifs_issues" FromRole="mifs_issues" ToRole="mifs_respondent" />
+    <NavigationProperty Name="mifs_response" Relationship="PALOUPModel.FK_mifs_response_mifs_issues" FromRole="mifs_issues" ToRole="mifs_response" />
+  </EntityType>
+  <Association Name="FK_mifs_respondent_mifs_issues">
+    <End Type="PALOUPModel.mifs_issues" Role="mifs_issues" Multiplicity="1" />
+    <End Type="PALOUPModel.mifs_respondent" Role="mifs_respondent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_issues">
+        <PropertyRef Name="issueId" />
+      </Principal>
+      <Dependent Role="mifs_respondent">
+        <PropertyRef Name="issueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_response_mifs_issues">
+    <End Type="PALOUPModel.mifs_issues" Role="mifs_issues" Multiplicity="1" />
+    <End Type="PALOUPModel.mifs_response" Role="mifs_response" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_issues">
+        <PropertyRef Name="issueId" />
+      </Principal>
+      <Dependent Role="mifs_response">
+        <PropertyRef Name="issueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

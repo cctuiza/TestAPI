@@ -1,0 +1,792 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD6068FD-6D00-421B-96D2-DBFC1FC25C44}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PaloUpAPI</RootNamespace>
+    <AssemblyName>PaloUpAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44354</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClearScript">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\ClearScript.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="fastLibrary">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\fastLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.ChakraCore">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\JavaScriptEngineSwitcher.ChakraCore.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\JavaScriptEngineSwitcher.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Msie">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\JavaScriptEngineSwitcher.Msie.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.V8">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\JavaScriptEngineSwitcher.V8.dll</HintPath>
+    </Reference>
+    <Reference Include="JSPool">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\JSPool.dll</HintPath>
+    </Reference>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects, Version=4.73.0.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
+      <HintPath>..\packages\CompareNETObjects.4.73.0\lib\net46\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PhpNetClassLibrary">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\PhpNetClassLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="PhpNetCore">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\PhpNetCore.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="VroomJs">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\VroomJs.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>D:\backup\DL\develop1\develop\FscCore\bin\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilters\AuthorizationRequiredAttribute.cs" />
+    <Compile Include="ActionFilters\CompressAttribute.cs" />
+    <Compile Include="ActionFilters\CustomAuthorizeAttribute.cs" />
+    <Compile Include="ActionFilters\GlobalExceptionAttribute.cs" />
+    <Compile Include="ActionFilters\LoggingFilterAttribute.cs" />
+    <Compile Include="ActionFilters\ServerAuthorizeAttribute.cs" />
+    <Compile Include="ActionFilters\UserAuthorizeAttribute.cs" />
+    <Compile Include="ActionFilters\ValidateMimeMultipartContentFilter.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CorsHandler.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Class\IssueReport.cs" />
+    <Compile Include="Class\NotMember.cs" />
+    <Compile Include="Class\PaloClosureChartData.cs" />
+    <Compile Include="Class\QMSClass.cs" />
+    <Compile Include="Class\Topic.cs" />
+    <Compile Include="Controllers\AccessController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\AuthenticateController.cs" />
+    <Compile Include="Controllers\ExportController.cs" />
+    <Compile Include="Controllers\FilemapController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\MifsCalendarController.cs" />
+    <Compile Include="Controllers\MifsController.cs" />
+    <Compile Include="Controllers\PaloUpNotMemberController.cs" />
+    <Compile Include="Controllers\PluginController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\TopicController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Core\BusinessEntity\ITokenServices.cs" />
+    <Compile Include="Core\BusinessEntity\IUserServices.cs" />
+    <Compile Include="Core\BusinessEntity\TokenEntity.cs" />
+    <Compile Include="Core\BusinessEntity\TokenServices.cs" />
+    <Compile Include="Core\BusinessEntity\UserServices.cs" />
+    <Compile Include="ErrorHelper\ApiBusinessException.cs" />
+    <Compile Include="ErrorHelper\ApiDataExceptions.cs" />
+    <Compile Include="ErrorHelper\ApiException.cs" />
+    <Compile Include="ErrorHelper\IApiExceptions.cs" />
+    <Compile Include="Filters\ApiAuthenticationFilter.cs" />
+    <Compile Include="Filters\BasicAuthenticationIdentity.cs" />
+    <Compile Include="Filters\GenericAuthenticationFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\JSONHelper.cs" />
+    <Compile Include="Helpers\NLogger.cs" />
+    <Compile Include="Helpers\ServiceStatus.cs" />
+    <Compile Include="Models\AppsImageModel.cs" />
+    <Compile Include="Models\AppsMenuModel.cs" />
+    <Compile Include="Models\apps_file_map.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_control_no.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\clsAccount.cs" />
+    <Compile Include="Models\core_appmenu.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_appmenuuser.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_appsettings.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_appsystem.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_appsystemuser.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_attachments.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_branchmst.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_confirmation.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_derictory.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_district.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_drivepath.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_employee.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_link.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_mailer.cs">
+      <DependentUpon>PaloUpMailModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_system.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_temp_attachment.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_UserMenuList.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_users.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_userswarehouse.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_vAdminMenu.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_vEmployeeNotUser.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\core_vParentMenu.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\fpma_member.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IssueMeetingModel.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\MailParamsModel.cs" />
+    <Compile Include="Models\MaterialDataModel.cs" />
+    <Compile Include="Models\MenuList.cs" />
+    <Compile Include="Models\MenuModel.cs" />
+    <Compile Include="Models\MIFS\MifsActivityLogModel.cs" />
+    <Compile Include="Models\MIFS\MifsAttashmentModel.cs" />
+    <Compile Include="Models\MIFS\MifsAttendanceModel.cs" />
+    <Compile Include="Models\MIFS\MifsChangeStatusModel.cs" />
+    <Compile Include="Models\MIFS\MifsContact.cs" />
+    <Compile Include="Models\MIFS\MifsDashboard.cs" />
+    <Compile Include="Models\MIFS\MifsIssue.cs" />
+    <Compile Include="Models\MIFS\MifsIssuePerBranchPerStatus.cs" />
+    <Compile Include="Models\MIFS\MifsResponseEmbed.cs" />
+    <Compile Include="Models\MIFS\MifsStatusCount.cs" />
+    <Compile Include="Models\MIFS\MypaloCountType.cs" />
+    <Compile Include="Models\mifs_Analytics.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_AnalyticsWithResponse.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_attendance.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mifs_DailyUtilization.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_dropdown.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_dropdowngroup.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_FollowUpOpen.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_issues.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_ladder.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_meeting.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_members.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_parking.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_respondent.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_response.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_SumOfIssues.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_topic.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_topicgroup.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_topicmembers.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vAccountValidation.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vClosedPerResponsible.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vFirmAttendance.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vIssueClosedPerEmployeeX.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vIssueCount.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vIssueForAcknowledgement.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vIssuePerBranchPerTopic.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vIssuePerWeekPerStatus.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vIssueReport.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vIssues.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vIssueTrendMonthly.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vMeeting.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vMeetingSchedule.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vNotMember.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vOpenIssuePerWeek.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vParking.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vResponse.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vTopicLevel.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mifs_vTopicMembers.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ole_examinee.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaloUpMailModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaloUpMailModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaloUpMailModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaloUpMailModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaloUpMailModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaloUpMailModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaloUpModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaloUpModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaloUpModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaloUpModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaloUpModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Response.cs" />
+    <Compile Include="Models\rms_useranalysisgroupaccess.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SMS.cs" />
+    <Compile Include="Models\Sproc_mifsClosureChart_Result.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sproc_mifsGetMemberSeparated_Result.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sproc_mifsIssuesCategoryGraph_Result.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sproc_mifsSelectAttendees_Result.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SvrModel.cs" />
+    <Compile Include="Models\token.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TokenGenerator.cs" />
+    <Compile Include="Models\TransList.cs" />
+    <Compile Include="Models\UserBranchModel.cs" />
+    <Compile Include="Models\UserMasterModel.cs" />
+    <Compile Include="Models\UserMenuModel.cs" />
+    <Compile Include="Models\UserParam.cs" />
+    <Compile Include="Models\UserRightsModel.cs" />
+    <Compile Include="Models\UserSystemModel.cs" />
+    <Compile Include="Models\wms_servers.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\wms_serverwarehouses.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\wms_userserverwarehouse.cs">
+      <DependentUpon>PaloUpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaloCharts\PaloClosureChart.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaloClosureChart.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Base64FileJsonConverter.cs" />
+    <Compile Include="Service\MifsServices.cs" />
+    <Compile Include="SQLData\AccountRights.cs" />
+    <Compile Include="SQLData\MifsIssues.cs" />
+    <Compile Include="SQLData\MifsMember.cs" />
+    <Compile Include="SQLData\MifsReport.cs" />
+    <Compile Include="SQLData\MifsResponse.cs" />
+    <Compile Include="SQLData\MifsSourceType.cs" />
+    <Compile Include="SQLData\SMS.cs" />
+    <Compile Include="SQLData\UserData.cs" />
+    <Compile Include="Utils\clsprocedure.cs" />
+    <Compile Include="Utils\clsRandom.cs" />
+    <Compile Include="Utils\clssecurity.cs" />
+    <Compile Include="Utils\ImageHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="mailTemplate\account.forgot.password.html" />
+    <Content Include="mailTemplate\account.reset.password.complete.html" />
+    <Content Include="mailTemplate\error.msg.html" />
+    <Content Include="mailTemplate\index.html" />
+    <Content Include="mailTemplate\iwfms.fleet.departed.html" />
+    <Content Include="mailTemplate\mifs.acknowledge.notification.html" />
+    <Content Include="mailTemplate\mifs.bulk-drop-issue.html" />
+    <Content Include="mailTemplate\mifs.change.status.counterlimit.html" />
+    <Content Include="mailTemplate\mifs.daily.notification.html" />
+    <Content Include="mailTemplate\mifs.issue.transfer.notification.html" />
+    <Content Include="mailTemplate\mifs.meeting.schedule.html" />
+    <Content Include="mailTemplate\mifs.new.issue.report.html" />
+    <Content Include="mailTemplate\mifs.over.due.notification.html" />
+    <Content Include="mailTemplate\mifs.request.chance.status.drop.html" />
+    <Content Include="mailTemplate\mifs.request.chance.status.html" />
+    <Content Include="mailTemplate\mifs.request.chance.status.park.html" />
+    <Content Include="mailTemplate\mifs.response.report.html" />
+    <Content Include="mailTemplate\mifs.response.report.youtube.html" />
+    <Content Include="mailTemplate\mifs.tollgater.close.issue.notification.html" />
+    <Content Include="mailTemplate\mifs.weekly.dashboard.report.html" />
+    <Content Include="mailTemplate\olex_approval.html" />
+    <Content Include="mailTemplate\olex_exam_result.html" />
+    <Content Include="Models\PaloUpMailModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PaloUpMailModel.edmx</DependentUpon>
+      <LastGenOutput>PaloUpMailModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PaloUpMailModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PaloUpMailModel.edmx</DependentUpon>
+      <LastGenOutput>PaloUpMailModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PaloUpModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PaloUpModel.Context.cs</LastGenOutput>
+      <DependentUpon>PaloUpModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\PaloUpModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PaloUpModel.edmx</DependentUpon>
+      <LastGenOutput>PaloUpModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\PaloUpModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PaloUpModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PaloUpModel.edmx.diagram">
+      <DependentUpon>PaloUpModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\PaloUpMailModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PaloUpMailModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PaloUpMailModel.edmx.diagram">
+      <DependentUpon>PaloUpMailModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="mailTemplate\mifs.bulk-transfer-raisedby-issue.html" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Styles\table.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Plugin\attend-paloup-meeting.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PaloCharts\PaloClosureChart.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaloClosureChart.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51270</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44356/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

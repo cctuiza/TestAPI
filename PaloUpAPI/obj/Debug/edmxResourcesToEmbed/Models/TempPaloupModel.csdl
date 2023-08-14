@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TempPaloUpModelEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="mifs_issues">
+    <Key>
+      <PropertyRef Name="issueId" />
+    </Key>
+    <Property Name="issueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hashcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="issuedetails" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="actionplan" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="issuedate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fromtopicId" Type="Int32" />
+    <Property Name="targetcompletiondate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="raisedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="raisedbyemail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="raisedbyempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="raisedbyphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="responsible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="responemail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="responempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="responphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="followfrequency" Type="Int32" Nullable="false" />
+    <Property Name="followmail" Type="Byte" Nullable="false" />
+    <Property Name="followsms" Type="Byte" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="newstatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="acknowledgedbysource" Type="Byte" Nullable="false" />
+    <Property Name="acknowledgesourcedate" Type="DateTime" Precision="3" />
+    <Property Name="acknowledgebyrespondent" Type="Byte" Nullable="false" />
+    <Property Name="acknowledgerespondentdate" Type="DateTime" Precision="3" />
+    <Property Name="fupcounter" Type="Int32" Nullable="false" />
+    <Property Name="parkdate" Type="DateTime" Precision="3" />
+    <Property Name="resumedate" Type="DateTime" Precision="3" />
+    <Property Name="firstsenddate" Type="DateTime" Precision="3" />
+    <Property Name="lastsenddate" Type="DateTime" Precision="3" />
+    <Property Name="statchangefupcounter" Type="Int32" />
+    <Property Name="meetingId" Type="Int32" Nullable="false" />
+    <Property Name="reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sourcetype" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="collaboratorname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratorempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="pflag" Type="Byte" Nullable="false" />
+    <Property Name="issuetype" Type="Byte" Nullable="false" />
+    <Property Name="category" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="closedate" Type="DateTime" Precision="3" />
+    <Property Name="referenceId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="referencetype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="refsource" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="mifs_topic" Relationship="Self.FK_mifs_issues_mifs_sourcetype" FromRole="mifs_issues" ToRole="mifs_topic" />
+    <NavigationProperty Name="mifs_respondent" Relationship="TempPaloUpModelEntities.FK_mifs_respondent_mifs_issues" FromRole="mifs_issues" ToRole="mifs_respondent" />
+    <NavigationProperty Name="mifs_response" Relationship="TempPaloUpModelEntities.FK_mifs_response_mifs_issues" FromRole="mifs_issues" ToRole="mifs_response" />
+  </EntityType>
+  <EntityType Name="mifs_topic">
+    <Key>
+      <PropertyRef Name="topicId" />
+    </Key>
+    <Property Name="topicId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="hashcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="aliascode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="topiclevel" Type="Int32" Nullable="false" />
+    <Property Name="fupfrequency" Type="Int32" Nullable="false" />
+    <Property Name="occurence" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="topicscope" Type="Byte" Nullable="false" />
+    <Property Name="bgcolor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="classification" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="profile" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="statchangecounterlimit" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="mifs_issues" Relationship="Self.FK_mifs_issues_mifs_sourcetype" FromRole="mifs_topic" ToRole="mifs_issues" />
+    <NavigationProperty Name="mifs_meeting" Relationship="TempPaloUpModelEntities.FK_mifs_meeting_mifs_sourcetype" FromRole="mifs_topic" ToRole="mifs_meeting" />
+    <NavigationProperty Name="mifs_topicgroup" Relationship="TempPaloUpModelEntities.FK_mifs_topic_mifs_topicgroup" FromRole="mifs_topic" ToRole="mifs_topicgroup" />
+    <NavigationProperty Name="mifs_topicmembers" Relationship="TempPaloUpModelEntities.FK_mifs_sourcemembers_mifs_source" FromRole="mifs_topic" ToRole="mifs_topicmembers" />
+  </EntityType>
+  <Association Name="FK_mifs_issues_mifs_sourcetype">
+    <End Role="mifs_topic" Type="Self.mifs_topic" Multiplicity="1" />
+    <End Role="mifs_issues" Type="Self.mifs_issues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="mifs_issues">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TempPaloUpModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mifs_issues" EntityType="Self.mifs_issues" />
+    <EntitySet Name="mifs_topic" EntityType="Self.mifs_topic" />
+    <AssociationSet Name="FK_mifs_issues_mifs_sourcetype" Association="Self.FK_mifs_issues_mifs_sourcetype">
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+      <End Role="mifs_issues" EntitySet="mifs_issues" />
+    </AssociationSet>
+    <EntitySet Name="mifs_meeting" EntityType="TempPaloUpModelEntities.mifs_meeting" />
+    <AssociationSet Name="FK_mifs_meeting_mifs_sourcetype" Association="TempPaloUpModelEntities.FK_mifs_meeting_mifs_sourcetype">
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+      <End Role="mifs_meeting" EntitySet="mifs_meeting" />
+    </AssociationSet>
+    <EntitySet Name="mifs_topicgroup" EntityType="TempPaloUpModelEntities.mifs_topicgroup" />
+    <AssociationSet Name="FK_mifs_topic_mifs_topicgroup" Association="TempPaloUpModelEntities.FK_mifs_topic_mifs_topicgroup">
+      <End Role="mifs_topicgroup" EntitySet="mifs_topicgroup" />
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+    </AssociationSet>
+    <EntitySet Name="mifs_attendance" EntityType="TempPaloUpModelEntities.mifs_attendance" />
+    <EntitySet Name="mifs_members" EntityType="TempPaloUpModelEntities.mifs_members" />
+    <EntitySet Name="mifs_respondent" EntityType="TempPaloUpModelEntities.mifs_respondent" />
+    <EntitySet Name="mifs_response" EntityType="TempPaloUpModelEntities.mifs_response" />
+    <EntitySet Name="mifs_topicmembers" EntityType="TempPaloUpModelEntities.mifs_topicmembers" />
+    <EntitySet Name="mifs_ladder" EntityType="TempPaloUpModelEntities.mifs_ladder" />
+    <EntitySet Name="mifs_parking" EntityType="TempPaloUpModelEntities.mifs_parking" />
+    <AssociationSet Name="FK_mifs_attendance_mifs_meeting" Association="TempPaloUpModelEntities.FK_mifs_attendance_mifs_meeting">
+      <End Role="mifs_meeting" EntitySet="mifs_meeting" />
+      <End Role="mifs_attendance" EntitySet="mifs_attendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_respondent_mifs_issues" Association="TempPaloUpModelEntities.FK_mifs_respondent_mifs_issues">
+      <End Role="mifs_issues" EntitySet="mifs_issues" />
+      <End Role="mifs_respondent" EntitySet="mifs_respondent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_response_mifs_issues" Association="TempPaloUpModelEntities.FK_mifs_response_mifs_issues">
+      <End Role="mifs_issues" EntitySet="mifs_issues" />
+      <End Role="mifs_response" EntitySet="mifs_response" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_sourcemembers_mifs_source" Association="TempPaloUpModelEntities.FK_mifs_sourcemembers_mifs_source">
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+      <End Role="mifs_topicmembers" EntitySet="mifs_topicmembers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="mifs_meeting">
+    <Key>
+      <PropertyRef Name="meetingId" />
+    </Key>
+    <Property Name="meetingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hashcode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="agenda" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="datestart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dateend" Type="DateTime" Precision="3" />
+    <Property Name="venue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="facilitator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="closedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="closedate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="mifs_topic" Relationship="TempPaloUpModelEntities.FK_mifs_meeting_mifs_sourcetype" FromRole="mifs_meeting" ToRole="mifs_topic" />
+    <NavigationProperty Name="mifs_attendance" Relationship="TempPaloUpModelEntities.FK_mifs_attendance_mifs_meeting" FromRole="mifs_meeting" ToRole="mifs_attendance" />
+  </EntityType>
+  <Association Name="FK_mifs_meeting_mifs_sourcetype">
+    <End Type="TempPaloUpModelEntities.mifs_topic" Role="mifs_topic" Multiplicity="1" />
+    <End Type="TempPaloUpModelEntities.mifs_meeting" Role="mifs_meeting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="mifs_meeting">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="mifs_topicgroup">
+    <Key>
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mifs_topic" Relationship="TempPaloUpModelEntities.FK_mifs_topic_mifs_topicgroup" FromRole="mifs_topicgroup" ToRole="mifs_topic" />
+  </EntityType>
+  <Association Name="FK_mifs_topic_mifs_topicgroup">
+    <End Type="TempPaloUpModelEntities.mifs_topicgroup" Role="mifs_topicgroup" Multiplicity="1" />
+    <End Type="TempPaloUpModelEntities.mifs_topic" Role="mifs_topic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topicgroup">
+        <PropertyRef Name="groupId" />
+      </Principal>
+      <Dependent Role="mifs_topic">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="mifs_attendance">
+    <Key>
+      <PropertyRef Name="attendanceId" />
+    </Key>
+    <Property Name="attendanceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="meetingId" Type="Int32" Nullable="false" />
+    <Property Name="attendeeempid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="attendeename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="attendeemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="attendeephone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="ismember" Type="Byte" Nullable="false" />
+    <Property Name="ispresent" Type="Byte" Nullable="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="timein" Type="DateTime" Precision="3" />
+    <Property Name="timeout" Type="DateTime" Precision="3" />
+    <Property Name="isgenerated" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="mifs_meeting" Relationship="TempPaloUpModelEntities.FK_mifs_attendance_mifs_meeting" FromRole="mifs_attendance" ToRole="mifs_meeting" />
+  </EntityType>
+  <EntityType Name="mifs_members">
+    <Key>
+      <PropertyRef Name="memberId" />
+    </Key>
+    <Property Name="memberId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fullname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="emailaddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mobileno" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="nickname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mifs_respondent">
+    <Key>
+      <PropertyRef Name="respondentId" />
+    </Key>
+    <Property Name="respondentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="responsibleemailadd" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responsiblename" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="responsiblephone" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="responsibleemplid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremailadd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratorname" Type="Binary" MaxLength="100" FixedLength="false" />
+    <Property Name="collaboratorphone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="collaboratoremplid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="newstatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="parkdate" Type="DateTime" Precision="3" />
+    <Property Name="resumedate" Type="DateTime" Precision="3" />
+    <Property Name="firstsenddate" Type="DateTime" Precision="3" />
+    <Property Name="lastsenddate" Type="DateTime" Precision="3" />
+    <Property Name="commitmentdate" Type="DateTime" Precision="3" />
+    <Property Name="statchangeacknowledgementdate" Type="DateTime" Precision="3" />
+    <Property Name="statchangeresponsible" Type="Boolean" Nullable="false" />
+    <Property Name="statchangetollgater" Type="Boolean" Nullable="false" />
+    <Property Name="statchangefupcounter" Type="Int32" Nullable="false" />
+    <Property Name="fupcounter" Type="Int32" Nullable="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mifs_issues" Relationship="TempPaloUpModelEntities.FK_mifs_respondent_mifs_issues" FromRole="mifs_respondent" ToRole="mifs_issues" />
+  </EntityType>
+  <EntityType Name="mifs_response">
+    <Key>
+      <PropertyRef Name="responseId" />
+    </Key>
+    <Property Name="responseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="messagedetails" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="responseby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="responsebyempid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="responsedate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="responsebyemail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="islock" Type="Boolean" Nullable="false" />
+    <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+    <Property Name="istypeaction" Type="Boolean" />
+    <NavigationProperty Name="mifs_issues" Relationship="TempPaloUpModelEntities.FK_mifs_response_mifs_issues" FromRole="mifs_response" ToRole="mifs_issues" />
+  </EntityType>
+  <EntityType Name="mifs_topicmembers">
+    <Key>
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="memberId" />
+    </Key>
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="memberId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="accesslevel" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="mifs_topic" Relationship="TempPaloUpModelEntities.FK_mifs_sourcemembers_mifs_source" FromRole="mifs_topicmembers" ToRole="mifs_topic" />
+  </EntityType>
+  <EntityType Name="mifs_ladder">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="totalopen" />
+      <PropertyRef Name="totalclosed" />
+      <PropertyRef Name="totalparked" />
+      <PropertyRef Name="totaldropped" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="totalopen" Type="Int32" Nullable="false" />
+    <Property Name="totalclosed" Type="Int32" Nullable="false" />
+    <Property Name="totalparked" Type="Int32" Nullable="false" />
+    <Property Name="totaldropped" Type="Int32" Nullable="false" />
+    <Property Name="topicid" Type="Int32" />
+    <Property Name="topicdesc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="issuedyear" Type="Int32" />
+    <Property Name="issuedmonth" Type="Int32" />
+    <Property Name="issuedweek" Type="Int32" />
+    <Property Name="capturedyear" Type="Int32" />
+    <Property Name="capturedmonth" Type="Int32" />
+    <Property Name="capturedweek" Type="Int32" />
+    <Property Name="rundate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mifs_parking">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="parkdate" />
+      <PropertyRef Name="commitmentdate" />
+      <PropertyRef Name="rundate" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="issueId" Type="Int32" Nullable="false" />
+    <Property Name="topicId" Type="Int32" Nullable="false" />
+    <Property Name="parkdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="commitmentdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="rundate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_mifs_attendance_mifs_meeting">
+    <End Type="TempPaloUpModelEntities.mifs_meeting" Role="mifs_meeting" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TempPaloUpModelEntities.mifs_attendance" Role="mifs_attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_meeting">
+        <PropertyRef Name="meetingId" />
+      </Principal>
+      <Dependent Role="mifs_attendance">
+        <PropertyRef Name="meetingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_respondent_mifs_issues">
+    <End Type="TempPaloUpModelEntities.mifs_issues" Role="mifs_issues" Multiplicity="1" />
+    <End Type="TempPaloUpModelEntities.mifs_respondent" Role="mifs_respondent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_issues">
+        <PropertyRef Name="issueId" />
+      </Principal>
+      <Dependent Role="mifs_respondent">
+        <PropertyRef Name="issueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_response_mifs_issues">
+    <End Type="TempPaloUpModelEntities.mifs_issues" Role="mifs_issues" Multiplicity="1" />
+    <End Type="TempPaloUpModelEntities.mifs_response" Role="mifs_response" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_issues">
+        <PropertyRef Name="issueId" />
+      </Principal>
+      <Dependent Role="mifs_response">
+        <PropertyRef Name="issueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_sourcemembers_mifs_source">
+    <End Type="TempPaloUpModelEntities.mifs_topic" Role="mifs_topic" Multiplicity="1" />
+    <End Type="TempPaloUpModelEntities.mifs_topicmembers" Role="mifs_topicmembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="mifs_topicmembers">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

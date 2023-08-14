@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TempPaloUpModelEntities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="mifs_attendance">
+    <Key>
+      <PropertyRef Name="attendanceId" />
+    </Key>
+    <Property Name="attendanceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="meetingId" Type="int" Nullable="false" />
+    <Property Name="attendeeempid" Type="varchar" MaxLength="10" />
+    <Property Name="attendeename" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="attendeemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="attendeephone" Type="varchar" MaxLength="13" />
+    <Property Name="ismember" Type="tinyint" Nullable="false" />
+    <Property Name="ispresent" Type="tinyint" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="timein" Type="datetime" />
+    <Property Name="timeout" Type="datetime" />
+    <Property Name="isgenerated" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_issues">
+    <Key>
+      <PropertyRef Name="issueId" />
+    </Key>
+    <Property Name="issueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hashcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="issuedetails" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="actionplan" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="issuedate" Type="datetime" Nullable="false" />
+    <Property Name="fromtopicId" Type="int" />
+    <Property Name="targetcompletiondate" Type="datetime" Nullable="false" />
+    <Property Name="raisedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyempid" Type="varchar" MaxLength="10" />
+    <Property Name="raisedbyphone" Type="varchar" MaxLength="13" />
+    <Property Name="responsible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responempid" Type="varchar" MaxLength="10" />
+    <Property Name="responphone" Type="varchar" MaxLength="13" />
+    <Property Name="followfrequency" Type="int" Nullable="false" />
+    <Property Name="followmail" Type="tinyint" Nullable="false" />
+    <Property Name="followsms" Type="tinyint" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="newstatus" Type="char" MaxLength="1" />
+    <Property Name="acknowledgedbysource" Type="tinyint" Nullable="false" />
+    <Property Name="acknowledgesourcedate" Type="datetime" />
+    <Property Name="acknowledgebyrespondent" Type="tinyint" Nullable="false" />
+    <Property Name="acknowledgerespondentdate" Type="datetime" />
+    <Property Name="fupcounter" Type="int" Nullable="false" />
+    <Property Name="parkdate" Type="datetime" />
+    <Property Name="resumedate" Type="datetime" />
+    <Property Name="firstsenddate" Type="datetime" />
+    <Property Name="lastsenddate" Type="datetime" />
+    <Property Name="statchangefupcounter" Type="int" />
+    <Property Name="meetingId" Type="int" Nullable="false" />
+    <Property Name="reference" Type="varchar" MaxLength="50" />
+    <Property Name="sourcetype" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="collaboratorname" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratoremail" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratorempid" Type="varchar" MaxLength="10" />
+    <Property Name="pflag" Type="tinyint" Nullable="false" />
+    <Property Name="issuetype" Type="tinyint" Nullable="false" />
+    <Property Name="category" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="closedate" Type="datetime" />
+    <Property Name="referenceId" Type="varchar" MaxLength="20" />
+    <Property Name="referencetype" Type="varchar" MaxLength="20" />
+    <Property Name="refsource" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QSO_Database.dbo.mifs_ladder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_ladder">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="totalopen" />
+      <PropertyRef Name="totalclosed" />
+      <PropertyRef Name="totalparked" />
+      <PropertyRef Name="totaldropped" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="totalopen" Type="int" Nullable="false" />
+    <Property Name="totalclosed" Type="int" Nullable="false" />
+    <Property Name="totalparked" Type="int" Nullable="false" />
+    <Property Name="totaldropped" Type="int" Nullable="false" />
+    <Property Name="topicid" Type="int" />
+    <Property Name="topicdesc" Type="varchar" MaxLength="150" />
+    <Property Name="issuedyear" Type="int" />
+    <Property Name="issuedmonth" Type="int" />
+    <Property Name="issuedweek" Type="int" />
+    <Property Name="capturedyear" Type="int" />
+    <Property Name="capturedmonth" Type="int" />
+    <Property Name="capturedweek" Type="int" />
+    <Property Name="rundate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mifs_meeting">
+    <Key>
+      <PropertyRef Name="meetingId" />
+    </Key>
+    <Property Name="meetingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hashcode" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="agenda" Type="varchar" MaxLength="100" />
+    <Property Name="datestart" Type="datetime" Nullable="false" />
+    <Property Name="dateend" Type="datetime" />
+    <Property Name="venue" Type="varchar" MaxLength="250" />
+    <Property Name="facilitator" Type="varchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="notes" Type="varchar(max)" />
+    <Property Name="closedby" Type="varchar" MaxLength="50" />
+    <Property Name="closedate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mifs_members">
+    <Key>
+      <PropertyRef Name="memberId" />
+    </Key>
+    <Property Name="memberId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="emailaddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobileno" Type="varchar" MaxLength="13" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="nickname" Type="varchar" MaxLength="20" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QSO_Database.dbo.mifs_parking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_parking">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="parkdate" />
+      <PropertyRef Name="commitmentdate" />
+      <PropertyRef Name="rundate" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="parkdate" Type="date" Nullable="false" />
+    <Property Name="commitmentdate" Type="date" Nullable="false" />
+    <Property Name="rundate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_respondent">
+    <Key>
+      <PropertyRef Name="respondentId" />
+    </Key>
+    <Property Name="respondentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="responsibleemailadd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responsiblename" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="responsiblephone" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="responsibleemplid" Type="varchar" MaxLength="10" />
+    <Property Name="collaboratoremailadd" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratorname" Type="varbinary" MaxLength="100" />
+    <Property Name="collaboratorphone" Type="varchar" MaxLength="13" />
+    <Property Name="collaboratoremplid" Type="varchar" MaxLength="10" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="newstatus" Type="char" MaxLength="1" />
+    <Property Name="parkdate" Type="datetime" />
+    <Property Name="resumedate" Type="datetime" />
+    <Property Name="firstsenddate" Type="datetime" />
+    <Property Name="lastsenddate" Type="datetime" />
+    <Property Name="commitmentdate" Type="datetime" />
+    <Property Name="statchangeacknowledgementdate" Type="datetime" />
+    <Property Name="statchangeresponsible" Type="bit" Nullable="false" />
+    <Property Name="statchangetollgater" Type="bit" Nullable="false" />
+    <Property Name="statchangefupcounter" Type="int" Nullable="false" />
+    <Property Name="fupcounter" Type="int" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_response">
+    <Key>
+      <PropertyRef Name="responseId" />
+    </Key>
+    <Property Name="responseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="messagedetails" Type="varchar(max)" Nullable="false" />
+    <Property Name="responseby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responsebyempid" Type="varchar" MaxLength="20" />
+    <Property Name="responsedate" Type="datetime" Nullable="false" />
+    <Property Name="responsebyemail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="islock" Type="bit" Nullable="false" />
+    <Property Name="isdeleted" Type="bit" Nullable="false" />
+    <Property Name="istypeaction" Type="bit" />
+  </EntityType>
+  <EntityType Name="mifs_topic">
+    <Key>
+      <PropertyRef Name="topicId" />
+    </Key>
+    <Property Name="topicId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="groupId" Type="int" Nullable="false" />
+    <Property Name="hashcode" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="aliascode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="topiclevel" Type="int" Nullable="false" />
+    <Property Name="fupfrequency" Type="int" Nullable="false" />
+    <Property Name="occurence" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="topicscope" Type="tinyint" Nullable="false" />
+    <Property Name="bgcolor" Type="varchar" MaxLength="10" />
+    <Property Name="classification" Type="varchar" MaxLength="20" />
+    <Property Name="profile" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="statchangecounterlimit" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_topicgroup">
+    <Key>
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="groupId" Type="int" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_topicmembers">
+    <Key>
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="memberId" />
+    </Key>
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="memberId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="accesslevel" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_mifs_attendance_mifs_meeting">
+    <End Role="mifs_meeting" Type="Self.mifs_meeting" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="mifs_attendance" Type="Self.mifs_attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_meeting">
+        <PropertyRef Name="meetingId" />
+      </Principal>
+      <Dependent Role="mifs_attendance">
+        <PropertyRef Name="meetingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_issues_mifs_sourcetype">
+    <End Role="mifs_topic" Type="Self.mifs_topic" Multiplicity="1" />
+    <End Role="mifs_issues" Type="Self.mifs_issues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="mifs_issues">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_meeting_mifs_sourcetype">
+    <End Role="mifs_topic" Type="Self.mifs_topic" Multiplicity="1" />
+    <End Role="mifs_meeting" Type="Self.mifs_meeting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="mifs_meeting">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_respondent_mifs_issues">
+    <End Role="mifs_issues" Type="Self.mifs_issues" Multiplicity="1" />
+    <End Role="mifs_respondent" Type="Self.mifs_respondent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_issues">
+        <PropertyRef Name="issueId" />
+      </Principal>
+      <Dependent Role="mifs_respondent">
+        <PropertyRef Name="issueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_response_mifs_issues">
+    <End Role="mifs_issues" Type="Self.mifs_issues" Multiplicity="1" />
+    <End Role="mifs_response" Type="Self.mifs_response" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_issues">
+        <PropertyRef Name="issueId" />
+      </Principal>
+      <Dependent Role="mifs_response">
+        <PropertyRef Name="issueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_sourcemembers_mifs_source">
+    <End Role="mifs_topic" Type="Self.mifs_topic" Multiplicity="1" />
+    <End Role="mifs_topicmembers" Type="Self.mifs_topicmembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="mifs_topicmembers">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_topic_mifs_topicgroup">
+    <End Role="mifs_topicgroup" Type="Self.mifs_topicgroup" Multiplicity="1" />
+    <End Role="mifs_topic" Type="Self.mifs_topic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topicgroup">
+        <PropertyRef Name="groupId" />
+      </Principal>
+      <Dependent Role="mifs_topic">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TempPaloUpModelEntitiesStoreContainer">
+    <EntitySet Name="mifs_attendance" EntityType="Self.mifs_attendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_issues" EntityType="Self.mifs_issues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_meeting" EntityType="Self.mifs_meeting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_members" EntityType="Self.mifs_members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_respondent" EntityType="Self.mifs_respondent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_response" EntityType="Self.mifs_response" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_topic" EntityType="Self.mifs_topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_topicgroup" EntityType="Self.mifs_topicgroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_topicmembers" EntityType="Self.mifs_topicmembers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_ladder" EntityType="Self.mifs_ladder" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_ladder].[id] AS [id], 
+    [mifs_ladder].[totalopen] AS [totalopen], 
+    [mifs_ladder].[totalclosed] AS [totalclosed], 
+    [mifs_ladder].[totalparked] AS [totalparked], 
+    [mifs_ladder].[totaldropped] AS [totaldropped], 
+    [mifs_ladder].[topicid] AS [topicid], 
+    [mifs_ladder].[topicdesc] AS [topicdesc], 
+    [mifs_ladder].[issuedyear] AS [issuedyear], 
+    [mifs_ladder].[issuedmonth] AS [issuedmonth], 
+    [mifs_ladder].[issuedweek] AS [issuedweek], 
+    [mifs_ladder].[capturedyear] AS [capturedyear], 
+    [mifs_ladder].[capturedmonth] AS [capturedmonth], 
+    [mifs_ladder].[capturedweek] AS [capturedweek], 
+    [mifs_ladder].[rundate] AS [rundate]
+    FROM [dbo].[mifs_ladder] AS [mifs_ladder]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_parking" EntityType="Self.mifs_parking" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_parking].[id] AS [id], 
+    [mifs_parking].[issueId] AS [issueId], 
+    [mifs_parking].[topicId] AS [topicId], 
+    [mifs_parking].[parkdate] AS [parkdate], 
+    [mifs_parking].[commitmentdate] AS [commitmentdate], 
+    [mifs_parking].[rundate] AS [rundate]
+    FROM [dbo].[mifs_parking] AS [mifs_parking]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_mifs_attendance_mifs_meeting" Association="Self.FK_mifs_attendance_mifs_meeting">
+      <End Role="mifs_meeting" EntitySet="mifs_meeting" />
+      <End Role="mifs_attendance" EntitySet="mifs_attendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_issues_mifs_sourcetype" Association="Self.FK_mifs_issues_mifs_sourcetype">
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+      <End Role="mifs_issues" EntitySet="mifs_issues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_meeting_mifs_sourcetype" Association="Self.FK_mifs_meeting_mifs_sourcetype">
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+      <End Role="mifs_meeting" EntitySet="mifs_meeting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_respondent_mifs_issues" Association="Self.FK_mifs_respondent_mifs_issues">
+      <End Role="mifs_issues" EntitySet="mifs_issues" />
+      <End Role="mifs_respondent" EntitySet="mifs_respondent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_response_mifs_issues" Association="Self.FK_mifs_response_mifs_issues">
+      <End Role="mifs_issues" EntitySet="mifs_issues" />
+      <End Role="mifs_response" EntitySet="mifs_response" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_sourcemembers_mifs_source" Association="Self.FK_mifs_sourcemembers_mifs_source">
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+      <End Role="mifs_topicmembers" EntitySet="mifs_topicmembers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_topic_mifs_topicgroup" Association="Self.FK_mifs_topic_mifs_topicgroup">
+      <End Role="mifs_topicgroup" EntitySet="mifs_topicgroup" />
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

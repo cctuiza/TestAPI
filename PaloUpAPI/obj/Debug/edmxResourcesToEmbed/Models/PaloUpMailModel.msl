@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PaloUpMailModelStoreContainer" CdmEntityContainer="PaloUpMailEntities">
+    <EntitySetMapping Name="core_mailer">
+      <EntityTypeMapping TypeName="PaloUpMailModel.core_mailer">
+        <MappingFragment StoreEntitySet="core_mailer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="senderDisplayEmail" ColumnName="senderDisplayEmail" />
+          <ScalarProperty Name="senderDisplayName" ColumnName="senderDisplayName" />
+          <ScalarProperty Name="recipient" ColumnName="recipient" />
+          <ScalarProperty Name="ccrecipient" ColumnName="ccrecipient" />
+          <ScalarProperty Name="bccrecipient" ColumnName="bccrecipient" />
+          <ScalarProperty Name="mailSubject" ColumnName="mailSubject" />
+          <ScalarProperty Name="mailBody" ColumnName="mailBody" />
+          <ScalarProperty Name="filePath" ColumnName="filePath" />
+          <ScalarProperty Name="mailFormat" ColumnName="mailFormat" />
+          <ScalarProperty Name="mailStatus" ColumnName="mailStatus" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

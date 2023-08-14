@@ -1,0 +1,3045 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PALOUPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="app_control_no">
+    <Key>
+      <PropertyRef Name="control_type" />
+      <PropertyRef Name="control_code" />
+    </Key>
+    <Property Name="control_type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="control_code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="control_desc" Type="varchar" MaxLength="100" />
+    <Property Name="control_digit" Type="varchar" MaxLength="10" />
+    <Property Name="last_seq_no" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="last_update" Type="datetime" />
+  </EntityType>
+  <EntityType Name="apps_file_map">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apps_sysid" Type="int" />
+    <Property Name="file_path" Type="varchar" MaxLength="500" />
+    <Property Name="file_type" Type="varchar" MaxLength="50" />
+    <Property Name="file_name" Type="varchar" MaxLength="50" />
+    <Property Name="file_isdeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="core_appmenu">
+    <Key>
+      <PropertyRef Name="menuId" />
+      <PropertyRef Name="sysId" />
+    </Key>
+    <Property Name="menuId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sysId" Type="int" Nullable="false" />
+    <Property Name="menucode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="menuname" Type="varchar" MaxLength="100" />
+    <Property Name="prtmenucode" Type="varchar" MaxLength="50" />
+    <Property Name="menuorder" Type="int" />
+    <Property Name="isactive" Type="bit" />
+    <Property Name="viewtype" Type="varchar" MaxLength="20" />
+    <Property Name="istransaction" Type="bit" />
+    <Property Name="menutype" Type="varchar" MaxLength="20" />
+    <Property Name="accesslevel" Type="int" />
+    <Property Name="defaultemployee" Type="bit" />
+    <Property Name="defaultcustomer" Type="bit" />
+    <Property Name="defaultsupplier" Type="bit" />
+    <Property Name="formobile" Type="bit" />
+    <Property Name="forweb" Type="bit" />
+    <Property Name="classicon" Type="varchar" MaxLength="50" />
+    <Property Name="mobiledefault" Type="bit" />
+    <Property Name="webdefault" Type="bit" />
+  </EntityType>
+  <EntityType Name="core_appmenuuser">
+    <Key>
+      <PropertyRef Name="menuId" />
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="menuId" Type="int" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="canadd" Type="bit" />
+    <Property Name="canedit" Type="bit" />
+    <Property Name="candelete" Type="bit" />
+    <Property Name="canview" Type="bit" />
+    <Property Name="canopen" Type="bit" />
+  </EntityType>
+  <EntityType Name="core_appsettings">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="appID" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="appID" Type="int" Nullable="false" />
+    <Property Name="SittingName" Type="varchar" MaxLength="50" />
+    <Property Name="SettingDescription" Type="varchar" MaxLength="200" />
+    <Property Name="SettingValue" Type="varchar" MaxLength="50" />
+    <Property Name="create_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="core_appsystem">
+    <Key>
+      <PropertyRef Name="sysId" />
+    </Key>
+    <Property Name="sysId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="syscode" Type="varchar" MaxLength="10" />
+    <Property Name="sysname" Type="varchar" MaxLength="100" />
+    <Property Name="sysdescription" Type="varchar" MaxLength="250" />
+    <Property Name="isactive" Type="bit" />
+    <Property Name="about" Type="text" />
+    <Property Name="showwebapps" Type="bit" />
+    <Property Name="showusermenu" Type="bit" />
+    <Property Name="ismaintenance" Type="bit" />
+    <Property Name="emailsupport" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="core_appsystemuser">
+    <Key>
+      <PropertyRef Name="sysId" />
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="sysId" Type="int" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="createdby" Type="varchar" MaxLength="20" />
+    <Property Name="createddate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="core_attachments">
+    <Key>
+      <PropertyRef Name="attachmentId" />
+    </Key>
+    <Property Name="attachmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transactionId" Type="int" Nullable="false" />
+    <Property Name="attachtype" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="filename" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="newfilename" Type="varchar" MaxLength="50" />
+    <Property Name="filetype" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="uploadtype" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="core_branchmst">
+    <Key>
+      <PropertyRef Name="brancode" />
+    </Key>
+    <Property Name="brancode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="branname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="districtcode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="branchheadname" Type="varchar" MaxLength="50" />
+    <Property Name="branchheadcontact" Type="varchar" MaxLength="100" />
+    <Property Name="branalias" Type="varchar" MaxLength="20" />
+    <Property Name="mapreference" Type="varchar(max)" />
+    <Property Name="branchheadid" Type="varchar" MaxLength="20" />
+    <Property Name="branchheademail" Type="varchar" MaxLength="30" />
+    <Property Name="latitude" Type="varchar" MaxLength="30" />
+    <Property Name="longitude" Type="varchar" MaxLength="30" />
+    <Property Name="sbu" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="withpism" Type="tinyint" Nullable="false" />
+    <Property Name="withwfmsdb" Type="bit" Nullable="false" />
+    <Property Name="wfmsdbId" Type="int" />
+    <Property Name="reportflag" Type="tinyint" Nullable="false" />
+    <Property Name="hrisbranchcode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="isinclude" Type="tinyint" />
+    <Property Name="brancharea" Type="varchar" MaxLength="8" />
+    <Property Name="region" Type="varchar" MaxLength="8" />
+    <Property Name="matrix" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="additives" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="reliever_rd" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="projbase_bill" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="sunday_ops" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="reliever_absent" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="nonmatrix" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="projbase_notbill" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="isreportauto" Type="tinyint" />
+    <Property Name="logcapturing" Type="varchar" MaxLength="50" />
+    <Property Name="isnteonly" Type="tinyint" Nullable="false" />
+    <Property Name="matrixam" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="matrixpm" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="nonmatrixam" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="nonmatrixpm" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="core_confirmation">
+    <Key>
+      <PropertyRef Name="confirmId" />
+    </Key>
+    <Property Name="confirmId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="confirmtype" Type="char" MaxLength="1" />
+    <Property Name="confirmcode" Type="varchar" MaxLength="10" />
+    <Property Name="referencecode" Type="varchar" MaxLength="20" />
+    <Property Name="expirydate" Type="datetime" />
+    <Property Name="isconfirm" Type="bit" />
+    <Property Name="create_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="core_derictory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="domain" Type="varchar" MaxLength="500" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="crea_by" Type="varchar" MaxLength="50" />
+    <Property Name="crea_dte" Type="datetime" />
+  </EntityType>
+  <EntityType Name="core_district">
+    <Key>
+      <PropertyRef Name="districtcode" />
+    </Key>
+    <Property Name="districtcode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="districtname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="districtheadname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="districtheadcontact" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="districtheadid" Type="varchar" MaxLength="20" />
+    <Property Name="districtheademail" Type="varchar" MaxLength="30" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" />
+    <Property Name="create_date" Type="datetime" />
+    <Property Name="sortorder" Type="int" />
+  </EntityType>
+  <EntityType Name="core_drivepath">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="drive_path" Type="varchar" MaxLength="500" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="crea_by" Type="varchar" MaxLength="20" />
+    <Property Name="crea_dte" Type="datetime" />
+  </EntityType>
+  <EntityType Name="core_employee">
+    <Key>
+      <PropertyRef Name="empl_id" />
+    </Key>
+    <Property Name="empl_id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="employeename" Type="varchar" MaxLength="153" Nullable="false" />
+    <Property Name="employeename2" Type="varchar" MaxLength="108" />
+    <Property Name="lname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mname" Type="varchar" MaxLength="50" />
+    <Property Name="birthday" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="15" />
+    <Property Name="sex" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="civilstatus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="emailadd" Type="varchar" MaxLength="50" />
+    <Property Name="datehired" Type="datetime" />
+    <Property Name="effectivitydate" Type="datetime" Nullable="false" />
+    <Property Name="corporate" Type="varchar" MaxLength="20" />
+    <Property Name="corporateName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="branch" Type="varchar" MaxLength="20" />
+    <Property Name="branchname" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="brancharea" Type="varchar" MaxLength="50" />
+    <Property Name="position" Type="varchar" MaxLength="20" />
+    <Property Name="positionname" Type="varchar" MaxLength="100" />
+    <Property Name="department" Type="varchar" MaxLength="20" />
+    <Property Name="departmentname" Type="varchar" MaxLength="100" />
+    <Property Name="section" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="sectionname" Type="varchar" MaxLength="100" />
+    <Property Name="levelcode" Type="varchar" MaxLength="20" />
+    <Property Name="levelname" Type="varchar" MaxLength="100" />
+    <Property Name="joblevelgroup" Type="varchar" MaxLength="20" />
+    <Property Name="class" Type="varchar" MaxLength="25" />
+    <Property Name="type" Type="varchar" MaxLength="20" />
+    <Property Name="typedescription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="employeepresentaddress" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="employeehomeaddress" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="employeepresentcontact" Type="varchar" MaxLength="100" />
+    <Property Name="homecontact" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateID" Type="varchar" MaxLength="20" />
+    <Property Name="ImmediateName" Type="varchar" MaxLength="300" />
+    <Property Name="ImmediateBDay" Type="datetime" />
+    <Property Name="ImmediateStatus" Type="varchar" MaxLength="50" />
+    <Property Name="ImmediateEmail" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateDHired" Type="datetime" />
+    <Property Name="ImmediateSBU" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateBranch" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediatePosition" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateDepartment" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateSection" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateLevel" Type="varchar" MaxLength="100" />
+    <Property Name="modifiedby" Type="varchar" MaxLength="30" />
+    <Property Name="modifieddate" Type="datetime" />
+    <Property Name="sss" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="core_link">
+    <Key>
+      <PropertyRef Name="linkId" />
+    </Key>
+    <Property Name="linkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uuid" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="expirydate" Type="datetime" Nullable="false" />
+    <Property Name="isused" Type="bit" Nullable="false" />
+    <Property Name="recipientemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sourceapplication" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="createdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="core_system">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="debugpassword" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="pismutilizationmonth" Type="int" Nullable="false" />
+    <Property Name="pismutilizationyear" Type="int" Nullable="false" />
+    <Property Name="mobadminpincode" Type="varchar" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <EntityType Name="core_temp_attachment">
+    <Key>
+      <PropertyRef Name="attachmentId" />
+    </Key>
+    <Property Name="attachmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="appId" Type="int" />
+    <Property Name="refmodule" Type="varchar" MaxLength="50" />
+    <Property Name="filename" Type="varchar" MaxLength="100" />
+    <Property Name="newfilename" Type="varchar" MaxLength="100" />
+    <Property Name="extension" Type="varchar" MaxLength="5" />
+    <Property Name="filepath" Type="varchar" MaxLength="500" />
+    <Property Name="userId" Type="int" />
+    <Property Name="status" Type="char" MaxLength="1" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="core_users">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="userrole" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="userpass" Type="varchar" MaxLength="50" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="middlename" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nickname" Type="varchar" MaxLength="20" />
+    <Property Name="usertype" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="emplId" Type="varchar" MaxLength="10" />
+    <Property Name="emailaddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobileno" Type="varchar" MaxLength="150" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="hashcode" Type="varchar" MaxLength="100" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="canaccessaquila" Type="bit" Nullable="false" />
+    <Property Name="ismailvalid" Type="bit" Nullable="false" />
+    <Property Name="isphonevalid" Type="bit" Nullable="false" />
+    <Property Name="isverify" Type="bit" />
+  </EntityType>
+  <EntityType Name="core_userswarehouse">
+    <Key>
+      <PropertyRef Name="brancode" />
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="sysId" />
+    </Key>
+    <Property Name="brancode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="sysId" Type="int" Nullable="false" />
+    <Property Name="isdefault" Type="bit" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" />
+    <Property Name="create_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="fpma_member">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpId" Type="varchar" MaxLength="15" />
+    <Property Name="CatalystId" Type="int" />
+    <Property Name="IsActive" Type="tinyint" />
+    <Property Name="sitecode" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="mifs_attendance">
+    <Key>
+      <PropertyRef Name="attendanceId" />
+    </Key>
+    <Property Name="attendanceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="meetingId" Type="int" Nullable="false" />
+    <Property Name="attendeeempid" Type="varchar" MaxLength="10" />
+    <Property Name="attendeename" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="attendeemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="attendeephone" Type="varchar" MaxLength="13" />
+    <Property Name="ismember" Type="tinyint" Nullable="false" />
+    <Property Name="ispresent" Type="tinyint" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="timein" Type="datetime" />
+    <Property Name="timeout" Type="datetime" />
+    <Property Name="isgenerated" Type="tinyint" Nullable="false" />
+    <Property Name="isremark" Type="tinyint" />
+    <Property Name="remarks" Type="varchar" MaxLength="100" />
+    <Property Name="isgoing" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_dropdown">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
+    <Property Name="value" Type="varchar" MaxLength="50" />
+    <Property Name="display" Type="varchar" MaxLength="100" />
+    <Property Name="details" Type="varchar" MaxLength="255" />
+    <Property Name="leadtimemin" Type="int" />
+    <Property Name="leadtimemax" Type="int" />
+    <Property Name="sortorder" Type="int" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createddate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedby" Type="varchar" MaxLength="50" />
+    <Property Name="modifieddate" Type="datetime" />
+    <Property Name="lookup" Type="int" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="isdelete" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_dropdowngroup">
+    <Key>
+      <PropertyRef Name="dropid" />
+    </Key>
+    <Property Name="dropid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="showinuser" Type="tinyint" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="isdelete" Type="tinyint" Nullable="false" />
+    <Property Name="createdby" Type="int" />
+    <Property Name="createddate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedby" Type="int" />
+    <Property Name="modifieddate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mifs_issues">
+    <Key>
+      <PropertyRef Name="issueId" />
+    </Key>
+    <Property Name="issueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hashcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="issuedetails" Type="varchar(max)" Nullable="false" />
+    <Property Name="actionplan" Type="varchar(max)" Nullable="false" />
+    <Property Name="issuedate" Type="datetime" Nullable="false" />
+    <Property Name="fromtopicId" Type="int" />
+    <Property Name="targetcompletiondate" Type="datetime" Nullable="false" />
+    <Property Name="raisedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyempid" Type="varchar" MaxLength="10" />
+    <Property Name="raisedbyphone" Type="varchar" MaxLength="100" />
+    <Property Name="responsible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responempid" Type="varchar" MaxLength="10" />
+    <Property Name="responphone" Type="varchar" MaxLength="100" />
+    <Property Name="followfrequency" Type="int" Nullable="false" />
+    <Property Name="followmail" Type="tinyint" Nullable="false" />
+    <Property Name="followsms" Type="tinyint" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="newstatus" Type="char" MaxLength="1" />
+    <Property Name="acknowledgedbysource" Type="tinyint" Nullable="false" />
+    <Property Name="acknowledgesourcedate" Type="datetime" />
+    <Property Name="acknowledgebyrespondent" Type="tinyint" Nullable="false" />
+    <Property Name="acknowledgerespondentdate" Type="datetime" />
+    <Property Name="fupcounter" Type="int" Nullable="false" />
+    <Property Name="parkdate" Type="datetime" />
+    <Property Name="resumedate" Type="datetime" />
+    <Property Name="firstsenddate" Type="datetime" />
+    <Property Name="lastsenddate" Type="datetime" />
+    <Property Name="statchangefupcounter" Type="int" />
+    <Property Name="meetingId" Type="int" Nullable="false" />
+    <Property Name="reference" Type="varchar" MaxLength="50" />
+    <Property Name="sourcetype" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="collaboratorname" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratoremail" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratorempid" Type="varchar" MaxLength="10" />
+    <Property Name="pflag" Type="tinyint" Nullable="false" />
+    <Property Name="issuetype" Type="tinyint" Nullable="false" />
+    <Property Name="category" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="closedate" Type="datetime" />
+    <Property Name="referenceId" Type="varchar" MaxLength="20" />
+    <Property Name="referencetype" Type="varchar" MaxLength="20" />
+    <Property Name="refsource" Type="varchar" MaxLength="20" />
+    <Property Name="issuecategory" Type="varchar" MaxLength="50" />
+    <Property Name="branchcode" Type="varchar" MaxLength="20" />
+    <Property Name="fromissueid" Type="int" />
+    <Property Name="districtcode" Type="varchar" MaxLength="20" />
+    <Property Name="quadrant" Type="varchar" MaxLength="50" />
+    <Property Name="subkpi" Type="varchar" MaxLength="100" />
+    <Property Name="reviewlevel" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_ladder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_ladder">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="totalopen" />
+      <PropertyRef Name="totalclosed" />
+      <PropertyRef Name="totalparked" />
+      <PropertyRef Name="totaldropped" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="totalopen" Type="int" Nullable="false" />
+    <Property Name="totalclosed" Type="int" Nullable="false" />
+    <Property Name="totalparked" Type="int" Nullable="false" />
+    <Property Name="totaldropped" Type="int" Nullable="false" />
+    <Property Name="topicid" Type="int" />
+    <Property Name="topicdesc" Type="varchar" MaxLength="150" />
+    <Property Name="issuedyear" Type="int" />
+    <Property Name="issuedmonth" Type="int" />
+    <Property Name="issuedweek" Type="int" />
+    <Property Name="capturedyear" Type="int" />
+    <Property Name="capturedmonth" Type="int" />
+    <Property Name="capturedweek" Type="int" />
+    <Property Name="rundate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mifs_meeting">
+    <Key>
+      <PropertyRef Name="meetingId" />
+    </Key>
+    <Property Name="meetingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hashcode" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="agenda" Type="varchar" MaxLength="100" />
+    <Property Name="datestart" Type="datetime" Nullable="false" />
+    <Property Name="dateend" Type="datetime" />
+    <Property Name="venue" Type="varchar" MaxLength="250" />
+    <Property Name="facilitator" Type="varchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="notes" Type="varchar(max)" />
+    <Property Name="closedby" Type="varchar" MaxLength="50" />
+    <Property Name="closedate" Type="datetime" />
+    <Property Name="issent" Type="tinyint" Nullable="false" />
+    <Property Name="isattendance" Type="tinyint" Nullable="false" />
+    <Property Name="iscancel" Type="tinyint" Nullable="false" />
+    <Property Name="scheduledatestart" Type="datetime" />
+    <Property Name="scheduledateend" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mifs_members">
+    <Key>
+      <PropertyRef Name="memberId" />
+    </Key>
+    <Property Name="memberId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="emailaddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobileno" Type="varchar" MaxLength="100" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="nickname" Type="varchar" MaxLength="20" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="sysId" Type="int" />
+    <Property Name="systemname" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_parking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_parking">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="parkdate" />
+      <PropertyRef Name="commitmentdate" />
+      <PropertyRef Name="rundate" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="parkdate" Type="date" Nullable="false" />
+    <Property Name="commitmentdate" Type="date" Nullable="false" />
+    <Property Name="rundate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_respondent">
+    <Key>
+      <PropertyRef Name="respondentId" />
+    </Key>
+    <Property Name="respondentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="responsibleemailadd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responsiblename" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="responsiblephone" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="responsibleemplid" Type="varchar" MaxLength="10" />
+    <Property Name="collaboratoremailadd" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratorname" Type="varbinary" MaxLength="100" />
+    <Property Name="collaboratorphone" Type="varchar" MaxLength="13" />
+    <Property Name="collaboratoremplid" Type="varchar" MaxLength="10" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="newstatus" Type="char" MaxLength="1" />
+    <Property Name="parkdate" Type="datetime" />
+    <Property Name="resumedate" Type="datetime" />
+    <Property Name="firstsenddate" Type="datetime" />
+    <Property Name="lastsenddate" Type="datetime" />
+    <Property Name="commitmentdate" Type="datetime" />
+    <Property Name="statchangeacknowledgementdate" Type="datetime" />
+    <Property Name="statchangeresponsible" Type="bit" Nullable="false" />
+    <Property Name="statchangetollgater" Type="bit" Nullable="false" />
+    <Property Name="statchangefupcounter" Type="int" Nullable="false" />
+    <Property Name="fupcounter" Type="int" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_response">
+    <Key>
+      <PropertyRef Name="responseId" />
+    </Key>
+    <Property Name="responseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="messagedetails" Type="varchar(max)" Nullable="false" />
+    <Property Name="responseby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responsebyempid" Type="varchar" MaxLength="20" />
+    <Property Name="responsedate" Type="datetime" Nullable="false" />
+    <Property Name="responsebyemail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="islock" Type="bit" Nullable="false" />
+    <Property Name="isdeleted" Type="bit" Nullable="false" />
+    <Property Name="istypeaction" Type="bit" />
+  </EntityType>
+  <EntityType Name="mifs_topic">
+    <Key>
+      <PropertyRef Name="topicId" />
+    </Key>
+    <Property Name="topicId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="groupId" Type="int" Nullable="false" />
+    <Property Name="hashcode" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="aliascode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="topiclevel" Type="int" Nullable="false" />
+    <Property Name="fupfrequency" Type="int" Nullable="false" />
+    <Property Name="occurence" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="topicscope" Type="tinyint" Nullable="false" />
+    <Property Name="bgcolor" Type="varchar" MaxLength="10" />
+    <Property Name="classification" Type="varchar" MaxLength="20" />
+    <Property Name="profile" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="statchangecounterlimit" Type="int" Nullable="false" />
+    <Property Name="branchcode" Type="varchar" MaxLength="10" />
+    <Property Name="districtcode" Type="varchar" MaxLength="10" />
+    <Property Name="modifiedby" Type="varchar" MaxLength="50" />
+    <Property Name="modifieddate" Type="datetime" />
+    <Property Name="isvisible" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_topicgroup">
+    <Key>
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="groupId" Type="int" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mifs_topicmembers">
+    <Key>
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="memberId" />
+    </Key>
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="memberId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="accesslevel" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="isinclude" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ole_examinee">
+    <Key>
+      <PropertyRef Name="examineeId" />
+    </Key>
+    <Property Name="examineeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="middlename" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sex" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="birthdate" Type="date" Nullable="false" />
+    <Property Name="sbu" Type="varchar" MaxLength="50" />
+    <Property Name="area" Type="varchar" MaxLength="50" />
+    <Property Name="branch" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="mobile" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="nickname" Type="varchar" MaxLength="20" />
+    <Property Name="chnickflag" Type="char" MaxLength="1" />
+    <Property Name="hashcode" Type="varchar" MaxLength="200" />
+    <Property Name="joblevel" Type="varchar" MaxLength="20" />
+    <Property Name="employeeid" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="rms_useranalysisgroupaccess">
+    <Key>
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="groupId" Type="int" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tokens">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="AuthToken" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="IssuedOn" Type="datetime" Nullable="false" />
+    <Property Name="ExpiresOn" Type="datetime" Nullable="false" />
+    <Property Name="IsExpire" Type="bit" />
+  </EntityType>
+  <EntityType Name="wms_servers">
+    <Key>
+      <PropertyRef Name="serverId" />
+    </Key>
+    <Property Name="serverId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="servername" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="dbname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ipaddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="webaddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sqluser" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sqlpass" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wms_serverwarehouses">
+    <Key>
+      <PropertyRef Name="serverwarehouseId" />
+    </Key>
+    <Property Name="serverwarehouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="serverId" Type="int" Nullable="false" />
+    <Property Name="warehousecode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="brancode" Type="varchar" MaxLength="20" />
+    <Property Name="storageidentity" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wms_userserverwarehouse">
+    <Key>
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="serverwarehouseId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="serverwarehouseId" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.core_UserMenuList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="core_UserMenuList">
+    <Key>
+      <PropertyRef Name="sysId" />
+      <PropertyRef Name="menuId" />
+      <PropertyRef Name="MENUPARENT" />
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="SUBTOTAL" />
+      <PropertyRef Name="menucode" />
+    </Key>
+    <Property Name="sysId" Type="int" Nullable="false" />
+    <Property Name="sysname" Type="varchar" MaxLength="100" />
+    <Property Name="menuId" Type="int" Nullable="false" />
+    <Property Name="menuname" Type="varchar" MaxLength="100" />
+    <Property Name="MENUPARENT" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="isactive" Type="bit" />
+    <Property Name="menuorder" Type="int" />
+    <Property Name="viewtype" Type="varchar" MaxLength="20" />
+    <Property Name="prtmenucode" Type="varchar" MaxLength="50" />
+    <Property Name="istransaction" Type="bit" />
+    <Property Name="menutype" Type="varchar" MaxLength="20" />
+    <Property Name="nenunames" Type="varchar" MaxLength="304" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="canadd" Type="bit" />
+    <Property Name="canedit" Type="bit" />
+    <Property Name="candelete" Type="bit" />
+    <Property Name="canview" Type="bit" />
+    <Property Name="canopen" Type="bit" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="SUBTOTAL" Type="int" Nullable="false" />
+    <Property Name="MENUTYPEDES" Type="varchar" MaxLength="50" />
+    <Property Name="forweb" Type="bit" />
+    <Property Name="ParentMenuOrder" Type="int" />
+    <Property Name="syscode" Type="varchar" MaxLength="10" />
+    <Property Name="sysdescription" Type="varchar" MaxLength="250" />
+    <Property Name="ParentIcon" Type="varchar" MaxLength="50" />
+    <Property Name="ChildIcon" Type="varchar" MaxLength="50" />
+    <Property Name="formobile" Type="bit" />
+    <Property Name="menucode" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.core_vAdminMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="core_vAdminMenu">
+    <Key>
+      <PropertyRef Name="parentId" />
+      <PropertyRef Name="sysId" />
+      <PropertyRef Name="menucode" />
+    </Key>
+    <Property Name="parentId" Type="int" Nullable="false" />
+    <Property Name="parentName" Type="varchar" MaxLength="100" />
+    <Property Name="parentmenuorder" Type="int" />
+    <Property Name="parenticon" Type="varchar" MaxLength="50" />
+    <Property Name="userId" Type="int" />
+    <Property Name="sysId" Type="int" Nullable="false" />
+    <Property Name="menucode" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.core_vEmployeeNotUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="core_vEmployeeNotUser">
+    <Key>
+      <PropertyRef Name="empl_id" />
+      <PropertyRef Name="employeename" />
+      <PropertyRef Name="lname" />
+      <PropertyRef Name="fname" />
+      <PropertyRef Name="sex" />
+      <PropertyRef Name="civilstatus" />
+      <PropertyRef Name="effectivitydate" />
+      <PropertyRef Name="corporateName" />
+      <PropertyRef Name="branchname" />
+      <PropertyRef Name="section" />
+      <PropertyRef Name="typedescription" />
+      <PropertyRef Name="employeepresentaddress" />
+      <PropertyRef Name="employeehomeaddress" />
+    </Key>
+    <Property Name="empl_id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="employeename" Type="varchar" MaxLength="153" Nullable="false" />
+    <Property Name="employeename2" Type="varchar" MaxLength="108" />
+    <Property Name="lname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mname" Type="varchar" MaxLength="50" />
+    <Property Name="birthday" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="15" />
+    <Property Name="sex" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="civilstatus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="emailadd" Type="varchar" MaxLength="50" />
+    <Property Name="datehired" Type="datetime" />
+    <Property Name="effectivitydate" Type="datetime" Nullable="false" />
+    <Property Name="corporate" Type="varchar" MaxLength="20" />
+    <Property Name="corporateName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="branch" Type="varchar" MaxLength="20" />
+    <Property Name="branchname" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="brancharea" Type="varchar" MaxLength="50" />
+    <Property Name="position" Type="varchar" MaxLength="20" />
+    <Property Name="positionname" Type="varchar" MaxLength="100" />
+    <Property Name="department" Type="varchar" MaxLength="20" />
+    <Property Name="departmentname" Type="varchar" MaxLength="100" />
+    <Property Name="section" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="sectionname" Type="varchar" MaxLength="100" />
+    <Property Name="levelcode" Type="varchar" MaxLength="20" />
+    <Property Name="levelname" Type="varchar" MaxLength="100" />
+    <Property Name="joblevelgroup" Type="varchar" MaxLength="20" />
+    <Property Name="class" Type="varchar" MaxLength="25" />
+    <Property Name="type" Type="varchar" MaxLength="20" />
+    <Property Name="typedescription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="employeepresentaddress" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="employeehomeaddress" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="employeepresentcontact" Type="varchar" MaxLength="100" />
+    <Property Name="homecontact" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateID" Type="varchar" MaxLength="20" />
+    <Property Name="ImmediateName" Type="varchar" MaxLength="300" />
+    <Property Name="ImmediateBDay" Type="datetime" />
+    <Property Name="ImmediateStatus" Type="varchar" MaxLength="50" />
+    <Property Name="ImmediateEmail" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateDHired" Type="datetime" />
+    <Property Name="ImmediateSBU" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateBranch" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediatePosition" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateDepartment" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateSection" Type="varchar" MaxLength="100" />
+    <Property Name="ImmediateLevel" Type="varchar" MaxLength="100" />
+    <Property Name="modifiedby" Type="varchar" MaxLength="30" />
+    <Property Name="modifieddate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.core_vParentMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="core_vParentMenu">
+    <Key>
+      <PropertyRef Name="parentId" />
+      <PropertyRef Name="sysId" />
+      <PropertyRef Name="menucode" />
+    </Key>
+    <Property Name="parentId" Type="int" Nullable="false" />
+    <Property Name="parentName" Type="varchar" MaxLength="100" />
+    <Property Name="parentmenuorder" Type="int" />
+    <Property Name="parenticon" Type="varchar" MaxLength="50" />
+    <Property Name="userId" Type="int" />
+    <Property Name="sysId" Type="int" Nullable="false" />
+    <Property Name="menucode" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_Analytics' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_Analytics">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="DateIssued" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="FollowUpFrequency" />
+      <PropertyRef Name="IsFollowUpOnEmail" />
+      <PropertyRef Name="IsFollowUpOnSMS" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="IsAcknowledgeBySource" />
+      <PropertyRef Name="IsAcknowledgeByRespondent" />
+      <PropertyRef Name="FollowUpCounter" />
+      <PropertyRef Name="IssueHashcode" />
+      <PropertyRef Name="TopicHashcode" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="sourcetype" />
+      <PropertyRef Name="PriorityFlag" />
+      <PropertyRef Name="TypeOfIssue" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="TopicAlias" />
+      <PropertyRef Name="HasResponseAttachment" />
+      <PropertyRef Name="IsOverdue" />
+      <PropertyRef Name="AcknowledgementDays" />
+      <PropertyRef Name="IssueCategory" />
+    </Key>
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Details" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="actionplan" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="DateIssued" Type="datetime" Nullable="false" />
+    <Property Name="PreviousTopicId" Type="int" />
+    <Property Name="PreviousTopicDescription" Type="varchar" MaxLength="100" />
+    <Property Name="targetcompletiondate" Type="datetime" Nullable="false" />
+    <Property Name="FollowUpFrequency" Type="int" Nullable="false" />
+    <Property Name="IsFollowUpOnEmail" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="IsFollowUpOnSMS" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="IssueStatus" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="newstatus" Type="char" MaxLength="1" />
+    <Property Name="IsAcknowledgeBySource" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="SourceAcknowledgeDate" Type="datetime" />
+    <Property Name="IsAcknowledgeByRespondent" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="RespondentAcknowledgeDate" Type="datetime" />
+    <Property Name="FollowUpCounter" Type="int" Nullable="false" />
+    <Property Name="IssueDateParked" Type="datetime" />
+    <Property Name="IssueDateResumed" Type="datetime" />
+    <Property Name="NoOfAttachment" Type="int" />
+    <Property Name="IssueHashcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="meetingId" Type="int" />
+    <Property Name="agenda" Type="varchar" MaxLength="100" />
+    <Property Name="datestart" Type="datetime" />
+    <Property Name="dateend" Type="datetime" />
+    <Property Name="venue" Type="varchar" MaxLength="250" />
+    <Property Name="facilitator" Type="varchar" MaxLength="50" />
+    <Property Name="reference" Type="varchar" MaxLength="50" />
+    <Property Name="TopicHashcode" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="raisedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyempid" Type="varchar" MaxLength="10" />
+    <Property Name="raisedbyphone" Type="varchar" MaxLength="13" />
+    <Property Name="responsible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responempid" Type="varchar" MaxLength="10" />
+    <Property Name="responphone" Type="varchar" MaxLength="100" />
+    <Property Name="sourcetype" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="lastsenddate" Type="datetime" />
+    <Property Name="NoOfResponse" Type="int" />
+    <Property Name="PriorityFlag" Type="tinyint" Nullable="false" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="Collaborator" Type="varchar" MaxLength="50" />
+    <Property Name="TypeOfIssue" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="category" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TopicAlias" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bgcolor" Type="varchar" MaxLength="10" />
+    <Property Name="collaboratoremail" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratorempid" Type="varchar" MaxLength="10" />
+    <Property Name="HasResponseAttachment" Type="int" Nullable="false" />
+    <Property Name="referenceId" Type="varchar" MaxLength="20" />
+    <Property Name="referencetype" Type="varchar" MaxLength="20" />
+    <Property Name="DaysElapse" Type="int" />
+    <Property Name="IsOverdue" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="LastUpdate" Type="datetime" />
+    <Property Name="LastTollgated" Type="datetime" />
+    <Property Name="Responsiveness" Type="int" />
+    <Property Name="TollGaterResponsiveness" Type="int" />
+    <Property Name="AcknowledgementDays" Type="int" Nullable="false" />
+    <Property Name="ResponsibleImmediateHead" Type="varchar" MaxLength="300" />
+    <Property Name="TollGaterImmediateHead" Type="varchar" MaxLength="300" />
+    <Property Name="BranchName" Type="varchar" MaxLength="200" />
+    <Property Name="DistrictName" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateMessage" Type="varchar(max)" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateMessageByCollaborator" Type="varchar(max)" />
+    <Property Name="LastUpdateDateByCollaborator" Type="datetime" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="20" />
+    <Property Name="CorporateCode" Type="varchar" MaxLength="20" />
+    <Property Name="CorporateName" Type="varchar" MaxLength="100" />
+    <Property Name="IssueCategory" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="JobLevelGroup" Type="varchar" MaxLength="20" />
+    <Property Name="Position" Type="varchar" MaxLength="100" />
+    <Property Name="WeekCreated" Type="varchar" MaxLength="2" />
+    <Property Name="EncoderBranch" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_AnalyticsWithResponse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_AnalyticsWithResponse">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="DateIssued" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="FollowUpFrequency" />
+      <PropertyRef Name="IsFollowUpOnEmail" />
+      <PropertyRef Name="IsFollowUpOnSMS" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="IsAcknowledgeBySource" />
+      <PropertyRef Name="IsAcknowledgeByRespondent" />
+      <PropertyRef Name="FollowUpCounter" />
+      <PropertyRef Name="IssueHashcode" />
+      <PropertyRef Name="TopicHashcode" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="sourcetype" />
+      <PropertyRef Name="PriorityFlag" />
+      <PropertyRef Name="TypeOfIssue" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="TopicAlias" />
+      <PropertyRef Name="HasResponseAttachment" />
+      <PropertyRef Name="IsOverdue" />
+      <PropertyRef Name="responseId" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="messagedetails" />
+      <PropertyRef Name="responseby" />
+      <PropertyRef Name="responsedate" />
+      <PropertyRef Name="responsebyemail" />
+      <PropertyRef Name="islock" />
+      <PropertyRef Name="isdeleted" />
+      <PropertyRef Name="IssueMessageDetail" />
+    </Key>
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Details" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="actionplan" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="DateIssued" Type="datetime" Nullable="false" />
+    <Property Name="PreviousTopicId" Type="int" />
+    <Property Name="PreviousTopicDescription" Type="varchar" MaxLength="100" />
+    <Property Name="targetcompletiondate" Type="datetime" Nullable="false" />
+    <Property Name="FollowUpFrequency" Type="int" Nullable="false" />
+    <Property Name="IsFollowUpOnEmail" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="IsFollowUpOnSMS" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="IssueStatus" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="newstatus" Type="char" MaxLength="1" />
+    <Property Name="IsAcknowledgeBySource" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="SourceAcknowledgeDate" Type="datetime" />
+    <Property Name="IsAcknowledgeByRespondent" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="RespondentAcknowledgeDate" Type="datetime" />
+    <Property Name="FollowUpCounter" Type="int" Nullable="false" />
+    <Property Name="IssueDateParked" Type="datetime" />
+    <Property Name="IssueDateResumed" Type="datetime" />
+    <Property Name="NoOfAttachment" Type="int" />
+    <Property Name="IssueHashcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="meetingId" Type="int" />
+    <Property Name="agenda" Type="varchar" MaxLength="100" />
+    <Property Name="datestart" Type="datetime" />
+    <Property Name="dateend" Type="datetime" />
+    <Property Name="venue" Type="varchar" MaxLength="250" />
+    <Property Name="facilitator" Type="varchar" MaxLength="50" />
+    <Property Name="reference" Type="varchar" MaxLength="50" />
+    <Property Name="TopicHashcode" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="raisedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyempid" Type="varchar" MaxLength="10" />
+    <Property Name="raisedbyphone" Type="varchar" MaxLength="13" />
+    <Property Name="responsible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responempid" Type="varchar" MaxLength="10" />
+    <Property Name="responphone" Type="varchar" MaxLength="13" />
+    <Property Name="sourcetype" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="lastsenddate" Type="datetime" />
+    <Property Name="NoOfResponse" Type="int" />
+    <Property Name="PriorityFlag" Type="tinyint" Nullable="false" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="Collaborator" Type="varchar" MaxLength="50" />
+    <Property Name="TypeOfIssue" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="category" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TopicAlias" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bgcolor" Type="varchar" MaxLength="10" />
+    <Property Name="collaboratoremail" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratorempid" Type="varchar" MaxLength="10" />
+    <Property Name="HasResponseAttachment" Type="int" Nullable="false" />
+    <Property Name="referenceId" Type="varchar" MaxLength="20" />
+    <Property Name="referencetype" Type="varchar" MaxLength="20" />
+    <Property Name="DaysElapse" Type="int" />
+    <Property Name="IsOverdue" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="LastUpdate" Type="datetime" />
+    <Property Name="LastTollgated" Type="datetime" />
+    <Property Name="responseId" Type="int" Nullable="false" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="messagedetails" Type="varchar(max)" Nullable="false" />
+    <Property Name="responseby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responsebyempid" Type="varchar" MaxLength="20" />
+    <Property Name="responsedate" Type="datetime" Nullable="false" />
+    <Property Name="responsebyemail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="islock" Type="bit" Nullable="false" />
+    <Property Name="isdeleted" Type="bit" Nullable="false" />
+    <Property Name="istypeaction" Type="bit" />
+    <Property Name="IssueMessageDetail" Type="varchar(max)" Nullable="false" />
+    <Property Name="TollGaterComment" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.Mifs_DailyUtilization' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Mifs_DailyUtilization">
+    <Key>
+      <PropertyRef Name="CreatedBy" />
+    </Key>
+    <Property Name="IssueCaptured" Type="int" />
+    <Property Name="DateCaptured" Type="date" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BranchName" Type="varchar" MaxLength="50" />
+    <Property Name="DistrictName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_FollowUpOpen' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_FollowUpOpen">
+    <Key>
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="issuedetails" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="issuedate" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="followfrequency" />
+      <PropertyRef Name="followmail" />
+      <PropertyRef Name="followsms" />
+    </Key>
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="100" />
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="issuedetails" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="actionplan" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="issuedate" Type="datetime" Nullable="false" />
+    <Property Name="targetcompletiondate" Type="datetime" Nullable="false" />
+    <Property Name="lastsenddate" Type="datetime" />
+    <Property Name="raisedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyphone" Type="varchar" MaxLength="13" />
+    <Property Name="responsible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responphone" Type="varchar" MaxLength="13" />
+    <Property Name="followfrequency" Type="int" Nullable="false" />
+    <Property Name="followmail" Type="tinyint" Nullable="false" />
+    <Property Name="followsms" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_SumOfIssues' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_SumOfIssues">
+    <Key>
+      <PropertyRef Name="IssueType" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="IssueStatus" />
+    </Key>
+    <Property Name="IssueType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IssueStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SumOfIssues" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vAccountValidation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vAccountValidation">
+    <Key>
+      <PropertyRef Name="empl_id" />
+    </Key>
+    <Property Name="empl_id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="employeename2" Type="varchar" MaxLength="108" />
+    <Property Name="coreEmployeeEmail" Type="varchar" MaxLength="50" />
+    <Property Name="HRISEmail" Type="varchar" MaxLength="50" />
+    <Property Name="CoreUsername" Type="nvarchar(max)" />
+    <Property Name="CoreEmail" Type="nvarchar(max)" />
+    <Property Name="mifsMember" Type="varchar" MaxLength="50" />
+    <Property Name="ResponEmail" Type="nvarchar(max)" />
+    <Property Name="RaisedbyEmail" Type="nvarchar(max)" />
+    <Property Name="CollaboratorEmail" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vClosedPerResponsible' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vClosedPerResponsible">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="issuedate" />
+      <PropertyRef Name="BranchName" />
+    </Key>
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="responempid" Type="varchar" MaxLength="10" />
+    <Property Name="responsible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="issuedate" Type="datetime" Nullable="false" />
+    <Property Name="WeekNumber" Type="varchar" MaxLength="2" />
+    <Property Name="MonthNumber" Type="varchar" MaxLength="2" />
+    <Property Name="YearNumber" Type="varchar" MaxLength="4" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="10" />
+    <Property Name="BranchName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DistrictName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vFirmAttendance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vFirmAttendance">
+    <Key>
+      <PropertyRef Name="Attendee" />
+      <PropertyRef Name="Is member" />
+      <PropertyRef Name="Is present" />
+    </Key>
+    <Property Name="Meeting ID" Type="int" />
+    <Property Name="Topic Name" Type="varchar" MaxLength="100" />
+    <Property Name="Topic Created Date" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Attendee" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Is member" Type="tinyint" Nullable="false" />
+    <Property Name="Is present" Type="tinyint" Nullable="false" />
+    <Property Name="Logdate" Type="nvarchar" MaxLength="4000" />
+    <Property Name="LogTime" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vIssueClosedPerEmployeeX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vIssueClosedPerEmployeeX">
+    <Key>
+      <PropertyRef Name="PaloType" />
+    </Key>
+    <Property Name="PaloType" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="TotalClosed" Type="int" />
+    <Property Name="EmailAdd" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="YearClosed" Type="int" />
+    <Property Name="MonthClosed" Type="int" />
+    <Property Name="EmployeeId" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vIssueCount' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vIssueCount">
+    <Key>
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="TopicAlias" />
+    </Key>
+    <Property Name="CurrentTopicId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IssueStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TotalIssues" Type="int" />
+    <Property Name="responemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="collaboratoremail" Type="varchar" MaxLength="50" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="TopicAlias" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vIssueForAcknowledgement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vIssueForAcknowledgement">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="DateIssued" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="FollowUpFrequency" />
+      <PropertyRef Name="IsFollowUpOnEmail" />
+      <PropertyRef Name="IsFollowUpOnSMS" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="IsAcknowledgeBySource" />
+      <PropertyRef Name="IsAcknowledgeByRespondent" />
+      <PropertyRef Name="FollowUpCounter" />
+      <PropertyRef Name="IssueHashcode" />
+      <PropertyRef Name="TopicHashcode" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="sourcetype" />
+      <PropertyRef Name="PriorityFlag" />
+      <PropertyRef Name="TypeOfIssue" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="TopicAlias" />
+      <PropertyRef Name="HasResponseAttachment" />
+      <PropertyRef Name="IsOverdue" />
+      <PropertyRef Name="AcknowledgementDays" />
+    </Key>
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Details" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="actionplan" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="DateIssued" Type="datetime" Nullable="false" />
+    <Property Name="PreviousTopicId" Type="int" />
+    <Property Name="PreviousTopicDescription" Type="varchar" MaxLength="100" />
+    <Property Name="targetcompletiondate" Type="datetime" Nullable="false" />
+    <Property Name="FollowUpFrequency" Type="int" Nullable="false" />
+    <Property Name="IsFollowUpOnEmail" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="IsFollowUpOnSMS" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="IssueStatus" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="newstatus" Type="char" MaxLength="1" />
+    <Property Name="IsAcknowledgeBySource" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="SourceAcknowledgeDate" Type="datetime" />
+    <Property Name="IsAcknowledgeByRespondent" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="RespondentAcknowledgeDate" Type="datetime" />
+    <Property Name="FollowUpCounter" Type="int" Nullable="false" />
+    <Property Name="IssueDateParked" Type="datetime" />
+    <Property Name="IssueDateResumed" Type="datetime" />
+    <Property Name="NoOfAttachment" Type="int" />
+    <Property Name="IssueHashcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="meetingId" Type="int" />
+    <Property Name="agenda" Type="varchar" MaxLength="100" />
+    <Property Name="datestart" Type="datetime" />
+    <Property Name="dateend" Type="datetime" />
+    <Property Name="venue" Type="varchar" MaxLength="250" />
+    <Property Name="facilitator" Type="varchar" MaxLength="50" />
+    <Property Name="reference" Type="varchar" MaxLength="50" />
+    <Property Name="TopicHashcode" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="raisedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyempid" Type="varchar" MaxLength="10" />
+    <Property Name="raisedbyphone" Type="varchar" MaxLength="13" />
+    <Property Name="responsible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responempid" Type="varchar" MaxLength="10" />
+    <Property Name="responphone" Type="varchar" MaxLength="13" />
+    <Property Name="sourcetype" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="lastsenddate" Type="datetime" />
+    <Property Name="NoOfResponse" Type="int" />
+    <Property Name="PriorityFlag" Type="tinyint" Nullable="false" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="Collaborator" Type="varchar" MaxLength="50" />
+    <Property Name="TypeOfIssue" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="category" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TopicAlias" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bgcolor" Type="varchar" MaxLength="10" />
+    <Property Name="collaboratoremail" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratorempid" Type="varchar" MaxLength="10" />
+    <Property Name="HasResponseAttachment" Type="int" Nullable="false" />
+    <Property Name="referenceId" Type="varchar" MaxLength="20" />
+    <Property Name="referencetype" Type="varchar" MaxLength="20" />
+    <Property Name="DaysElapse" Type="int" />
+    <Property Name="IsOverdue" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="LastUpdate" Type="datetime" />
+    <Property Name="LastTollgated" Type="datetime" />
+    <Property Name="Responsiveness" Type="int" />
+    <Property Name="TollGaterResponsiveness" Type="int" />
+    <Property Name="AcknowledgementDays" Type="int" Nullable="false" />
+    <Property Name="ResponsibleImmediateHead" Type="varchar" MaxLength="104" />
+    <Property Name="TollGaterImmediateHead" Type="varchar" MaxLength="104" />
+    <Property Name="BranchName" Type="varchar" MaxLength="30" />
+    <Property Name="DistrictName" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateMessage" Type="varchar(max)" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateMessageByCollaborator" Type="varchar(max)" />
+    <Property Name="LastUpdateDateByCollaborator" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vIssuePerBranchPerTopic' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vIssuePerBranchPerTopic">
+    <Key>
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+    </Key>
+    <Property Name="id" Type="bigint" />
+    <Property Name="TotalOpen" Type="int" />
+    <Property Name="TotalClosed" Type="int" />
+    <Property Name="TotalParked" Type="int" />
+    <Property Name="TotalDropped" Type="int" />
+    <Property Name="CurrentTopicId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IssuedYear" Type="int" />
+    <Property Name="IssuedMonth" Type="int" />
+    <Property Name="IssuedWeek" Type="int" />
+    <Property Name="CurrentYear" Type="int" />
+    <Property Name="CurrentMonth" Type="int" />
+    <Property Name="CurrentWeek" Type="int" />
+    <Property Name="CorporateName" Type="varchar" MaxLength="70" />
+    <Property Name="BusinessGroup" Type="varchar" MaxLength="50" />
+    <Property Name="Branch" Type="varchar" MaxLength="10" />
+    <Property Name="BranchName" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vIssuePerWeekPerStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vIssuePerWeekPerStatus">
+    <Key>
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+    </Key>
+    <Property Name="id" Type="bigint" />
+    <Property Name="TotalOpen" Type="int" />
+    <Property Name="TotalClosed" Type="int" />
+    <Property Name="TotalParked" Type="int" />
+    <Property Name="TotalDropped" Type="int" />
+    <Property Name="CurrentTopicId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IssuedYear" Type="int" />
+    <Property Name="IssuedMonth" Type="int" />
+    <Property Name="IssuedWeek" Type="int" />
+    <Property Name="CurrentYear" Type="int" />
+    <Property Name="CurrentMonth" Type="int" />
+    <Property Name="CurrentWeek" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vIssueReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vIssueReport">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="DateIssued" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="FollowUpCounter" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="sourcetype" />
+      <PropertyRef Name="TopicAlias" />
+      <PropertyRef Name="followfrequency" />
+      <PropertyRef Name="followmail" />
+      <PropertyRef Name="acknowledgedbysource" />
+      <PropertyRef Name="acknowledgebyrespondent" />
+      <PropertyRef Name="meetingId" />
+      <PropertyRef Name="created_by" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="hashcode" />
+      <PropertyRef Name="pflag" />
+      <PropertyRef Name="issuetype" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="ResponsivenessRating" />
+    </Key>
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Details" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="actionplan" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="DateIssued" Type="datetime" Nullable="false" />
+    <Property Name="targetcompletiondate" Type="datetime" Nullable="false" />
+    <Property Name="IssueStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="FollowUpCounter" Type="int" Nullable="false" />
+    <Property Name="IssueDateParked" Type="datetime" />
+    <Property Name="IssueDateResumed" Type="datetime" />
+    <Property Name="reference" Type="varchar" MaxLength="50" />
+    <Property Name="raisedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyempid" Type="varchar" MaxLength="10" />
+    <Property Name="raisedbyphone" Type="varchar" MaxLength="13" />
+    <Property Name="responsible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responempid" Type="varchar" MaxLength="10" />
+    <Property Name="responphone" Type="varchar" MaxLength="13" />
+    <Property Name="sourcetype" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TopicAlias" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="followfrequency" Type="int" Nullable="false" />
+    <Property Name="followmail" Type="tinyint" Nullable="false" />
+    <Property Name="newstatus" Type="char" MaxLength="1" />
+    <Property Name="acknowledgedbysource" Type="tinyint" Nullable="false" />
+    <Property Name="acknowledgesourcedate" Type="datetime" />
+    <Property Name="acknowledgebyrespondent" Type="tinyint" Nullable="false" />
+    <Property Name="acknowledgerespondentdate" Type="datetime" />
+    <Property Name="firstsenddate" Type="datetime" />
+    <Property Name="lastsenddate" Type="datetime" />
+    <Property Name="statchangefupcounter" Type="int" />
+    <Property Name="meetingId" Type="int" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="collaboratorname" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratoremail" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratorempid" Type="varchar" MaxLength="10" />
+    <Property Name="hashcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pflag" Type="tinyint" Nullable="false" />
+    <Property Name="issuetype" Type="tinyint" Nullable="false" />
+    <Property Name="category" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="closedate" Type="datetime" />
+    <Property Name="referenceId" Type="varchar" MaxLength="20" />
+    <Property Name="referencetype" Type="varchar" MaxLength="20" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="Updates" Type="nvarchar(max)" />
+    <Property Name="ResponsivenessRating" Type="varchar" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vIssues' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vIssues">
+    <Key>
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="CurrentTopicId" />
+      <PropertyRef Name="CurrentTopicDescription" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="actionplan" />
+      <PropertyRef Name="DateIssued" />
+      <PropertyRef Name="targetcompletiondate" />
+      <PropertyRef Name="FollowUpFrequency" />
+      <PropertyRef Name="IsFollowUpOnEmail" />
+      <PropertyRef Name="IsFollowUpOnSMS" />
+      <PropertyRef Name="IssueStatus" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="IsAcknowledgeBySource" />
+      <PropertyRef Name="IsAcknowledgeByRespondent" />
+      <PropertyRef Name="FollowUpCounter" />
+      <PropertyRef Name="IssueHashcode" />
+      <PropertyRef Name="TopicHashcode" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="sourcetype" />
+      <PropertyRef Name="PriorityFlag" />
+      <PropertyRef Name="TypeOfIssue" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="TopicAlias" />
+      <PropertyRef Name="HasResponseAttachment" />
+      <PropertyRef Name="statchangecounterlimit" />
+      <PropertyRef Name="topicId" />
+    </Key>
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicId" Type="int" Nullable="false" />
+    <Property Name="CurrentTopicDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Details" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="actionplan" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="DateIssued" Type="datetime" Nullable="false" />
+    <Property Name="PreviousTopicId" Type="int" />
+    <Property Name="PreviousTopicDescription" Type="varchar" MaxLength="100" />
+    <Property Name="targetcompletiondate" Type="datetime" Nullable="false" />
+    <Property Name="FollowUpFrequency" Type="int" Nullable="false" />
+    <Property Name="IsFollowUpOnEmail" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="IsFollowUpOnSMS" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="IssueStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="newstatus" Type="char" MaxLength="1" />
+    <Property Name="IsAcknowledgeBySource" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="SourceAcknowledgeDate" Type="datetime" />
+    <Property Name="IsAcknowledgeByRespondent" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="RespondentAcknowledgeDate" Type="datetime" />
+    <Property Name="FollowUpCounter" Type="int" Nullable="false" />
+    <Property Name="IssueDateParked" Type="datetime" />
+    <Property Name="IssueDateResumed" Type="datetime" />
+    <Property Name="NoOfAttachment" Type="int" />
+    <Property Name="IssueHashcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="meetingId" Type="int" />
+    <Property Name="agenda" Type="varchar" MaxLength="100" />
+    <Property Name="datestart" Type="datetime" />
+    <Property Name="dateend" Type="datetime" />
+    <Property Name="venue" Type="varchar" MaxLength="250" />
+    <Property Name="facilitator" Type="varchar" MaxLength="50" />
+    <Property Name="reference" Type="varchar" MaxLength="50" />
+    <Property Name="TopicHashcode" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="raisedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedbyempid" Type="varchar" MaxLength="10" />
+    <Property Name="raisedbyphone" Type="varchar" MaxLength="13" />
+    <Property Name="responsible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responempid" Type="varchar" MaxLength="10" />
+    <Property Name="responphone" Type="varchar" MaxLength="13" />
+    <Property Name="sourcetype" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="lastsenddate" Type="datetime" />
+    <Property Name="NoOfResponse" Type="int" />
+    <Property Name="PriorityFlag" Type="tinyint" Nullable="false" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="Collaborator" Type="varchar" MaxLength="50" />
+    <Property Name="TypeOfIssue" Type="tinyint" Nullable="false" />
+    <Property Name="category" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TopicAlias" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bgcolor" Type="varchar" MaxLength="10" />
+    <Property Name="collaboratoremail" Type="varchar" MaxLength="50" />
+    <Property Name="collaboratorempid" Type="varchar" MaxLength="10" />
+    <Property Name="HasResponseAttachment" Type="int" Nullable="false" />
+    <Property Name="referenceId" Type="varchar" MaxLength="20" />
+    <Property Name="referencetype" Type="varchar" MaxLength="20" />
+    <Property Name="statchangecounterlimit" Type="int" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="statchangefupcounter" Type="int" />
+    <Property Name="firstsenddate" Type="datetime" />
+    <Property Name="refsource" Type="varchar" MaxLength="20" />
+    <Property Name="issuecategory" Type="varchar" MaxLength="50" />
+    <Property Name="branchcode" Type="varchar" MaxLength="20" />
+    <Property Name="JobLevelGroup" Type="varchar" MaxLength="10" />
+    <Property Name="Position" Type="varchar" MaxLength="100" />
+    <Property Name="topiclevel" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vIssueTrendMonthly' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vIssueTrendMonthly">
+    <Key>
+      <PropertyRef Name="CurrentTopicDescription" />
+    </Key>
+    <Property Name="CurrentTopicDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IssuedYear" Type="int" />
+    <Property Name="IssuedMonth" Type="int" />
+    <Property Name="Open" Type="int" />
+    <Property Name="Parked" Type="int" />
+    <Property Name="Closed" Type="int" />
+    <Property Name="Dropped" Type="int" />
+    <Property Name="Total" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vMeeting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vMeeting">
+    <Key>
+      <PropertyRef Name="meetingId" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="created_by" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="TotalExpectedAttendees" />
+      <PropertyRef Name="TotalActualAttendees" />
+      <PropertyRef Name="TotalMinuteCaptured" />
+    </Key>
+    <Property Name="meetingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="TopicDescription" Type="varchar" MaxLength="100" />
+    <Property Name="agenda" Type="varchar" MaxLength="100" />
+    <Property Name="venue" Type="varchar" MaxLength="250" />
+    <Property Name="facilitator" Type="varchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="TotalExpectedAttendees" Type="int" Nullable="false" />
+    <Property Name="TotalActualAttendees" Type="int" Nullable="false" />
+    <Property Name="TotalMinuteCaptured" Type="int" Nullable="false" />
+    <Property Name="YearNumber" Type="varchar" MaxLength="4" />
+    <Property Name="MonthNumber" Type="varchar" MaxLength="2" />
+    <Property Name="WeekNumber" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vMeetingSchedule' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vMeetingSchedule">
+    <Key>
+      <PropertyRef Name="meetingId" />
+      <PropertyRef Name="hashcode" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="datestart" />
+      <PropertyRef Name="created_by" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="memberId" />
+      <PropertyRef Name="aliascode" />
+      <PropertyRef Name="description" />
+      <PropertyRef Name="emailaddress" />
+    </Key>
+    <Property Name="meetingId" Type="int" Nullable="false" />
+    <Property Name="hashcode" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="agenda" Type="varchar" MaxLength="100" />
+    <Property Name="datestart" Type="datetime" Nullable="false" />
+    <Property Name="dateend" Type="datetime" />
+    <Property Name="venue" Type="varchar" MaxLength="250" />
+    <Property Name="facilitator" Type="varchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="notes" Type="varchar(max)" />
+    <Property Name="memberId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="yr" Type="int" />
+    <Property Name="month" Type="int" />
+    <Property Name="aliascode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="followupday" Type="datetime" />
+    <Property Name="followuphour" Type="datetime" />
+    <Property Name="emailaddress" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vNotMember' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vNotMember">
+    <Key>
+      <PropertyRef Name="empl_id" />
+    </Key>
+    <Property Name="empl_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="employeename2" Type="varchar" MaxLength="108" />
+    <Property Name="emailadd" Type="varchar" MaxLength="50" />
+    <Property Name="positionname" Type="varchar" MaxLength="100" />
+    <Property Name="employeepresentcontact" Type="varchar" MaxLength="50" />
+    <Property Name="corporate" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vOpenIssuePerWeek' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vOpenIssuePerWeek">
+    <Key>
+      <PropertyRef Name="CurrentTopicDescription" />
+    </Key>
+    <Property Name="Total" Type="int" />
+    <Property Name="CurrentTopicDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IssuedYear" Type="int" />
+    <Property Name="IssuedMonth" Type="nvarchar" MaxLength="30" />
+    <Property Name="IssuedWeek" Type="int" />
+    <Property Name="CurrentYear" Type="int" />
+    <Property Name="CurrentMonth" Type="nvarchar" MaxLength="30" />
+    <Property Name="CurrentWeek" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vParking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vParking">
+    <Key>
+      <PropertyRef Name="IssueId" />
+      <PropertyRef Name="TrailOfCommitment" />
+      <PropertyRef Name="TopicId" />
+      <PropertyRef Name="DateParked" />
+    </Key>
+    <Property Name="Responsible" Type="varchar" MaxLength="50" />
+    <Property Name="IssueId" Type="int" Nullable="false" />
+    <Property Name="TrailOfCommitment" Type="date" Nullable="false" />
+    <Property Name="TopicId" Type="int" Nullable="false" />
+    <Property Name="TopicDescription" Type="varchar" MaxLength="100" />
+    <Property Name="Issue" Type="varchar" MaxLength="500" />
+    <Property Name="ActionPlan" Type="varchar" MaxLength="500" />
+    <Property Name="Tollgater" Type="varchar" MaxLength="50" />
+    <Property Name="Collaborator" Type="varchar" MaxLength="50" />
+    <Property Name="IssueStatus" Type="char" MaxLength="1" />
+    <Property Name="DateParked" Type="date" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vResponse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vResponse">
+    <Key>
+      <PropertyRef Name="responseId" />
+      <PropertyRef Name="issueId" />
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="issuedetails" />
+      <PropertyRef Name="messagedetails" />
+      <PropertyRef Name="responsedate" />
+      <PropertyRef Name="responseby" />
+      <PropertyRef Name="raisedbyemail" />
+      <PropertyRef Name="raisedby" />
+      <PropertyRef Name="responsible" />
+      <PropertyRef Name="responemail" />
+      <PropertyRef Name="islock" />
+      <PropertyRef Name="isdeleted" />
+    </Key>
+    <Property Name="responseId" Type="int" Nullable="false" />
+    <Property Name="issueId" Type="int" Nullable="false" />
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="issuedetails" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="messagedetails" Type="varchar(max)" Nullable="false" />
+    <Property Name="responsebyempid" Type="varchar" MaxLength="20" />
+    <Property Name="responsedate" Type="datetime" Nullable="false" />
+    <Property Name="responseby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responsebyemail" Type="varchar" MaxLength="100" />
+    <Property Name="raisedbyphone" Type="varchar" MaxLength="13" />
+    <Property Name="raisedbyempid" Type="varchar" MaxLength="10" />
+    <Property Name="raisedbyemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="raisedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responsible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="responempid" Type="varchar" MaxLength="10" />
+    <Property Name="responphone" Type="varchar" MaxLength="13" />
+    <Property Name="NoOfAttachment" Type="int" />
+    <Property Name="islock" Type="bit" Nullable="false" />
+    <Property Name="isdeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vTopicLevel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vTopicLevel">
+    <Key>
+      <PropertyRef Name="parent_code" />
+      <PropertyRef Name="child_code" />
+      <PropertyRef Name="levelcode" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="parent_code" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="child_code" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="levelcode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="level" Type="varchar" MaxLength="10" />
+    <Property Name="status" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'COREDB.dbo.mifs_vTopicMembers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mifs_vTopicMembers">
+    <Key>
+      <PropertyRef Name="topicId" />
+      <PropertyRef Name="memberId" />
+      <PropertyRef Name="CreateBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="accesslevel" />
+      <PropertyRef Name="isinclude" />
+    </Key>
+    <Property Name="topicId" Type="int" Nullable="false" />
+    <Property Name="TopicDescription" Type="varchar" MaxLength="100" />
+    <Property Name="memberId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MemberName" Type="varchar" MaxLength="50" />
+    <Property Name="MemberMobileNumber" Type="varchar" MaxLength="13" />
+    <Property Name="MemberEmailAddress" Type="varchar" MaxLength="50" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="nickname" Type="varchar" MaxLength="20" />
+    <Property Name="status" Type="char" MaxLength="1" />
+    <Property Name="fupfrequency" Type="int" />
+    <Property Name="sourcelevel" Type="int" />
+    <Property Name="hashcode" Type="varchar" MaxLength="100" />
+    <Property Name="occurence" Type="char" MaxLength="1" />
+    <Property Name="bgcolor" Type="varchar" MaxLength="10" />
+    <Property Name="accesslevel" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="isinclude" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_core_appmenu_core_appsystem">
+    <End Role="core_appsystem" Type="Self.core_appsystem" Multiplicity="1" />
+    <End Role="core_appmenu" Type="Self.core_appmenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_appsystem">
+        <PropertyRef Name="sysId" />
+      </Principal>
+      <Dependent Role="core_appmenu">
+        <PropertyRef Name="sysId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_core_appmenuuser_core_users">
+    <End Role="core_users" Type="Self.core_users" Multiplicity="1" />
+    <End Role="core_appmenuuser" Type="Self.core_appmenuuser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="core_appmenuuser">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_core_appsystemuser_core_users">
+    <End Role="core_users" Type="Self.core_users" Multiplicity="1" />
+    <End Role="core_appsystemuser" Type="Self.core_appsystemuser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="core_appsystemuser">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_core_branchmst_ core_district">
+    <End Role="core_district" Type="Self.core_district" Multiplicity="1" />
+    <End Role="core_branchmst" Type="Self.core_branchmst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_district">
+        <PropertyRef Name="districtcode" />
+      </Principal>
+      <Dependent Role="core_branchmst">
+        <PropertyRef Name="districtcode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_core_userswarehouse_core_appsystem">
+    <End Role="core_appsystem" Type="Self.core_appsystem" Multiplicity="1" />
+    <End Role="core_userswarehouse" Type="Self.core_userswarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_appsystem">
+        <PropertyRef Name="sysId" />
+      </Principal>
+      <Dependent Role="core_userswarehouse">
+        <PropertyRef Name="sysId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_core_userswarehouse_core_users">
+    <End Role="core_users" Type="Self.core_users" Multiplicity="1" />
+    <End Role="core_userswarehouse" Type="Self.core_userswarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="core_userswarehouse">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_attendance_mifs_meeting">
+    <End Role="mifs_meeting" Type="Self.mifs_meeting" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="mifs_attendance" Type="Self.mifs_attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_meeting">
+        <PropertyRef Name="meetingId" />
+      </Principal>
+      <Dependent Role="mifs_attendance">
+        <PropertyRef Name="meetingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_meeting_mifs_sourcetype">
+    <End Role="mifs_topic" Type="Self.mifs_topic" Multiplicity="1" />
+    <End Role="mifs_meeting" Type="Self.mifs_meeting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="mifs_meeting">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_respondent_mifs_issues">
+    <End Role="mifs_issues" Type="Self.mifs_issues" Multiplicity="1" />
+    <End Role="mifs_respondent" Type="Self.mifs_respondent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_issues">
+        <PropertyRef Name="issueId" />
+      </Principal>
+      <Dependent Role="mifs_respondent">
+        <PropertyRef Name="issueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_response_mifs_issues">
+    <End Role="mifs_issues" Type="Self.mifs_issues" Multiplicity="1" />
+    <End Role="mifs_response" Type="Self.mifs_response" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_issues">
+        <PropertyRef Name="issueId" />
+      </Principal>
+      <Dependent Role="mifs_response">
+        <PropertyRef Name="issueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_sourcemembers_mifs_source">
+    <End Role="mifs_topic" Type="Self.mifs_topic" Multiplicity="1" />
+    <End Role="mifs_topicmembers" Type="Self.mifs_topicmembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="mifs_topicmembers">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mifs_topic_mifs_topicgroup">
+    <End Role="mifs_topicgroup" Type="Self.mifs_topicgroup" Multiplicity="1" />
+    <End Role="mifs_topic" Type="Self.mifs_topic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mifs_topicgroup">
+        <PropertyRef Name="groupId" />
+      </Principal>
+      <Dependent Role="mifs_topic">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pism_useranalysisgroupaccess_core_users">
+    <End Role="core_users" Type="Self.core_users" Multiplicity="1" />
+    <End Role="rms_useranalysisgroupaccess" Type="Self.rms_useranalysisgroupaccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="rms_useranalysisgroupaccess">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_wms_serverwarehouses_wms_servers">
+    <End Role="wms_servers" Type="Self.wms_servers" Multiplicity="1" />
+    <End Role="wms_serverwarehouses" Type="Self.wms_serverwarehouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wms_servers">
+        <PropertyRef Name="serverId" />
+      </Principal>
+      <Dependent Role="wms_serverwarehouses">
+        <PropertyRef Name="serverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_wms_userserverwarehouse_core_users">
+    <End Role="core_users" Type="Self.core_users" Multiplicity="1" />
+    <End Role="wms_userserverwarehouse" Type="Self.wms_userserverwarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="core_users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="wms_userserverwarehouse">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_wms_userserverwarehouse_wms_serverwarehouses">
+    <End Role="wms_serverwarehouses" Type="Self.wms_serverwarehouses" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="wms_userserverwarehouse" Type="Self.wms_userserverwarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wms_serverwarehouses">
+        <PropertyRef Name="serverwarehouseId" />
+      </Principal>
+      <Dependent Role="wms_userserverwarehouse">
+        <PropertyRef Name="serverwarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Sproc_CoreSetAppMenuUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="menuId" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="int" Mode="In" />
+    <Parameter Name="canadd" Type="bit" Mode="In" />
+    <Parameter Name="canedit" Type="bit" Mode="In" />
+    <Parameter Name="candelete" Type="bit" Mode="In" />
+    <Parameter Name="canview" Type="bit" Mode="In" />
+    <Parameter Name="canopen" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Sproc_CoreSetAppSystem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sysId" Type="int" Mode="In" />
+    <Parameter Name="syscode" Type="varchar" Mode="In" />
+    <Parameter Name="sysname" Type="varchar" Mode="In" />
+    <Parameter Name="sysdescription" Type="varchar" Mode="In" />
+    <Parameter Name="isactive" Type="bit" Mode="In" />
+    <Parameter Name="about" Type="text" Mode="In" />
+    <Parameter Name="showwebapps" Type="bit" Mode="In" />
+    <Parameter Name="showusermenu" Type="bit" Mode="In" />
+    <Parameter Name="ismaintenance" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Sproc_CoreSetAppSystemUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sysId" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="int" Mode="In" />
+    <Parameter Name="createdby" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Sproc_FPMADailyTaskFunction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="EmployeeId" Type="varchar" Mode="In" />
+    <Parameter Name="TaskTodayID" Type="int" Mode="In" />
+    <Parameter Name="Task" Type="varchar" Mode="In" />
+    <Parameter Name="PlannedDate" Type="datetime" Mode="In" />
+    <Parameter Name="ActualStartDate" Type="datetime" Mode="In" />
+    <Parameter Name="AccomplishedDate" Type="datetime" Mode="In" />
+    <Parameter Name="ProjectId" Type="int" Mode="In" />
+    <Parameter Name="ActivityId" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="Remarks" Type="varchar" Mode="In" />
+    <Parameter Name="PlannedDateEnd" Type="datetime" Mode="In" />
+    <Parameter Name="site" Type="varchar" Mode="In" />
+    <Parameter Name="createdby" Type="varchar" Mode="In" />
+    <Parameter Name="source" Type="varchar" Mode="In" />
+    <Parameter Name="isImpediment" Type="tinyint" Mode="In" />
+    <Parameter Name="action" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sproc_mifsClosureChart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="useremail" Type="varchar" Mode="In" />
+    <Parameter Name="param" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sproc_mifsGetCommitment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Sproc_mifsGetMemberSeparated" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="itype" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sproc_mifsIssuesCategoryGraph" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="useremail" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Sproc_mifsLadderize" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Sproc_mifsRemapEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Sproc_mifsResumeParking" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Sproc_mifsSelectAttendees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Sproc_mifsSetAttendance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="attendanceId" Type="int" Mode="In" />
+    <Parameter Name="meetingId" Type="int" Mode="In" />
+    <Parameter Name="attendeeempid" Type="varchar" Mode="In" />
+    <Parameter Name="attendeename" Type="varchar" Mode="In" />
+    <Parameter Name="attendeemail" Type="varchar" Mode="In" />
+    <Parameter Name="attendeephone" Type="varchar" Mode="In" />
+    <Parameter Name="ismember" Type="tinyint" Mode="In" />
+    <Parameter Name="ispresent" Type="tinyint" Mode="In" />
+    <Parameter Name="created_by" Type="varchar" Mode="In" />
+    <Parameter Name="create_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Sproc_mifsSetIssues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="issueId" Type="int" Mode="In" />
+    <Parameter Name="hashcode" Type="varchar" Mode="In" />
+    <Parameter Name="topicId" Type="int" Mode="In" />
+    <Parameter Name="issuedetails" Type="varchar" Mode="In" />
+    <Parameter Name="actionplan" Type="varchar" Mode="In" />
+    <Parameter Name="issuedate" Type="datetime" Mode="In" />
+    <Parameter Name="fromtopicId" Type="int" Mode="In" />
+    <Parameter Name="targetcompletiondate" Type="datetime" Mode="In" />
+    <Parameter Name="raisedby" Type="varchar" Mode="In" />
+    <Parameter Name="raisedbyemail" Type="varchar" Mode="In" />
+    <Parameter Name="raisedbyempid" Type="varchar" Mode="In" />
+    <Parameter Name="raisedbyphone" Type="varchar" Mode="In" />
+    <Parameter Name="responsible" Type="varchar" Mode="In" />
+    <Parameter Name="responemail" Type="varchar" Mode="In" />
+    <Parameter Name="responempid" Type="varchar" Mode="In" />
+    <Parameter Name="responphone" Type="varchar" Mode="In" />
+    <Parameter Name="followfrequency" Type="int" Mode="In" />
+    <Parameter Name="followmail" Type="tinyint" Mode="In" />
+    <Parameter Name="followsms" Type="tinyint" Mode="In" />
+    <Parameter Name="status" Type="char" Mode="In" />
+    <Parameter Name="newstatus" Type="char" Mode="In" />
+    <Parameter Name="acknowledgedbysource" Type="tinyint" Mode="In" />
+    <Parameter Name="acknowledgesourcedate" Type="datetime" Mode="In" />
+    <Parameter Name="acknowledgebyrespondent" Type="tinyint" Mode="In" />
+    <Parameter Name="acknowledgerespondentdate" Type="datetime" Mode="In" />
+    <Parameter Name="fupcounter" Type="int" Mode="In" />
+    <Parameter Name="parkdate" Type="datetime" Mode="In" />
+    <Parameter Name="resumedate" Type="datetime" Mode="In" />
+    <Parameter Name="lastsenddate" Type="datetime" Mode="In" />
+    <Parameter Name="statchangefupcounter" Type="int" Mode="In" />
+    <Parameter Name="meetingId" Type="int" Mode="In" />
+    <Parameter Name="reference" Type="varchar" Mode="In" />
+    <Parameter Name="sourcetype" Type="char" Mode="In" />
+    <Parameter Name="created_by" Type="varchar" Mode="In" />
+    <Parameter Name="create_date" Type="datetime" Mode="In" />
+    <Parameter Name="collaboratorname" Type="varchar" Mode="In" />
+    <Parameter Name="collaboratoremail" Type="varchar" Mode="In" />
+    <Parameter Name="pflag" Type="tinyint" Mode="In" />
+    <Parameter Name="issuetype" Type="tinyint" Mode="In" />
+    <Parameter Name="issuecategory" Type="char" Mode="In" />
+    <Parameter Name="branchcode" Type="varchar" Mode="In" />
+    <Parameter Name="districtcode" Type="varchar" Mode="In" />
+    <Parameter Name="quadrant" Type="varchar" Mode="In" />
+    <Parameter Name="fromissueid" Type="int" Mode="In" />
+    <Parameter Name="subkpi" Type="varchar" Mode="In" />
+    <Parameter Name="reviewlevel" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sproc_mifsSetMeeting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="meetingId" Type="int" Mode="In" />
+    <Parameter Name="hashcode" Type="varchar" Mode="In" />
+    <Parameter Name="topicId" Type="int" Mode="In" />
+    <Parameter Name="agenda" Type="varchar" Mode="In" />
+    <Parameter Name="datestart" Type="datetime" Mode="In" />
+    <Parameter Name="dateend" Type="datetime" Mode="In" />
+    <Parameter Name="venue" Type="varchar" Mode="In" />
+    <Parameter Name="facilitator" Type="varchar" Mode="In" />
+    <Parameter Name="created_by" Type="varchar" Mode="In" />
+    <Parameter Name="create_date" Type="datetime" Mode="In" />
+    <Parameter Name="status" Type="char" Mode="In" />
+    <Parameter Name="scheduledatestart" Type="datetime" Mode="In" />
+    <Parameter Name="scheduledateend" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Sproc_mifsSetMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="memberId" Type="varchar" Mode="In" />
+    <Parameter Name="fullname" Type="varchar" Mode="In" />
+    <Parameter Name="emailaddress" Type="varchar" Mode="In" />
+    <Parameter Name="mobileno" Type="varchar" Mode="In" />
+    <Parameter Name="created_by" Type="varchar" Mode="In" />
+    <Parameter Name="create_date" Type="datetime" Mode="In" />
+    <Parameter Name="nickname" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="char" Mode="In" />
+  </Function>
+  <Function Name="Sproc_mifsSetResponse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="responseId" Type="int" Mode="In" />
+    <Parameter Name="issueId" Type="int" Mode="In" />
+    <Parameter Name="messagedetails" Type="varchar(max)" Mode="In" />
+    <Parameter Name="responseby" Type="varchar" Mode="In" />
+    <Parameter Name="responsebyempid" Type="varchar" Mode="In" />
+    <Parameter Name="responsedate" Type="datetime" Mode="In" />
+    <Parameter Name="responsebyemail" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Sproc_mifsSetTopic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="topicId" Type="int" Mode="In" />
+    <Parameter Name="hashcode" Type="varchar" Mode="In" />
+    <Parameter Name="aliascode" Type="varchar" Mode="In" />
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="char" Mode="In" />
+    <Parameter Name="topiclevel" Type="int" Mode="In" />
+    <Parameter Name="fupfrequency" Type="int" Mode="In" />
+    <Parameter Name="created_by" Type="varchar" Mode="In" />
+    <Parameter Name="create_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Sproc_mifsTransferIssue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="transferfrom" Type="varchar" Mode="In" />
+    <Parameter Name="transferto" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Sproc_SendSms" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="phonenum" Type="varchar" Mode="In" />
+    <Parameter Name="smsmessage" Type="varchar" Mode="In" />
+    <Parameter Name="smssource" Type="varchar" Mode="In" />
+    <Parameter Name="smssender" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Sproc_SyncEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="PALOUPModelStoreContainer">
+    <EntitySet Name="app_control_no" EntityType="Self.app_control_no" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="apps_file_map" EntityType="Self.apps_file_map" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_appmenu" EntityType="Self.core_appmenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_appmenuuser" EntityType="Self.core_appmenuuser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_appsettings" EntityType="Self.core_appsettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_appsystem" EntityType="Self.core_appsystem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_appsystemuser" EntityType="Self.core_appsystemuser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_attachments" EntityType="Self.core_attachments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_branchmst" EntityType="Self.core_branchmst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_confirmation" EntityType="Self.core_confirmation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_derictory" EntityType="Self.core_derictory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_district" EntityType="Self.core_district" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_drivepath" EntityType="Self.core_drivepath" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_employee" EntityType="Self.core_employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_link" EntityType="Self.core_link" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_system" EntityType="Self.core_system" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_temp_attachment" EntityType="Self.core_temp_attachment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_users" EntityType="Self.core_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="core_userswarehouse" EntityType="Self.core_userswarehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fpma_member" EntityType="Self.fpma_member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_attendance" EntityType="Self.mifs_attendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_dropdown" EntityType="Self.mifs_dropdown" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_dropdowngroup" EntityType="Self.mifs_dropdowngroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_issues" EntityType="Self.mifs_issues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_meeting" EntityType="Self.mifs_meeting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_members" EntityType="Self.mifs_members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_respondent" EntityType="Self.mifs_respondent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_response" EntityType="Self.mifs_response" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_topic" EntityType="Self.mifs_topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_topicgroup" EntityType="Self.mifs_topicgroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_topicmembers" EntityType="Self.mifs_topicmembers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ole_examinee" EntityType="Self.ole_examinee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_useranalysisgroupaccess" EntityType="Self.rms_useranalysisgroupaccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tokens" EntityType="Self.tokens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wms_servers" EntityType="Self.wms_servers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wms_serverwarehouses" EntityType="Self.wms_serverwarehouses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wms_userserverwarehouse" EntityType="Self.wms_userserverwarehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mifs_ladder" EntityType="Self.mifs_ladder" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_ladder].[id] AS [id], 
+    [mifs_ladder].[totalopen] AS [totalopen], 
+    [mifs_ladder].[totalclosed] AS [totalclosed], 
+    [mifs_ladder].[totalparked] AS [totalparked], 
+    [mifs_ladder].[totaldropped] AS [totaldropped], 
+    [mifs_ladder].[topicid] AS [topicid], 
+    [mifs_ladder].[topicdesc] AS [topicdesc], 
+    [mifs_ladder].[issuedyear] AS [issuedyear], 
+    [mifs_ladder].[issuedmonth] AS [issuedmonth], 
+    [mifs_ladder].[issuedweek] AS [issuedweek], 
+    [mifs_ladder].[capturedyear] AS [capturedyear], 
+    [mifs_ladder].[capturedmonth] AS [capturedmonth], 
+    [mifs_ladder].[capturedweek] AS [capturedweek], 
+    [mifs_ladder].[rundate] AS [rundate]
+    FROM [dbo].[mifs_ladder] AS [mifs_ladder]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_parking" EntityType="Self.mifs_parking" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_parking].[id] AS [id], 
+    [mifs_parking].[issueId] AS [issueId], 
+    [mifs_parking].[topicId] AS [topicId], 
+    [mifs_parking].[parkdate] AS [parkdate], 
+    [mifs_parking].[commitmentdate] AS [commitmentdate], 
+    [mifs_parking].[rundate] AS [rundate]
+    FROM [dbo].[mifs_parking] AS [mifs_parking]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="core_UserMenuList" EntityType="Self.core_UserMenuList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [core_UserMenuList].[sysId] AS [sysId], 
+    [core_UserMenuList].[sysname] AS [sysname], 
+    [core_UserMenuList].[menuId] AS [menuId], 
+    [core_UserMenuList].[menuname] AS [menuname], 
+    [core_UserMenuList].[MENUPARENT] AS [MENUPARENT], 
+    [core_UserMenuList].[isactive] AS [isactive], 
+    [core_UserMenuList].[menuorder] AS [menuorder], 
+    [core_UserMenuList].[viewtype] AS [viewtype], 
+    [core_UserMenuList].[prtmenucode] AS [prtmenucode], 
+    [core_UserMenuList].[istransaction] AS [istransaction], 
+    [core_UserMenuList].[menutype] AS [menutype], 
+    [core_UserMenuList].[nenunames] AS [nenunames], 
+    [core_UserMenuList].[userId] AS [userId], 
+    [core_UserMenuList].[canadd] AS [canadd], 
+    [core_UserMenuList].[canedit] AS [canedit], 
+    [core_UserMenuList].[candelete] AS [candelete], 
+    [core_UserMenuList].[canview] AS [canview], 
+    [core_UserMenuList].[canopen] AS [canopen], 
+    [core_UserMenuList].[Expr1] AS [Expr1], 
+    [core_UserMenuList].[SUBTOTAL] AS [SUBTOTAL], 
+    [core_UserMenuList].[MENUTYPEDES] AS [MENUTYPEDES], 
+    [core_UserMenuList].[forweb] AS [forweb], 
+    [core_UserMenuList].[ParentMenuOrder] AS [ParentMenuOrder], 
+    [core_UserMenuList].[syscode] AS [syscode], 
+    [core_UserMenuList].[sysdescription] AS [sysdescription], 
+    [core_UserMenuList].[ParentIcon] AS [ParentIcon], 
+    [core_UserMenuList].[ChildIcon] AS [ChildIcon], 
+    [core_UserMenuList].[formobile] AS [formobile], 
+    [core_UserMenuList].[menucode] AS [menucode]
+    FROM [dbo].[core_UserMenuList] AS [core_UserMenuList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="core_vAdminMenu" EntityType="Self.core_vAdminMenu" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [core_vAdminMenu].[parentId] AS [parentId], 
+    [core_vAdminMenu].[parentName] AS [parentName], 
+    [core_vAdminMenu].[parentmenuorder] AS [parentmenuorder], 
+    [core_vAdminMenu].[parenticon] AS [parenticon], 
+    [core_vAdminMenu].[userId] AS [userId], 
+    [core_vAdminMenu].[sysId] AS [sysId], 
+    [core_vAdminMenu].[menucode] AS [menucode]
+    FROM [dbo].[core_vAdminMenu] AS [core_vAdminMenu]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="core_vEmployeeNotUser" EntityType="Self.core_vEmployeeNotUser" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [core_vEmployeeNotUser].[empl_id] AS [empl_id], 
+    [core_vEmployeeNotUser].[employeename] AS [employeename], 
+    [core_vEmployeeNotUser].[employeename2] AS [employeename2], 
+    [core_vEmployeeNotUser].[lname] AS [lname], 
+    [core_vEmployeeNotUser].[fname] AS [fname], 
+    [core_vEmployeeNotUser].[mname] AS [mname], 
+    [core_vEmployeeNotUser].[birthday] AS [birthday], 
+    [core_vEmployeeNotUser].[status] AS [status], 
+    [core_vEmployeeNotUser].[sex] AS [sex], 
+    [core_vEmployeeNotUser].[civilstatus] AS [civilstatus], 
+    [core_vEmployeeNotUser].[emailadd] AS [emailadd], 
+    [core_vEmployeeNotUser].[datehired] AS [datehired], 
+    [core_vEmployeeNotUser].[effectivitydate] AS [effectivitydate], 
+    [core_vEmployeeNotUser].[corporate] AS [corporate], 
+    [core_vEmployeeNotUser].[corporateName] AS [corporateName], 
+    [core_vEmployeeNotUser].[branch] AS [branch], 
+    [core_vEmployeeNotUser].[branchname] AS [branchname], 
+    [core_vEmployeeNotUser].[brancharea] AS [brancharea], 
+    [core_vEmployeeNotUser].[position] AS [position], 
+    [core_vEmployeeNotUser].[positionname] AS [positionname], 
+    [core_vEmployeeNotUser].[department] AS [department], 
+    [core_vEmployeeNotUser].[departmentname] AS [departmentname], 
+    [core_vEmployeeNotUser].[section] AS [section], 
+    [core_vEmployeeNotUser].[sectionname] AS [sectionname], 
+    [core_vEmployeeNotUser].[levelcode] AS [levelcode], 
+    [core_vEmployeeNotUser].[levelname] AS [levelname], 
+    [core_vEmployeeNotUser].[joblevelgroup] AS [joblevelgroup], 
+    [core_vEmployeeNotUser].[class] AS [class], 
+    [core_vEmployeeNotUser].[type] AS [type], 
+    [core_vEmployeeNotUser].[typedescription] AS [typedescription], 
+    [core_vEmployeeNotUser].[employeepresentaddress] AS [employeepresentaddress], 
+    [core_vEmployeeNotUser].[employeehomeaddress] AS [employeehomeaddress], 
+    [core_vEmployeeNotUser].[employeepresentcontact] AS [employeepresentcontact], 
+    [core_vEmployeeNotUser].[homecontact] AS [homecontact], 
+    [core_vEmployeeNotUser].[ImmediateID] AS [ImmediateID], 
+    [core_vEmployeeNotUser].[ImmediateName] AS [ImmediateName], 
+    [core_vEmployeeNotUser].[ImmediateBDay] AS [ImmediateBDay], 
+    [core_vEmployeeNotUser].[ImmediateStatus] AS [ImmediateStatus], 
+    [core_vEmployeeNotUser].[ImmediateEmail] AS [ImmediateEmail], 
+    [core_vEmployeeNotUser].[ImmediateDHired] AS [ImmediateDHired], 
+    [core_vEmployeeNotUser].[ImmediateSBU] AS [ImmediateSBU], 
+    [core_vEmployeeNotUser].[ImmediateBranch] AS [ImmediateBranch], 
+    [core_vEmployeeNotUser].[ImmediatePosition] AS [ImmediatePosition], 
+    [core_vEmployeeNotUser].[ImmediateDepartment] AS [ImmediateDepartment], 
+    [core_vEmployeeNotUser].[ImmediateSection] AS [ImmediateSection], 
+    [core_vEmployeeNotUser].[ImmediateLevel] AS [ImmediateLevel], 
+    [core_vEmployeeNotUser].[modifiedby] AS [modifiedby], 
+    [core_vEmployeeNotUser].[modifieddate] AS [modifieddate]
+    FROM [dbo].[core_vEmployeeNotUser] AS [core_vEmployeeNotUser]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="core_vParentMenu" EntityType="Self.core_vParentMenu" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [core_vParentMenu].[parentId] AS [parentId], 
+    [core_vParentMenu].[parentName] AS [parentName], 
+    [core_vParentMenu].[parentmenuorder] AS [parentmenuorder], 
+    [core_vParentMenu].[parenticon] AS [parenticon], 
+    [core_vParentMenu].[userId] AS [userId], 
+    [core_vParentMenu].[sysId] AS [sysId], 
+    [core_vParentMenu].[menucode] AS [menucode]
+    FROM [dbo].[core_vParentMenu] AS [core_vParentMenu]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_Analytics" EntityType="Self.mifs_Analytics" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_Analytics].[issueId] AS [issueId], 
+    [mifs_Analytics].[CurrentTopicId] AS [CurrentTopicId], 
+    [mifs_Analytics].[CurrentTopicDescription] AS [CurrentTopicDescription], 
+    [mifs_Analytics].[Details] AS [Details], 
+    [mifs_Analytics].[actionplan] AS [actionplan], 
+    [mifs_Analytics].[DateIssued] AS [DateIssued], 
+    [mifs_Analytics].[PreviousTopicId] AS [PreviousTopicId], 
+    [mifs_Analytics].[PreviousTopicDescription] AS [PreviousTopicDescription], 
+    [mifs_Analytics].[targetcompletiondate] AS [targetcompletiondate], 
+    [mifs_Analytics].[FollowUpFrequency] AS [FollowUpFrequency], 
+    [mifs_Analytics].[IsFollowUpOnEmail] AS [IsFollowUpOnEmail], 
+    [mifs_Analytics].[IsFollowUpOnSMS] AS [IsFollowUpOnSMS], 
+    [mifs_Analytics].[IssueStatus] AS [IssueStatus], 
+    [mifs_Analytics].[CreatedBy] AS [CreatedBy], 
+    [mifs_Analytics].[CreateDate] AS [CreateDate], 
+    [mifs_Analytics].[newstatus] AS [newstatus], 
+    [mifs_Analytics].[IsAcknowledgeBySource] AS [IsAcknowledgeBySource], 
+    [mifs_Analytics].[SourceAcknowledgeDate] AS [SourceAcknowledgeDate], 
+    [mifs_Analytics].[IsAcknowledgeByRespondent] AS [IsAcknowledgeByRespondent], 
+    [mifs_Analytics].[RespondentAcknowledgeDate] AS [RespondentAcknowledgeDate], 
+    [mifs_Analytics].[FollowUpCounter] AS [FollowUpCounter], 
+    [mifs_Analytics].[IssueDateParked] AS [IssueDateParked], 
+    [mifs_Analytics].[IssueDateResumed] AS [IssueDateResumed], 
+    [mifs_Analytics].[NoOfAttachment] AS [NoOfAttachment], 
+    [mifs_Analytics].[IssueHashcode] AS [IssueHashcode], 
+    [mifs_Analytics].[meetingId] AS [meetingId], 
+    [mifs_Analytics].[agenda] AS [agenda], 
+    [mifs_Analytics].[datestart] AS [datestart], 
+    [mifs_Analytics].[dateend] AS [dateend], 
+    [mifs_Analytics].[venue] AS [venue], 
+    [mifs_Analytics].[facilitator] AS [facilitator], 
+    [mifs_Analytics].[reference] AS [reference], 
+    [mifs_Analytics].[TopicHashcode] AS [TopicHashcode], 
+    [mifs_Analytics].[raisedby] AS [raisedby], 
+    [mifs_Analytics].[raisedbyemail] AS [raisedbyemail], 
+    [mifs_Analytics].[raisedbyempid] AS [raisedbyempid], 
+    [mifs_Analytics].[raisedbyphone] AS [raisedbyphone], 
+    [mifs_Analytics].[responsible] AS [responsible], 
+    [mifs_Analytics].[responemail] AS [responemail], 
+    [mifs_Analytics].[responempid] AS [responempid], 
+    [mifs_Analytics].[responphone] AS [responphone], 
+    [mifs_Analytics].[sourcetype] AS [sourcetype], 
+    [mifs_Analytics].[lastsenddate] AS [lastsenddate], 
+    [mifs_Analytics].[NoOfResponse] AS [NoOfResponse], 
+    [mifs_Analytics].[PriorityFlag] AS [PriorityFlag], 
+    [mifs_Analytics].[DateClosed] AS [DateClosed], 
+    [mifs_Analytics].[Collaborator] AS [Collaborator], 
+    [mifs_Analytics].[TypeOfIssue] AS [TypeOfIssue], 
+    [mifs_Analytics].[category] AS [category], 
+    [mifs_Analytics].[TopicAlias] AS [TopicAlias], 
+    [mifs_Analytics].[bgcolor] AS [bgcolor], 
+    [mifs_Analytics].[collaboratoremail] AS [collaboratoremail], 
+    [mifs_Analytics].[collaboratorempid] AS [collaboratorempid], 
+    [mifs_Analytics].[HasResponseAttachment] AS [HasResponseAttachment], 
+    [mifs_Analytics].[referenceId] AS [referenceId], 
+    [mifs_Analytics].[referencetype] AS [referencetype], 
+    [mifs_Analytics].[DaysElapse] AS [DaysElapse], 
+    [mifs_Analytics].[IsOverdue] AS [IsOverdue], 
+    [mifs_Analytics].[LastUpdate] AS [LastUpdate], 
+    [mifs_Analytics].[LastTollgated] AS [LastTollgated], 
+    [mifs_Analytics].[Responsiveness] AS [Responsiveness], 
+    [mifs_Analytics].[TollGaterResponsiveness] AS [TollGaterResponsiveness], 
+    [mifs_Analytics].[AcknowledgementDays] AS [AcknowledgementDays], 
+    [mifs_Analytics].[ResponsibleImmediateHead] AS [ResponsibleImmediateHead], 
+    [mifs_Analytics].[TollGaterImmediateHead] AS [TollGaterImmediateHead], 
+    [mifs_Analytics].[BranchName] AS [BranchName], 
+    [mifs_Analytics].[DistrictName] AS [DistrictName], 
+    [mifs_Analytics].[LastUpdateMessage] AS [LastUpdateMessage], 
+    [mifs_Analytics].[LastUpdateBy] AS [LastUpdateBy], 
+    [mifs_Analytics].[LastUpdateMessageByCollaborator] AS [LastUpdateMessageByCollaborator], 
+    [mifs_Analytics].[LastUpdateDateByCollaborator] AS [LastUpdateDateByCollaborator], 
+    [mifs_Analytics].[BranchCode] AS [BranchCode], 
+    [mifs_Analytics].[CorporateCode] AS [CorporateCode], 
+    [mifs_Analytics].[CorporateName] AS [CorporateName], 
+    [mifs_Analytics].[IssueCategory] AS [IssueCategory], 
+    [mifs_Analytics].[JobLevelGroup] AS [JobLevelGroup], 
+    [mifs_Analytics].[Position] AS [Position], 
+    [mifs_Analytics].[WeekCreated] AS [WeekCreated], 
+    [mifs_Analytics].[EncoderBranch] AS [EncoderBranch]
+    FROM [dbo].[mifs_Analytics] AS [mifs_Analytics]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_AnalyticsWithResponse" EntityType="Self.mifs_AnalyticsWithResponse" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_AnalyticsWithResponse].[issueId] AS [issueId], 
+    [mifs_AnalyticsWithResponse].[CurrentTopicId] AS [CurrentTopicId], 
+    [mifs_AnalyticsWithResponse].[CurrentTopicDescription] AS [CurrentTopicDescription], 
+    [mifs_AnalyticsWithResponse].[Details] AS [Details], 
+    [mifs_AnalyticsWithResponse].[actionplan] AS [actionplan], 
+    [mifs_AnalyticsWithResponse].[DateIssued] AS [DateIssued], 
+    [mifs_AnalyticsWithResponse].[PreviousTopicId] AS [PreviousTopicId], 
+    [mifs_AnalyticsWithResponse].[PreviousTopicDescription] AS [PreviousTopicDescription], 
+    [mifs_AnalyticsWithResponse].[targetcompletiondate] AS [targetcompletiondate], 
+    [mifs_AnalyticsWithResponse].[FollowUpFrequency] AS [FollowUpFrequency], 
+    [mifs_AnalyticsWithResponse].[IsFollowUpOnEmail] AS [IsFollowUpOnEmail], 
+    [mifs_AnalyticsWithResponse].[IsFollowUpOnSMS] AS [IsFollowUpOnSMS], 
+    [mifs_AnalyticsWithResponse].[IssueStatus] AS [IssueStatus], 
+    [mifs_AnalyticsWithResponse].[CreatedBy] AS [CreatedBy], 
+    [mifs_AnalyticsWithResponse].[CreateDate] AS [CreateDate], 
+    [mifs_AnalyticsWithResponse].[newstatus] AS [newstatus], 
+    [mifs_AnalyticsWithResponse].[IsAcknowledgeBySource] AS [IsAcknowledgeBySource], 
+    [mifs_AnalyticsWithResponse].[SourceAcknowledgeDate] AS [SourceAcknowledgeDate], 
+    [mifs_AnalyticsWithResponse].[IsAcknowledgeByRespondent] AS [IsAcknowledgeByRespondent], 
+    [mifs_AnalyticsWithResponse].[RespondentAcknowledgeDate] AS [RespondentAcknowledgeDate], 
+    [mifs_AnalyticsWithResponse].[FollowUpCounter] AS [FollowUpCounter], 
+    [mifs_AnalyticsWithResponse].[IssueDateParked] AS [IssueDateParked], 
+    [mifs_AnalyticsWithResponse].[IssueDateResumed] AS [IssueDateResumed], 
+    [mifs_AnalyticsWithResponse].[NoOfAttachment] AS [NoOfAttachment], 
+    [mifs_AnalyticsWithResponse].[IssueHashcode] AS [IssueHashcode], 
+    [mifs_AnalyticsWithResponse].[meetingId] AS [meetingId], 
+    [mifs_AnalyticsWithResponse].[agenda] AS [agenda], 
+    [mifs_AnalyticsWithResponse].[datestart] AS [datestart], 
+    [mifs_AnalyticsWithResponse].[dateend] AS [dateend], 
+    [mifs_AnalyticsWithResponse].[venue] AS [venue], 
+    [mifs_AnalyticsWithResponse].[facilitator] AS [facilitator], 
+    [mifs_AnalyticsWithResponse].[reference] AS [reference], 
+    [mifs_AnalyticsWithResponse].[TopicHashcode] AS [TopicHashcode], 
+    [mifs_AnalyticsWithResponse].[raisedby] AS [raisedby], 
+    [mifs_AnalyticsWithResponse].[raisedbyemail] AS [raisedbyemail], 
+    [mifs_AnalyticsWithResponse].[raisedbyempid] AS [raisedbyempid], 
+    [mifs_AnalyticsWithResponse].[raisedbyphone] AS [raisedbyphone], 
+    [mifs_AnalyticsWithResponse].[responsible] AS [responsible], 
+    [mifs_AnalyticsWithResponse].[responemail] AS [responemail], 
+    [mifs_AnalyticsWithResponse].[responempid] AS [responempid], 
+    [mifs_AnalyticsWithResponse].[responphone] AS [responphone], 
+    [mifs_AnalyticsWithResponse].[sourcetype] AS [sourcetype], 
+    [mifs_AnalyticsWithResponse].[lastsenddate] AS [lastsenddate], 
+    [mifs_AnalyticsWithResponse].[NoOfResponse] AS [NoOfResponse], 
+    [mifs_AnalyticsWithResponse].[PriorityFlag] AS [PriorityFlag], 
+    [mifs_AnalyticsWithResponse].[DateClosed] AS [DateClosed], 
+    [mifs_AnalyticsWithResponse].[Collaborator] AS [Collaborator], 
+    [mifs_AnalyticsWithResponse].[TypeOfIssue] AS [TypeOfIssue], 
+    [mifs_AnalyticsWithResponse].[category] AS [category], 
+    [mifs_AnalyticsWithResponse].[TopicAlias] AS [TopicAlias], 
+    [mifs_AnalyticsWithResponse].[bgcolor] AS [bgcolor], 
+    [mifs_AnalyticsWithResponse].[collaboratoremail] AS [collaboratoremail], 
+    [mifs_AnalyticsWithResponse].[collaboratorempid] AS [collaboratorempid], 
+    [mifs_AnalyticsWithResponse].[HasResponseAttachment] AS [HasResponseAttachment], 
+    [mifs_AnalyticsWithResponse].[referenceId] AS [referenceId], 
+    [mifs_AnalyticsWithResponse].[referencetype] AS [referencetype], 
+    [mifs_AnalyticsWithResponse].[DaysElapse] AS [DaysElapse], 
+    [mifs_AnalyticsWithResponse].[IsOverdue] AS [IsOverdue], 
+    [mifs_AnalyticsWithResponse].[LastUpdate] AS [LastUpdate], 
+    [mifs_AnalyticsWithResponse].[LastTollgated] AS [LastTollgated], 
+    [mifs_AnalyticsWithResponse].[responseId] AS [responseId], 
+    [mifs_AnalyticsWithResponse].[Expr1] AS [Expr1], 
+    [mifs_AnalyticsWithResponse].[messagedetails] AS [messagedetails], 
+    [mifs_AnalyticsWithResponse].[responseby] AS [responseby], 
+    [mifs_AnalyticsWithResponse].[responsebyempid] AS [responsebyempid], 
+    [mifs_AnalyticsWithResponse].[responsedate] AS [responsedate], 
+    [mifs_AnalyticsWithResponse].[responsebyemail] AS [responsebyemail], 
+    [mifs_AnalyticsWithResponse].[islock] AS [islock], 
+    [mifs_AnalyticsWithResponse].[isdeleted] AS [isdeleted], 
+    [mifs_AnalyticsWithResponse].[istypeaction] AS [istypeaction], 
+    [mifs_AnalyticsWithResponse].[IssueMessageDetail] AS [IssueMessageDetail], 
+    [mifs_AnalyticsWithResponse].[TollGaterComment] AS [TollGaterComment]
+    FROM [dbo].[mifs_AnalyticsWithResponse] AS [mifs_AnalyticsWithResponse]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Mifs_DailyUtilization" EntityType="Self.Mifs_DailyUtilization" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Mifs_DailyUtilization].[IssueCaptured] AS [IssueCaptured], 
+    [Mifs_DailyUtilization].[DateCaptured] AS [DateCaptured], 
+    [Mifs_DailyUtilization].[CreatedBy] AS [CreatedBy], 
+    [Mifs_DailyUtilization].[BranchName] AS [BranchName], 
+    [Mifs_DailyUtilization].[DistrictName] AS [DistrictName]
+    FROM [dbo].[Mifs_DailyUtilization] AS [Mifs_DailyUtilization]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_FollowUpOpen" EntityType="Self.mifs_FollowUpOpen" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_FollowUpOpen].[topicId] AS [topicId], 
+    [mifs_FollowUpOpen].[description] AS [description], 
+    [mifs_FollowUpOpen].[issueId] AS [issueId], 
+    [mifs_FollowUpOpen].[issuedetails] AS [issuedetails], 
+    [mifs_FollowUpOpen].[actionplan] AS [actionplan], 
+    [mifs_FollowUpOpen].[issuedate] AS [issuedate], 
+    [mifs_FollowUpOpen].[targetcompletiondate] AS [targetcompletiondate], 
+    [mifs_FollowUpOpen].[lastsenddate] AS [lastsenddate], 
+    [mifs_FollowUpOpen].[raisedby] AS [raisedby], 
+    [mifs_FollowUpOpen].[raisedbyemail] AS [raisedbyemail], 
+    [mifs_FollowUpOpen].[raisedbyphone] AS [raisedbyphone], 
+    [mifs_FollowUpOpen].[responsible] AS [responsible], 
+    [mifs_FollowUpOpen].[responemail] AS [responemail], 
+    [mifs_FollowUpOpen].[responphone] AS [responphone], 
+    [mifs_FollowUpOpen].[followfrequency] AS [followfrequency], 
+    [mifs_FollowUpOpen].[followmail] AS [followmail], 
+    [mifs_FollowUpOpen].[followsms] AS [followsms]
+    FROM [dbo].[mifs_FollowUpOpen] AS [mifs_FollowUpOpen]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_SumOfIssues" EntityType="Self.mifs_SumOfIssues" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_SumOfIssues].[IssueType] AS [IssueType], 
+    [mifs_SumOfIssues].[Description] AS [Description], 
+    [mifs_SumOfIssues].[IssueStatus] AS [IssueStatus], 
+    [mifs_SumOfIssues].[SumOfIssues] AS [SumOfIssues]
+    FROM [dbo].[mifs_SumOfIssues] AS [mifs_SumOfIssues]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vAccountValidation" EntityType="Self.mifs_vAccountValidation" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vAccountValidation].[empl_id] AS [empl_id], 
+    [mifs_vAccountValidation].[employeename2] AS [employeename2], 
+    [mifs_vAccountValidation].[coreEmployeeEmail] AS [coreEmployeeEmail], 
+    [mifs_vAccountValidation].[HRISEmail] AS [HRISEmail], 
+    [mifs_vAccountValidation].[CoreUsername] AS [CoreUsername], 
+    [mifs_vAccountValidation].[CoreEmail] AS [CoreEmail], 
+    [mifs_vAccountValidation].[mifsMember] AS [mifsMember], 
+    [mifs_vAccountValidation].[ResponEmail] AS [ResponEmail], 
+    [mifs_vAccountValidation].[RaisedbyEmail] AS [RaisedbyEmail], 
+    [mifs_vAccountValidation].[CollaboratorEmail] AS [CollaboratorEmail]
+    FROM [dbo].[mifs_vAccountValidation] AS [mifs_vAccountValidation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vClosedPerResponsible" EntityType="Self.mifs_vClosedPerResponsible" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vClosedPerResponsible].[issueId] AS [issueId], 
+    [mifs_vClosedPerResponsible].[topicId] AS [topicId], 
+    [mifs_vClosedPerResponsible].[responempid] AS [responempid], 
+    [mifs_vClosedPerResponsible].[responsible] AS [responsible], 
+    [mifs_vClosedPerResponsible].[issuedate] AS [issuedate], 
+    [mifs_vClosedPerResponsible].[WeekNumber] AS [WeekNumber], 
+    [mifs_vClosedPerResponsible].[MonthNumber] AS [MonthNumber], 
+    [mifs_vClosedPerResponsible].[YearNumber] AS [YearNumber], 
+    [mifs_vClosedPerResponsible].[BranchCode] AS [BranchCode], 
+    [mifs_vClosedPerResponsible].[BranchName] AS [BranchName], 
+    [mifs_vClosedPerResponsible].[DistrictName] AS [DistrictName]
+    FROM [dbo].[mifs_vClosedPerResponsible] AS [mifs_vClosedPerResponsible]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vFirmAttendance" EntityType="Self.mifs_vFirmAttendance" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vFirmAttendance].[Meeting ID] AS [Meeting ID], 
+    [mifs_vFirmAttendance].[Topic Name] AS [Topic Name], 
+    [mifs_vFirmAttendance].[Topic Created Date] AS [Topic Created Date], 
+    [mifs_vFirmAttendance].[Attendee] AS [Attendee], 
+    [mifs_vFirmAttendance].[Is member] AS [Is member], 
+    [mifs_vFirmAttendance].[Is present] AS [Is present], 
+    [mifs_vFirmAttendance].[Logdate] AS [Logdate], 
+    [mifs_vFirmAttendance].[LogTime] AS [LogTime]
+    FROM [dbo].[mifs_vFirmAttendance] AS [mifs_vFirmAttendance]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vIssueClosedPerEmployeeX" EntityType="Self.mifs_vIssueClosedPerEmployeeX" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vIssueClosedPerEmployeeX].[PaloType] AS [PaloType], 
+    [mifs_vIssueClosedPerEmployeeX].[TotalClosed] AS [TotalClosed], 
+    [mifs_vIssueClosedPerEmployeeX].[EmailAdd] AS [EmailAdd], 
+    [mifs_vIssueClosedPerEmployeeX].[FullName] AS [FullName], 
+    [mifs_vIssueClosedPerEmployeeX].[YearClosed] AS [YearClosed], 
+    [mifs_vIssueClosedPerEmployeeX].[MonthClosed] AS [MonthClosed], 
+    [mifs_vIssueClosedPerEmployeeX].[EmployeeId] AS [EmployeeId]
+    FROM [dbo].[mifs_vIssueClosedPerEmployeeX] AS [mifs_vIssueClosedPerEmployeeX]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vIssueCount" EntityType="Self.mifs_vIssueCount" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vIssueCount].[CurrentTopicId] AS [CurrentTopicId], 
+    [mifs_vIssueCount].[CurrentTopicDescription] AS [CurrentTopicDescription], 
+    [mifs_vIssueCount].[IssueStatus] AS [IssueStatus], 
+    [mifs_vIssueCount].[TotalIssues] AS [TotalIssues], 
+    [mifs_vIssueCount].[responemail] AS [responemail], 
+    [mifs_vIssueCount].[raisedbyemail] AS [raisedbyemail], 
+    [mifs_vIssueCount].[collaboratoremail] AS [collaboratoremail], 
+    [mifs_vIssueCount].[topicId] AS [topicId], 
+    [mifs_vIssueCount].[TopicAlias] AS [TopicAlias]
+    FROM [dbo].[mifs_vIssueCount] AS [mifs_vIssueCount]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vIssueForAcknowledgement" EntityType="Self.mifs_vIssueForAcknowledgement" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vIssueForAcknowledgement].[issueId] AS [issueId], 
+    [mifs_vIssueForAcknowledgement].[CurrentTopicId] AS [CurrentTopicId], 
+    [mifs_vIssueForAcknowledgement].[CurrentTopicDescription] AS [CurrentTopicDescription], 
+    [mifs_vIssueForAcknowledgement].[Details] AS [Details], 
+    [mifs_vIssueForAcknowledgement].[actionplan] AS [actionplan], 
+    [mifs_vIssueForAcknowledgement].[DateIssued] AS [DateIssued], 
+    [mifs_vIssueForAcknowledgement].[PreviousTopicId] AS [PreviousTopicId], 
+    [mifs_vIssueForAcknowledgement].[PreviousTopicDescription] AS [PreviousTopicDescription], 
+    [mifs_vIssueForAcknowledgement].[targetcompletiondate] AS [targetcompletiondate], 
+    [mifs_vIssueForAcknowledgement].[FollowUpFrequency] AS [FollowUpFrequency], 
+    [mifs_vIssueForAcknowledgement].[IsFollowUpOnEmail] AS [IsFollowUpOnEmail], 
+    [mifs_vIssueForAcknowledgement].[IsFollowUpOnSMS] AS [IsFollowUpOnSMS], 
+    [mifs_vIssueForAcknowledgement].[IssueStatus] AS [IssueStatus], 
+    [mifs_vIssueForAcknowledgement].[CreatedBy] AS [CreatedBy], 
+    [mifs_vIssueForAcknowledgement].[CreateDate] AS [CreateDate], 
+    [mifs_vIssueForAcknowledgement].[newstatus] AS [newstatus], 
+    [mifs_vIssueForAcknowledgement].[IsAcknowledgeBySource] AS [IsAcknowledgeBySource], 
+    [mifs_vIssueForAcknowledgement].[SourceAcknowledgeDate] AS [SourceAcknowledgeDate], 
+    [mifs_vIssueForAcknowledgement].[IsAcknowledgeByRespondent] AS [IsAcknowledgeByRespondent], 
+    [mifs_vIssueForAcknowledgement].[RespondentAcknowledgeDate] AS [RespondentAcknowledgeDate], 
+    [mifs_vIssueForAcknowledgement].[FollowUpCounter] AS [FollowUpCounter], 
+    [mifs_vIssueForAcknowledgement].[IssueDateParked] AS [IssueDateParked], 
+    [mifs_vIssueForAcknowledgement].[IssueDateResumed] AS [IssueDateResumed], 
+    [mifs_vIssueForAcknowledgement].[NoOfAttachment] AS [NoOfAttachment], 
+    [mifs_vIssueForAcknowledgement].[IssueHashcode] AS [IssueHashcode], 
+    [mifs_vIssueForAcknowledgement].[meetingId] AS [meetingId], 
+    [mifs_vIssueForAcknowledgement].[agenda] AS [agenda], 
+    [mifs_vIssueForAcknowledgement].[datestart] AS [datestart], 
+    [mifs_vIssueForAcknowledgement].[dateend] AS [dateend], 
+    [mifs_vIssueForAcknowledgement].[venue] AS [venue], 
+    [mifs_vIssueForAcknowledgement].[facilitator] AS [facilitator], 
+    [mifs_vIssueForAcknowledgement].[reference] AS [reference], 
+    [mifs_vIssueForAcknowledgement].[TopicHashcode] AS [TopicHashcode], 
+    [mifs_vIssueForAcknowledgement].[raisedby] AS [raisedby], 
+    [mifs_vIssueForAcknowledgement].[raisedbyemail] AS [raisedbyemail], 
+    [mifs_vIssueForAcknowledgement].[raisedbyempid] AS [raisedbyempid], 
+    [mifs_vIssueForAcknowledgement].[raisedbyphone] AS [raisedbyphone], 
+    [mifs_vIssueForAcknowledgement].[responsible] AS [responsible], 
+    [mifs_vIssueForAcknowledgement].[responemail] AS [responemail], 
+    [mifs_vIssueForAcknowledgement].[responempid] AS [responempid], 
+    [mifs_vIssueForAcknowledgement].[responphone] AS [responphone], 
+    [mifs_vIssueForAcknowledgement].[sourcetype] AS [sourcetype], 
+    [mifs_vIssueForAcknowledgement].[lastsenddate] AS [lastsenddate], 
+    [mifs_vIssueForAcknowledgement].[NoOfResponse] AS [NoOfResponse], 
+    [mifs_vIssueForAcknowledgement].[PriorityFlag] AS [PriorityFlag], 
+    [mifs_vIssueForAcknowledgement].[DateClosed] AS [DateClosed], 
+    [mifs_vIssueForAcknowledgement].[Collaborator] AS [Collaborator], 
+    [mifs_vIssueForAcknowledgement].[TypeOfIssue] AS [TypeOfIssue], 
+    [mifs_vIssueForAcknowledgement].[category] AS [category], 
+    [mifs_vIssueForAcknowledgement].[TopicAlias] AS [TopicAlias], 
+    [mifs_vIssueForAcknowledgement].[bgcolor] AS [bgcolor], 
+    [mifs_vIssueForAcknowledgement].[collaboratoremail] AS [collaboratoremail], 
+    [mifs_vIssueForAcknowledgement].[collaboratorempid] AS [collaboratorempid], 
+    [mifs_vIssueForAcknowledgement].[HasResponseAttachment] AS [HasResponseAttachment], 
+    [mifs_vIssueForAcknowledgement].[referenceId] AS [referenceId], 
+    [mifs_vIssueForAcknowledgement].[referencetype] AS [referencetype], 
+    [mifs_vIssueForAcknowledgement].[DaysElapse] AS [DaysElapse], 
+    [mifs_vIssueForAcknowledgement].[IsOverdue] AS [IsOverdue], 
+    [mifs_vIssueForAcknowledgement].[LastUpdate] AS [LastUpdate], 
+    [mifs_vIssueForAcknowledgement].[LastTollgated] AS [LastTollgated], 
+    [mifs_vIssueForAcknowledgement].[Responsiveness] AS [Responsiveness], 
+    [mifs_vIssueForAcknowledgement].[TollGaterResponsiveness] AS [TollGaterResponsiveness], 
+    [mifs_vIssueForAcknowledgement].[AcknowledgementDays] AS [AcknowledgementDays], 
+    [mifs_vIssueForAcknowledgement].[ResponsibleImmediateHead] AS [ResponsibleImmediateHead], 
+    [mifs_vIssueForAcknowledgement].[TollGaterImmediateHead] AS [TollGaterImmediateHead], 
+    [mifs_vIssueForAcknowledgement].[BranchName] AS [BranchName], 
+    [mifs_vIssueForAcknowledgement].[DistrictName] AS [DistrictName], 
+    [mifs_vIssueForAcknowledgement].[LastUpdateMessage] AS [LastUpdateMessage], 
+    [mifs_vIssueForAcknowledgement].[LastUpdateBy] AS [LastUpdateBy], 
+    [mifs_vIssueForAcknowledgement].[LastUpdateMessageByCollaborator] AS [LastUpdateMessageByCollaborator], 
+    [mifs_vIssueForAcknowledgement].[LastUpdateDateByCollaborator] AS [LastUpdateDateByCollaborator]
+    FROM [dbo].[mifs_vIssueForAcknowledgement] AS [mifs_vIssueForAcknowledgement]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vIssuePerBranchPerTopic" EntityType="Self.mifs_vIssuePerBranchPerTopic" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vIssuePerBranchPerTopic].[id] AS [id], 
+    [mifs_vIssuePerBranchPerTopic].[TotalOpen] AS [TotalOpen], 
+    [mifs_vIssuePerBranchPerTopic].[TotalClosed] AS [TotalClosed], 
+    [mifs_vIssuePerBranchPerTopic].[TotalParked] AS [TotalParked], 
+    [mifs_vIssuePerBranchPerTopic].[TotalDropped] AS [TotalDropped], 
+    [mifs_vIssuePerBranchPerTopic].[CurrentTopicId] AS [CurrentTopicId], 
+    [mifs_vIssuePerBranchPerTopic].[CurrentTopicDescription] AS [CurrentTopicDescription], 
+    [mifs_vIssuePerBranchPerTopic].[IssuedYear] AS [IssuedYear], 
+    [mifs_vIssuePerBranchPerTopic].[IssuedMonth] AS [IssuedMonth], 
+    [mifs_vIssuePerBranchPerTopic].[IssuedWeek] AS [IssuedWeek], 
+    [mifs_vIssuePerBranchPerTopic].[CurrentYear] AS [CurrentYear], 
+    [mifs_vIssuePerBranchPerTopic].[CurrentMonth] AS [CurrentMonth], 
+    [mifs_vIssuePerBranchPerTopic].[CurrentWeek] AS [CurrentWeek], 
+    [mifs_vIssuePerBranchPerTopic].[CorporateName] AS [CorporateName], 
+    [mifs_vIssuePerBranchPerTopic].[BusinessGroup] AS [BusinessGroup], 
+    [mifs_vIssuePerBranchPerTopic].[Branch] AS [Branch], 
+    [mifs_vIssuePerBranchPerTopic].[BranchName] AS [BranchName]
+    FROM [dbo].[mifs_vIssuePerBranchPerTopic] AS [mifs_vIssuePerBranchPerTopic]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vIssuePerWeekPerStatus" EntityType="Self.mifs_vIssuePerWeekPerStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vIssuePerWeekPerStatus].[id] AS [id], 
+    [mifs_vIssuePerWeekPerStatus].[TotalOpen] AS [TotalOpen], 
+    [mifs_vIssuePerWeekPerStatus].[TotalClosed] AS [TotalClosed], 
+    [mifs_vIssuePerWeekPerStatus].[TotalParked] AS [TotalParked], 
+    [mifs_vIssuePerWeekPerStatus].[TotalDropped] AS [TotalDropped], 
+    [mifs_vIssuePerWeekPerStatus].[CurrentTopicId] AS [CurrentTopicId], 
+    [mifs_vIssuePerWeekPerStatus].[CurrentTopicDescription] AS [CurrentTopicDescription], 
+    [mifs_vIssuePerWeekPerStatus].[IssuedYear] AS [IssuedYear], 
+    [mifs_vIssuePerWeekPerStatus].[IssuedMonth] AS [IssuedMonth], 
+    [mifs_vIssuePerWeekPerStatus].[IssuedWeek] AS [IssuedWeek], 
+    [mifs_vIssuePerWeekPerStatus].[CurrentYear] AS [CurrentYear], 
+    [mifs_vIssuePerWeekPerStatus].[CurrentMonth] AS [CurrentMonth], 
+    [mifs_vIssuePerWeekPerStatus].[CurrentWeek] AS [CurrentWeek]
+    FROM [dbo].[mifs_vIssuePerWeekPerStatus] AS [mifs_vIssuePerWeekPerStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vIssueReport" EntityType="Self.mifs_vIssueReport" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vIssueReport].[issueId] AS [issueId], 
+    [mifs_vIssueReport].[CurrentTopicId] AS [CurrentTopicId], 
+    [mifs_vIssueReport].[CurrentTopicDescription] AS [CurrentTopicDescription], 
+    [mifs_vIssueReport].[Details] AS [Details], 
+    [mifs_vIssueReport].[actionplan] AS [actionplan], 
+    [mifs_vIssueReport].[DateIssued] AS [DateIssued], 
+    [mifs_vIssueReport].[targetcompletiondate] AS [targetcompletiondate], 
+    [mifs_vIssueReport].[IssueStatus] AS [IssueStatus], 
+    [mifs_vIssueReport].[FollowUpCounter] AS [FollowUpCounter], 
+    [mifs_vIssueReport].[IssueDateParked] AS [IssueDateParked], 
+    [mifs_vIssueReport].[IssueDateResumed] AS [IssueDateResumed], 
+    [mifs_vIssueReport].[reference] AS [reference], 
+    [mifs_vIssueReport].[raisedby] AS [raisedby], 
+    [mifs_vIssueReport].[raisedbyemail] AS [raisedbyemail], 
+    [mifs_vIssueReport].[raisedbyempid] AS [raisedbyempid], 
+    [mifs_vIssueReport].[raisedbyphone] AS [raisedbyphone], 
+    [mifs_vIssueReport].[responsible] AS [responsible], 
+    [mifs_vIssueReport].[responemail] AS [responemail], 
+    [mifs_vIssueReport].[responempid] AS [responempid], 
+    [mifs_vIssueReport].[responphone] AS [responphone], 
+    [mifs_vIssueReport].[sourcetype] AS [sourcetype], 
+    [mifs_vIssueReport].[TopicAlias] AS [TopicAlias], 
+    [mifs_vIssueReport].[followfrequency] AS [followfrequency], 
+    [mifs_vIssueReport].[followmail] AS [followmail], 
+    [mifs_vIssueReport].[newstatus] AS [newstatus], 
+    [mifs_vIssueReport].[acknowledgedbysource] AS [acknowledgedbysource], 
+    [mifs_vIssueReport].[acknowledgesourcedate] AS [acknowledgesourcedate], 
+    [mifs_vIssueReport].[acknowledgebyrespondent] AS [acknowledgebyrespondent], 
+    [mifs_vIssueReport].[acknowledgerespondentdate] AS [acknowledgerespondentdate], 
+    [mifs_vIssueReport].[firstsenddate] AS [firstsenddate], 
+    [mifs_vIssueReport].[lastsenddate] AS [lastsenddate], 
+    [mifs_vIssueReport].[statchangefupcounter] AS [statchangefupcounter], 
+    [mifs_vIssueReport].[meetingId] AS [meetingId], 
+    [mifs_vIssueReport].[created_by] AS [created_by], 
+    [mifs_vIssueReport].[create_date] AS [create_date], 
+    [mifs_vIssueReport].[collaboratorname] AS [collaboratorname], 
+    [mifs_vIssueReport].[collaboratoremail] AS [collaboratoremail], 
+    [mifs_vIssueReport].[collaboratorempid] AS [collaboratorempid], 
+    [mifs_vIssueReport].[hashcode] AS [hashcode], 
+    [mifs_vIssueReport].[pflag] AS [pflag], 
+    [mifs_vIssueReport].[issuetype] AS [issuetype], 
+    [mifs_vIssueReport].[category] AS [category], 
+    [mifs_vIssueReport].[closedate] AS [closedate], 
+    [mifs_vIssueReport].[referenceId] AS [referenceId], 
+    [mifs_vIssueReport].[referencetype] AS [referencetype], 
+    [mifs_vIssueReport].[DateClosed] AS [DateClosed], 
+    [mifs_vIssueReport].[Updates] AS [Updates], 
+    [mifs_vIssueReport].[ResponsivenessRating] AS [ResponsivenessRating]
+    FROM [dbo].[mifs_vIssueReport] AS [mifs_vIssueReport]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vIssues" EntityType="Self.mifs_vIssues" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vIssues].[issueId] AS [issueId], 
+    [mifs_vIssues].[CurrentTopicId] AS [CurrentTopicId], 
+    [mifs_vIssues].[CurrentTopicDescription] AS [CurrentTopicDescription], 
+    [mifs_vIssues].[Details] AS [Details], 
+    [mifs_vIssues].[actionplan] AS [actionplan], 
+    [mifs_vIssues].[DateIssued] AS [DateIssued], 
+    [mifs_vIssues].[PreviousTopicId] AS [PreviousTopicId], 
+    [mifs_vIssues].[PreviousTopicDescription] AS [PreviousTopicDescription], 
+    [mifs_vIssues].[targetcompletiondate] AS [targetcompletiondate], 
+    [mifs_vIssues].[FollowUpFrequency] AS [FollowUpFrequency], 
+    [mifs_vIssues].[IsFollowUpOnEmail] AS [IsFollowUpOnEmail], 
+    [mifs_vIssues].[IsFollowUpOnSMS] AS [IsFollowUpOnSMS], 
+    [mifs_vIssues].[IssueStatus] AS [IssueStatus], 
+    [mifs_vIssues].[CreatedBy] AS [CreatedBy], 
+    [mifs_vIssues].[CreateDate] AS [CreateDate], 
+    [mifs_vIssues].[newstatus] AS [newstatus], 
+    [mifs_vIssues].[IsAcknowledgeBySource] AS [IsAcknowledgeBySource], 
+    [mifs_vIssues].[SourceAcknowledgeDate] AS [SourceAcknowledgeDate], 
+    [mifs_vIssues].[IsAcknowledgeByRespondent] AS [IsAcknowledgeByRespondent], 
+    [mifs_vIssues].[RespondentAcknowledgeDate] AS [RespondentAcknowledgeDate], 
+    [mifs_vIssues].[FollowUpCounter] AS [FollowUpCounter], 
+    [mifs_vIssues].[IssueDateParked] AS [IssueDateParked], 
+    [mifs_vIssues].[IssueDateResumed] AS [IssueDateResumed], 
+    [mifs_vIssues].[NoOfAttachment] AS [NoOfAttachment], 
+    [mifs_vIssues].[IssueHashcode] AS [IssueHashcode], 
+    [mifs_vIssues].[meetingId] AS [meetingId], 
+    [mifs_vIssues].[agenda] AS [agenda], 
+    [mifs_vIssues].[datestart] AS [datestart], 
+    [mifs_vIssues].[dateend] AS [dateend], 
+    [mifs_vIssues].[venue] AS [venue], 
+    [mifs_vIssues].[facilitator] AS [facilitator], 
+    [mifs_vIssues].[reference] AS [reference], 
+    [mifs_vIssues].[TopicHashcode] AS [TopicHashcode], 
+    [mifs_vIssues].[raisedby] AS [raisedby], 
+    [mifs_vIssues].[raisedbyemail] AS [raisedbyemail], 
+    [mifs_vIssues].[raisedbyempid] AS [raisedbyempid], 
+    [mifs_vIssues].[raisedbyphone] AS [raisedbyphone], 
+    [mifs_vIssues].[responsible] AS [responsible], 
+    [mifs_vIssues].[responemail] AS [responemail], 
+    [mifs_vIssues].[responempid] AS [responempid], 
+    [mifs_vIssues].[responphone] AS [responphone], 
+    [mifs_vIssues].[sourcetype] AS [sourcetype], 
+    [mifs_vIssues].[lastsenddate] AS [lastsenddate], 
+    [mifs_vIssues].[NoOfResponse] AS [NoOfResponse], 
+    [mifs_vIssues].[PriorityFlag] AS [PriorityFlag], 
+    [mifs_vIssues].[DateClosed] AS [DateClosed], 
+    [mifs_vIssues].[Collaborator] AS [Collaborator], 
+    [mifs_vIssues].[TypeOfIssue] AS [TypeOfIssue], 
+    [mifs_vIssues].[category] AS [category], 
+    [mifs_vIssues].[TopicAlias] AS [TopicAlias], 
+    [mifs_vIssues].[bgcolor] AS [bgcolor], 
+    [mifs_vIssues].[collaboratoremail] AS [collaboratoremail], 
+    [mifs_vIssues].[collaboratorempid] AS [collaboratorempid], 
+    [mifs_vIssues].[HasResponseAttachment] AS [HasResponseAttachment], 
+    [mifs_vIssues].[referenceId] AS [referenceId], 
+    [mifs_vIssues].[referencetype] AS [referencetype], 
+    [mifs_vIssues].[statchangecounterlimit] AS [statchangecounterlimit], 
+    [mifs_vIssues].[topicId] AS [topicId], 
+    [mifs_vIssues].[statchangefupcounter] AS [statchangefupcounter], 
+    [mifs_vIssues].[firstsenddate] AS [firstsenddate], 
+    [mifs_vIssues].[refsource] AS [refsource], 
+    [mifs_vIssues].[issuecategory] AS [issuecategory], 
+    [mifs_vIssues].[branchcode] AS [branchcode], 
+    [mifs_vIssues].[JobLevelGroup] AS [JobLevelGroup], 
+    [mifs_vIssues].[Position] AS [Position], 
+    [mifs_vIssues].[topiclevel] AS [topiclevel]
+    FROM [dbo].[mifs_vIssues] AS [mifs_vIssues]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vIssueTrendMonthly" EntityType="Self.mifs_vIssueTrendMonthly" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vIssueTrendMonthly].[CurrentTopicDescription] AS [CurrentTopicDescription], 
+    [mifs_vIssueTrendMonthly].[IssuedYear] AS [IssuedYear], 
+    [mifs_vIssueTrendMonthly].[IssuedMonth] AS [IssuedMonth], 
+    [mifs_vIssueTrendMonthly].[Open] AS [Open], 
+    [mifs_vIssueTrendMonthly].[Parked] AS [Parked], 
+    [mifs_vIssueTrendMonthly].[Closed] AS [Closed], 
+    [mifs_vIssueTrendMonthly].[Dropped] AS [Dropped], 
+    [mifs_vIssueTrendMonthly].[Total] AS [Total]
+    FROM [dbo].[mifs_vIssueTrendMonthly] AS [mifs_vIssueTrendMonthly]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vMeeting" EntityType="Self.mifs_vMeeting" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vMeeting].[meetingId] AS [meetingId], 
+    [mifs_vMeeting].[topicId] AS [topicId], 
+    [mifs_vMeeting].[TopicDescription] AS [TopicDescription], 
+    [mifs_vMeeting].[agenda] AS [agenda], 
+    [mifs_vMeeting].[venue] AS [venue], 
+    [mifs_vMeeting].[facilitator] AS [facilitator], 
+    [mifs_vMeeting].[created_by] AS [created_by], 
+    [mifs_vMeeting].[create_date] AS [create_date], 
+    [mifs_vMeeting].[TotalExpectedAttendees] AS [TotalExpectedAttendees], 
+    [mifs_vMeeting].[TotalActualAttendees] AS [TotalActualAttendees], 
+    [mifs_vMeeting].[TotalMinuteCaptured] AS [TotalMinuteCaptured], 
+    [mifs_vMeeting].[YearNumber] AS [YearNumber], 
+    [mifs_vMeeting].[MonthNumber] AS [MonthNumber], 
+    [mifs_vMeeting].[WeekNumber] AS [WeekNumber]
+    FROM [dbo].[mifs_vMeeting] AS [mifs_vMeeting]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vMeetingSchedule" EntityType="Self.mifs_vMeetingSchedule" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vMeetingSchedule].[meetingId] AS [meetingId], 
+    [mifs_vMeetingSchedule].[hashcode] AS [hashcode], 
+    [mifs_vMeetingSchedule].[topicId] AS [topicId], 
+    [mifs_vMeetingSchedule].[agenda] AS [agenda], 
+    [mifs_vMeetingSchedule].[datestart] AS [datestart], 
+    [mifs_vMeetingSchedule].[dateend] AS [dateend], 
+    [mifs_vMeetingSchedule].[venue] AS [venue], 
+    [mifs_vMeetingSchedule].[facilitator] AS [facilitator], 
+    [mifs_vMeetingSchedule].[created_by] AS [created_by], 
+    [mifs_vMeetingSchedule].[create_date] AS [create_date], 
+    [mifs_vMeetingSchedule].[status] AS [status], 
+    [mifs_vMeetingSchedule].[notes] AS [notes], 
+    [mifs_vMeetingSchedule].[memberId] AS [memberId], 
+    [mifs_vMeetingSchedule].[yr] AS [yr], 
+    [mifs_vMeetingSchedule].[month] AS [month], 
+    [mifs_vMeetingSchedule].[aliascode] AS [aliascode], 
+    [mifs_vMeetingSchedule].[description] AS [description], 
+    [mifs_vMeetingSchedule].[followupday] AS [followupday], 
+    [mifs_vMeetingSchedule].[followuphour] AS [followuphour], 
+    [mifs_vMeetingSchedule].[emailaddress] AS [emailaddress]
+    FROM [dbo].[mifs_vMeetingSchedule] AS [mifs_vMeetingSchedule]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vNotMember" EntityType="Self.mifs_vNotMember" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vNotMember].[empl_id] AS [empl_id], 
+    [mifs_vNotMember].[employeename2] AS [employeename2], 
+    [mifs_vNotMember].[emailadd] AS [emailadd], 
+    [mifs_vNotMember].[positionname] AS [positionname], 
+    [mifs_vNotMember].[employeepresentcontact] AS [employeepresentcontact], 
+    [mifs_vNotMember].[corporate] AS [corporate]
+    FROM [dbo].[mifs_vNotMember] AS [mifs_vNotMember]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vOpenIssuePerWeek" EntityType="Self.mifs_vOpenIssuePerWeek" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vOpenIssuePerWeek].[Total] AS [Total], 
+    [mifs_vOpenIssuePerWeek].[CurrentTopicDescription] AS [CurrentTopicDescription], 
+    [mifs_vOpenIssuePerWeek].[IssuedYear] AS [IssuedYear], 
+    [mifs_vOpenIssuePerWeek].[IssuedMonth] AS [IssuedMonth], 
+    [mifs_vOpenIssuePerWeek].[IssuedWeek] AS [IssuedWeek], 
+    [mifs_vOpenIssuePerWeek].[CurrentYear] AS [CurrentYear], 
+    [mifs_vOpenIssuePerWeek].[CurrentMonth] AS [CurrentMonth], 
+    [mifs_vOpenIssuePerWeek].[CurrentWeek] AS [CurrentWeek]
+    FROM [dbo].[mifs_vOpenIssuePerWeek] AS [mifs_vOpenIssuePerWeek]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vParking" EntityType="Self.mifs_vParking" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vParking].[Responsible] AS [Responsible], 
+    [mifs_vParking].[IssueId] AS [IssueId], 
+    [mifs_vParking].[TrailOfCommitment] AS [TrailOfCommitment], 
+    [mifs_vParking].[TopicId] AS [TopicId], 
+    [mifs_vParking].[TopicDescription] AS [TopicDescription], 
+    [mifs_vParking].[Issue] AS [Issue], 
+    [mifs_vParking].[ActionPlan] AS [ActionPlan], 
+    [mifs_vParking].[Tollgater] AS [Tollgater], 
+    [mifs_vParking].[Collaborator] AS [Collaborator], 
+    [mifs_vParking].[IssueStatus] AS [IssueStatus], 
+    [mifs_vParking].[DateParked] AS [DateParked]
+    FROM [dbo].[mifs_vParking] AS [mifs_vParking]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vResponse" EntityType="Self.mifs_vResponse" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vResponse].[responseId] AS [responseId], 
+    [mifs_vResponse].[issueId] AS [issueId], 
+    [mifs_vResponse].[topicId] AS [topicId], 
+    [mifs_vResponse].[issuedetails] AS [issuedetails], 
+    [mifs_vResponse].[messagedetails] AS [messagedetails], 
+    [mifs_vResponse].[responsebyempid] AS [responsebyempid], 
+    [mifs_vResponse].[responsedate] AS [responsedate], 
+    [mifs_vResponse].[responseby] AS [responseby], 
+    [mifs_vResponse].[responsebyemail] AS [responsebyemail], 
+    [mifs_vResponse].[raisedbyphone] AS [raisedbyphone], 
+    [mifs_vResponse].[raisedbyempid] AS [raisedbyempid], 
+    [mifs_vResponse].[raisedbyemail] AS [raisedbyemail], 
+    [mifs_vResponse].[raisedby] AS [raisedby], 
+    [mifs_vResponse].[responsible] AS [responsible], 
+    [mifs_vResponse].[responemail] AS [responemail], 
+    [mifs_vResponse].[responempid] AS [responempid], 
+    [mifs_vResponse].[responphone] AS [responphone], 
+    [mifs_vResponse].[NoOfAttachment] AS [NoOfAttachment], 
+    [mifs_vResponse].[islock] AS [islock], 
+    [mifs_vResponse].[isdeleted] AS [isdeleted]
+    FROM [dbo].[mifs_vResponse] AS [mifs_vResponse]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vTopicLevel" EntityType="Self.mifs_vTopicLevel" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vTopicLevel].[parent_code] AS [parent_code], 
+    [mifs_vTopicLevel].[child_code] AS [child_code], 
+    [mifs_vTopicLevel].[levelcode] AS [levelcode], 
+    [mifs_vTopicLevel].[description] AS [description], 
+    [mifs_vTopicLevel].[level] AS [level], 
+    [mifs_vTopicLevel].[status] AS [status]
+    FROM [dbo].[mifs_vTopicLevel] AS [mifs_vTopicLevel]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mifs_vTopicMembers" EntityType="Self.mifs_vTopicMembers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mifs_vTopicMembers].[topicId] AS [topicId], 
+    [mifs_vTopicMembers].[TopicDescription] AS [TopicDescription], 
+    [mifs_vTopicMembers].[memberId] AS [memberId], 
+    [mifs_vTopicMembers].[MemberName] AS [MemberName], 
+    [mifs_vTopicMembers].[MemberMobileNumber] AS [MemberMobileNumber], 
+    [mifs_vTopicMembers].[MemberEmailAddress] AS [MemberEmailAddress], 
+    [mifs_vTopicMembers].[CreateBy] AS [CreateBy], 
+    [mifs_vTopicMembers].[CreateDate] AS [CreateDate], 
+    [mifs_vTopicMembers].[nickname] AS [nickname], 
+    [mifs_vTopicMembers].[status] AS [status], 
+    [mifs_vTopicMembers].[fupfrequency] AS [fupfrequency], 
+    [mifs_vTopicMembers].[sourcelevel] AS [sourcelevel], 
+    [mifs_vTopicMembers].[hashcode] AS [hashcode], 
+    [mifs_vTopicMembers].[occurence] AS [occurence], 
+    [mifs_vTopicMembers].[bgcolor] AS [bgcolor], 
+    [mifs_vTopicMembers].[accesslevel] AS [accesslevel], 
+    [mifs_vTopicMembers].[isinclude] AS [isinclude]
+    FROM [dbo].[mifs_vTopicMembers] AS [mifs_vTopicMembers]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_core_appmenu_core_appsystem" Association="Self.FK_core_appmenu_core_appsystem">
+      <End Role="core_appsystem" EntitySet="core_appsystem" />
+      <End Role="core_appmenu" EntitySet="core_appmenu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_core_appmenuuser_core_users" Association="Self.FK_core_appmenuuser_core_users">
+      <End Role="core_users" EntitySet="core_users" />
+      <End Role="core_appmenuuser" EntitySet="core_appmenuuser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_core_appsystemuser_core_users" Association="Self.FK_core_appsystemuser_core_users">
+      <End Role="core_users" EntitySet="core_users" />
+      <End Role="core_appsystemuser" EntitySet="core_appsystemuser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_core_branchmst_ core_district" Association="Self.FK_core_branchmst_ core_district">
+      <End Role="core_district" EntitySet="core_district" />
+      <End Role="core_branchmst" EntitySet="core_branchmst" />
+    </AssociationSet>
+    <AssociationSet Name="FK_core_userswarehouse_core_appsystem" Association="Self.FK_core_userswarehouse_core_appsystem">
+      <End Role="core_appsystem" EntitySet="core_appsystem" />
+      <End Role="core_userswarehouse" EntitySet="core_userswarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_core_userswarehouse_core_users" Association="Self.FK_core_userswarehouse_core_users">
+      <End Role="core_users" EntitySet="core_users" />
+      <End Role="core_userswarehouse" EntitySet="core_userswarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_attendance_mifs_meeting" Association="Self.FK_mifs_attendance_mifs_meeting">
+      <End Role="mifs_meeting" EntitySet="mifs_meeting" />
+      <End Role="mifs_attendance" EntitySet="mifs_attendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_meeting_mifs_sourcetype" Association="Self.FK_mifs_meeting_mifs_sourcetype">
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+      <End Role="mifs_meeting" EntitySet="mifs_meeting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_respondent_mifs_issues" Association="Self.FK_mifs_respondent_mifs_issues">
+      <End Role="mifs_issues" EntitySet="mifs_issues" />
+      <End Role="mifs_respondent" EntitySet="mifs_respondent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_response_mifs_issues" Association="Self.FK_mifs_response_mifs_issues">
+      <End Role="mifs_issues" EntitySet="mifs_issues" />
+      <End Role="mifs_response" EntitySet="mifs_response" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_sourcemembers_mifs_source" Association="Self.FK_mifs_sourcemembers_mifs_source">
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+      <End Role="mifs_topicmembers" EntitySet="mifs_topicmembers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mifs_topic_mifs_topicgroup" Association="Self.FK_mifs_topic_mifs_topicgroup">
+      <End Role="mifs_topicgroup" EntitySet="mifs_topicgroup" />
+      <End Role="mifs_topic" EntitySet="mifs_topic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pism_useranalysisgroupaccess_core_users" Association="Self.FK_pism_useranalysisgroupaccess_core_users">
+      <End Role="core_users" EntitySet="core_users" />
+      <End Role="rms_useranalysisgroupaccess" EntitySet="rms_useranalysisgroupaccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_wms_serverwarehouses_wms_servers" Association="Self.FK_wms_serverwarehouses_wms_servers">
+      <End Role="wms_servers" EntitySet="wms_servers" />
+      <End Role="wms_serverwarehouses" EntitySet="wms_serverwarehouses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_wms_userserverwarehouse_core_users" Association="Self.FK_wms_userserverwarehouse_core_users">
+      <End Role="core_users" EntitySet="core_users" />
+      <End Role="wms_userserverwarehouse" EntitySet="wms_userserverwarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_wms_userserverwarehouse_wms_serverwarehouses" Association="Self.FK_wms_userserverwarehouse_wms_serverwarehouses">
+      <End Role="wms_serverwarehouses" EntitySet="wms_serverwarehouses" />
+      <End Role="wms_userserverwarehouse" EntitySet="wms_userserverwarehouse" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

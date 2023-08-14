@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PaloUpMailModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="core_mailer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="senderDisplayEmail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="senderDisplayName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="recipient" Type="varchar(max)" Nullable="false" />
+    <Property Name="ccrecipient" Type="varchar(max)" />
+    <Property Name="bccrecipient" Type="varchar(max)" />
+    <Property Name="mailSubject" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="mailBody" Type="varchar(max)" Nullable="false" />
+    <Property Name="filePath" Type="varchar" MaxLength="250" />
+    <Property Name="mailFormat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mailStatus" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="createdBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PaloUpMailModelStoreContainer">
+    <EntitySet Name="core_mailer" EntityType="Self.core_mailer" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

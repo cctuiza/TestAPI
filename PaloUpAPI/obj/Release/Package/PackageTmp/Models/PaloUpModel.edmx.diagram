@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab66a04935b14256915ddfac0698c6ae" Name="Diagram1" ZoomLevel="108">
+        <EntityTypeShape EntityType="PALOUPModel.core_employee" Width="1.5" PointX="19.375" PointY="9.75" />
+        <EntityTypeShape EntityType="PALOUPModel.token" Width="1.5" PointX="11.375" PointY="20.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_attachments" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_drivepath" Width="1.5" PointX="21.375" PointY="4.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_temp_attachment" Width="1.5" PointX="21.375" PointY="11.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_users" Width="1.5" PointX="17.375" PointY="21.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_system" Width="1.5" PointX="21.375" PointY="18.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_appsystem" Width="1.5" PointX="19.375" PointY="21.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_link" Width="1.5" PointX="21.375" PointY="21.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_UserMenuList" Width="1.5" PointX="13.375" PointY="22.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_vAdminMenu" Width="1.5" PointX="23.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_vParentMenu" Width="1.5" PointX="23.375" PointY="4.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_appmenu" Width="1.5" PointX="21.625" PointY="32.125" />
+        <EntityTypeShape EntityType="PALOUPModel.core_appmenuuser" Width="1.5" PointX="19.625" PointY="28.5" />
+        <EntityTypeShape EntityType="PALOUPModel.core_appsystemuser" Width="1.5" PointX="19.625" PointY="25.75" />
+        <EntityTypeShape EntityType="PALOUPModel.ole_examinee" Width="1.5" PointX="23.375" PointY="8.75" />
+        <AssociationConnector Association="PALOUPModel.FK_core_appmenu_core_appsystem" />
+        <AssociationConnector Association="PALOUPModel.FK_core_appmenuuser_core_users" />
+        <AssociationConnector Association="PALOUPModel.FK_core_appsystemuser_core_users" />
+        <EntityTypeShape EntityType="PALOUPModel.core_branchmst" Width="1.5" PointX="25.625" PointY="15.125" />
+        <EntityTypeShape EntityType="PALOUPModel.core_district" Width="1.5" PointX="23.375" PointY="16.625" />
+        <EntityTypeShape EntityType="PALOUPModel.core_userswarehouse" Width="1.5" PointX="22.625" PointY="25.25" />
+        <EntityTypeShape EntityType="PALOUPModel.core_vEmployeeNotUser" Width="1.5" PointX="9.375" PointY="23.75" />
+        <AssociationConnector Association="PALOUPModel.FK_core_userswarehouse_core_appsystem" />
+        <AssociationConnector Association="PALOUPModel.FK_core_branchmst__core_district" />
+        <AssociationConnector Association="PALOUPModel.FK_core_userswarehouse_core_users" />
+        <EntityTypeShape EntityType="PALOUPModel.core_appsettings" Width="1.5" PointX="23.375" PointY="21.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_confirmation" Width="1.5" PointX="25.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.core_derictory" Width="1.5" PointX="25.375" PointY="4.75" />
+        <EntityTypeShape EntityType="PALOUPModel.apps_file_map" Width="1.5" PointX="25.375" PointY="7.75" />
+        <EntityTypeShape EntityType="PALOUPModel.rms_useranalysisgroupaccess" Width="1.5" PointX="19.625" PointY="37.625" />
+        <AssociationConnector Association="PALOUPModel.FK_pism_useranalysisgroupaccess_core_users" />
+        <EntityTypeShape EntityType="PALOUPModel.wms_userserverwarehouse" Width="1.5" PointX="19.625" PointY="40.375" />
+        <AssociationConnector Association="PALOUPModel.FK_wms_userserverwarehouse_core_users" />
+        <EntityTypeShape EntityType="PALOUPModel.wms_serverwarehouses" Width="1.5" PointX="25.375" PointY="11" />
+        <AssociationConnector Association="PALOUPModel.FK_wms_userserverwarehouse_wms_serverwarehouses" />
+        <EntityTypeShape EntityType="PALOUPModel.wms_servers" Width="1.5" PointX="23.125" PointY="38" />
+        <AssociationConnector Association="PALOUPModel.FK_wms_serverwarehouses_wms_servers" />
+        <EntityTypeShape EntityType="PALOUPModel.app_control_no" Width="1.5" PointX="27.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.fpma_member" Width="1.5" PointX="27.375" PointY="3.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_attendance" Width="1.5" PointX="7.5" PointY="16.875" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_meeting" Width="1.5" PointX="5.25" PointY="16.5" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_members" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_respondent" Width="1.5" PointX="7.5" PointY="6.25" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_response" Width="1.5" PointX="7.5" PointY="2.375" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_topicgroup" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_topicmembers" Width="1.5" PointX="5.25" PointY="13.375" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_ladder" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_parking" Width="1.5" PointX="9.75" PointY="5.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_Analytics" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_AnalyticsWithResponse" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.Mifs_DailyUtilization" Width="1.5" PointX="7.75" PointY="13.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_FollowUpOpen" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_SumOfIssues" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vAccountValidation" Width="1.5" PointX="15.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vClosedPerResponsible" Width="1.5" PointX="15.75" PointY="10.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vFirmAttendance" Width="1.5" PointX="15.75" PointY="14.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vIssueClosedPerEmployeeX" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vIssueCount" Width="1.5" PointX="17.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vIssueForAcknowledgement" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vIssuePerBranchPerTopic" Width="1.5" PointX="2.75" PointY="22.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vIssuePerWeekPerStatus" Width="1.5" PointX="4.75" PointY="22.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vIssueReport" Width="1.5" PointX="6.75" PointY="22.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vIssues" Width="1.5" PointX="25.75" PointY="23.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vIssueTrendMonthly" Width="1.5" PointX="13.75" PointY="18.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vMeeting" Width="1.5" PointX="27.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vMeetingSchedule" Width="1.5" PointX="27.75" PointY="23.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vNotMember" Width="1.5" PointX="9.75" PointY="17.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vOpenIssuePerWeek" Width="1.5" PointX="27.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vParking" Width="1.5" PointX="2.75" PointY="28.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vResponse" Width="1.5" PointX="28.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vTopicLevel" Width="1.5" PointX="15.75" PointY="18.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_vTopicMembers" Width="1.5" PointX="15.75" PointY="28.75" />
+        <AssociationConnector Association="PALOUPModel.FK_mifs_attendance_mifs_meeting" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_topic" Width="1.5" PointX="3" PointY="8.875" />
+        <AssociationConnector Association="PALOUPModel.FK_mifs_meeting_mifs_sourcetype" />
+        <AssociationConnector Association="PALOUPModel.FK_mifs_sourcemembers_mifs_source" />
+        <AssociationConnector Association="PALOUPModel.FK_mifs_topic_mifs_topicgroup" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_dropdown" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_dropdowngroup" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PALOUPModel.mifs_issues" Width="1.5" PointX="5.25" PointY="0.75" />
+        <AssociationConnector Association="PALOUPModel.FK_mifs_respondent_mifs_issues" />
+        <AssociationConnector Association="PALOUPModel.FK_mifs_response_mifs_issues" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

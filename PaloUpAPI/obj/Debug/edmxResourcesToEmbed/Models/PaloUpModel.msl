@@ -1,0 +1,1640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PALOUPModelStoreContainer" CdmEntityContainer="PALOUPEntities">
+    <EntitySetMapping Name="core_employee">
+      <EntityTypeMapping TypeName="PALOUPModel.core_employee">
+        <MappingFragment StoreEntitySet="core_employee">
+          <ScalarProperty Name="sss" ColumnName="sss" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="ImmediateLevel" ColumnName="ImmediateLevel" />
+          <ScalarProperty Name="ImmediateSection" ColumnName="ImmediateSection" />
+          <ScalarProperty Name="ImmediateDepartment" ColumnName="ImmediateDepartment" />
+          <ScalarProperty Name="ImmediatePosition" ColumnName="ImmediatePosition" />
+          <ScalarProperty Name="ImmediateBranch" ColumnName="ImmediateBranch" />
+          <ScalarProperty Name="ImmediateSBU" ColumnName="ImmediateSBU" />
+          <ScalarProperty Name="ImmediateDHired" ColumnName="ImmediateDHired" />
+          <ScalarProperty Name="ImmediateEmail" ColumnName="ImmediateEmail" />
+          <ScalarProperty Name="ImmediateStatus" ColumnName="ImmediateStatus" />
+          <ScalarProperty Name="ImmediateBDay" ColumnName="ImmediateBDay" />
+          <ScalarProperty Name="ImmediateName" ColumnName="ImmediateName" />
+          <ScalarProperty Name="ImmediateID" ColumnName="ImmediateID" />
+          <ScalarProperty Name="homecontact" ColumnName="homecontact" />
+          <ScalarProperty Name="employeepresentcontact" ColumnName="employeepresentcontact" />
+          <ScalarProperty Name="employeehomeaddress" ColumnName="employeehomeaddress" />
+          <ScalarProperty Name="employeepresentaddress" ColumnName="employeepresentaddress" />
+          <ScalarProperty Name="typedescription" ColumnName="typedescription" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="joblevelgroup" ColumnName="joblevelgroup" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="levelcode" ColumnName="levelcode" />
+          <ScalarProperty Name="sectionname" ColumnName="sectionname" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="departmentname" ColumnName="departmentname" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="positionname" ColumnName="positionname" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="brancharea" ColumnName="brancharea" />
+          <ScalarProperty Name="branchname" ColumnName="branchname" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="corporateName" ColumnName="corporateName" />
+          <ScalarProperty Name="corporate" ColumnName="corporate" />
+          <ScalarProperty Name="effectivitydate" ColumnName="effectivitydate" />
+          <ScalarProperty Name="datehired" ColumnName="datehired" />
+          <ScalarProperty Name="emailadd" ColumnName="emailadd" />
+          <ScalarProperty Name="civilstatus" ColumnName="civilstatus" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="employeename2" ColumnName="employeename2" />
+          <ScalarProperty Name="employeename" ColumnName="employeename" />
+          <ScalarProperty Name="empl_id" ColumnName="empl_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tokens">
+      <EntityTypeMapping TypeName="PALOUPModel.token">
+        <MappingFragment StoreEntitySet="tokens">
+          <ScalarProperty Name="IsExpire" ColumnName="IsExpire" />
+          <ScalarProperty Name="ExpiresOn" ColumnName="ExpiresOn" />
+          <ScalarProperty Name="IssuedOn" ColumnName="IssuedOn" />
+          <ScalarProperty Name="AuthToken" ColumnName="AuthToken" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TokenId" ColumnName="TokenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_attachments">
+      <EntityTypeMapping TypeName="PALOUPModel.core_attachments">
+        <MappingFragment StoreEntitySet="core_attachments">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="uploadtype" ColumnName="uploadtype" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="newfilename" ColumnName="newfilename" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="attachtype" ColumnName="attachtype" />
+          <ScalarProperty Name="transactionId" ColumnName="transactionId" />
+          <ScalarProperty Name="attachmentId" ColumnName="attachmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_drivepath">
+      <EntityTypeMapping TypeName="PALOUPModel.core_drivepath">
+        <MappingFragment StoreEntitySet="core_drivepath">
+          <ScalarProperty Name="crea_dte" ColumnName="crea_dte" />
+          <ScalarProperty Name="crea_by" ColumnName="crea_by" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="drive_path" ColumnName="drive_path" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_temp_attachment">
+      <EntityTypeMapping TypeName="PALOUPModel.core_temp_attachment">
+        <MappingFragment StoreEntitySet="core_temp_attachment">
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="newfilename" ColumnName="newfilename" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="refmodule" ColumnName="refmodule" />
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="attachmentId" ColumnName="attachmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_users">
+      <EntityTypeMapping TypeName="PALOUPModel.core_users">
+        <MappingFragment StoreEntitySet="core_users">
+          <ScalarProperty Name="isverify" ColumnName="isverify" />
+          <ScalarProperty Name="isphonevalid" ColumnName="isphonevalid" />
+          <ScalarProperty Name="ismailvalid" ColumnName="ismailvalid" />
+          <ScalarProperty Name="canaccessaquila" ColumnName="canaccessaquila" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="hashcode" ColumnName="hashcode" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+          <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
+          <ScalarProperty Name="emplId" ColumnName="emplId" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="userpass" ColumnName="userpass" />
+          <ScalarProperty Name="userrole" ColumnName="userrole" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_system">
+      <EntityTypeMapping TypeName="PALOUPModel.core_system">
+        <MappingFragment StoreEntitySet="core_system">
+          <ScalarProperty Name="mobadminpincode" ColumnName="mobadminpincode" />
+          <ScalarProperty Name="pismutilizationyear" ColumnName="pismutilizationyear" />
+          <ScalarProperty Name="pismutilizationmonth" ColumnName="pismutilizationmonth" />
+          <ScalarProperty Name="debugpassword" ColumnName="debugpassword" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_appsystem">
+      <EntityTypeMapping TypeName="PALOUPModel.core_appsystem">
+        <MappingFragment StoreEntitySet="core_appsystem">
+          <ScalarProperty Name="emailsupport" ColumnName="emailsupport" />
+          <ScalarProperty Name="ismaintenance" ColumnName="ismaintenance" />
+          <ScalarProperty Name="showusermenu" ColumnName="showusermenu" />
+          <ScalarProperty Name="showwebapps" ColumnName="showwebapps" />
+          <ScalarProperty Name="about" ColumnName="about" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="sysdescription" ColumnName="sysdescription" />
+          <ScalarProperty Name="sysname" ColumnName="sysname" />
+          <ScalarProperty Name="syscode" ColumnName="syscode" />
+          <ScalarProperty Name="sysId" ColumnName="sysId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_link">
+      <EntityTypeMapping TypeName="PALOUPModel.core_link">
+        <MappingFragment StoreEntitySet="core_link">
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="sourceapplication" ColumnName="sourceapplication" />
+          <ScalarProperty Name="recipientemail" ColumnName="recipientemail" />
+          <ScalarProperty Name="isused" ColumnName="isused" />
+          <ScalarProperty Name="expirydate" ColumnName="expirydate" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="uuid" ColumnName="uuid" />
+          <ScalarProperty Name="linkId" ColumnName="linkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_UserMenuList">
+      <EntityTypeMapping TypeName="PALOUPModel.core_UserMenuList">
+        <MappingFragment StoreEntitySet="core_UserMenuList">
+          <ScalarProperty Name="menucode" ColumnName="menucode" />
+          <ScalarProperty Name="formobile" ColumnName="formobile" />
+          <ScalarProperty Name="ChildIcon" ColumnName="ChildIcon" />
+          <ScalarProperty Name="ParentIcon" ColumnName="ParentIcon" />
+          <ScalarProperty Name="sysdescription" ColumnName="sysdescription" />
+          <ScalarProperty Name="syscode" ColumnName="syscode" />
+          <ScalarProperty Name="ParentMenuOrder" ColumnName="ParentMenuOrder" />
+          <ScalarProperty Name="forweb" ColumnName="forweb" />
+          <ScalarProperty Name="MENUTYPEDES" ColumnName="MENUTYPEDES" />
+          <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="canopen" ColumnName="canopen" />
+          <ScalarProperty Name="canview" ColumnName="canview" />
+          <ScalarProperty Name="candelete" ColumnName="candelete" />
+          <ScalarProperty Name="canedit" ColumnName="canedit" />
+          <ScalarProperty Name="canadd" ColumnName="canadd" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="nenunames" ColumnName="nenunames" />
+          <ScalarProperty Name="menutype" ColumnName="menutype" />
+          <ScalarProperty Name="istransaction" ColumnName="istransaction" />
+          <ScalarProperty Name="prtmenucode" ColumnName="prtmenucode" />
+          <ScalarProperty Name="viewtype" ColumnName="viewtype" />
+          <ScalarProperty Name="menuorder" ColumnName="menuorder" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="MENUPARENT" ColumnName="MENUPARENT" />
+          <ScalarProperty Name="menuname" ColumnName="menuname" />
+          <ScalarProperty Name="menuId" ColumnName="menuId" />
+          <ScalarProperty Name="sysname" ColumnName="sysname" />
+          <ScalarProperty Name="sysId" ColumnName="sysId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_vAdminMenu">
+      <EntityTypeMapping TypeName="PALOUPModel.core_vAdminMenu">
+        <MappingFragment StoreEntitySet="core_vAdminMenu">
+          <ScalarProperty Name="menucode" ColumnName="menucode" />
+          <ScalarProperty Name="sysId" ColumnName="sysId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="parenticon" ColumnName="parenticon" />
+          <ScalarProperty Name="parentmenuorder" ColumnName="parentmenuorder" />
+          <ScalarProperty Name="parentName" ColumnName="parentName" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_vParentMenu">
+      <EntityTypeMapping TypeName="PALOUPModel.core_vParentMenu">
+        <MappingFragment StoreEntitySet="core_vParentMenu">
+          <ScalarProperty Name="menucode" ColumnName="menucode" />
+          <ScalarProperty Name="sysId" ColumnName="sysId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="parenticon" ColumnName="parenticon" />
+          <ScalarProperty Name="parentmenuorder" ColumnName="parentmenuorder" />
+          <ScalarProperty Name="parentName" ColumnName="parentName" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_appmenu">
+      <EntityTypeMapping TypeName="PALOUPModel.core_appmenu">
+        <MappingFragment StoreEntitySet="core_appmenu">
+          <ScalarProperty Name="webdefault" ColumnName="webdefault" />
+          <ScalarProperty Name="mobiledefault" ColumnName="mobiledefault" />
+          <ScalarProperty Name="classicon" ColumnName="classicon" />
+          <ScalarProperty Name="forweb" ColumnName="forweb" />
+          <ScalarProperty Name="formobile" ColumnName="formobile" />
+          <ScalarProperty Name="defaultsupplier" ColumnName="defaultsupplier" />
+          <ScalarProperty Name="defaultcustomer" ColumnName="defaultcustomer" />
+          <ScalarProperty Name="defaultemployee" ColumnName="defaultemployee" />
+          <ScalarProperty Name="accesslevel" ColumnName="accesslevel" />
+          <ScalarProperty Name="menutype" ColumnName="menutype" />
+          <ScalarProperty Name="istransaction" ColumnName="istransaction" />
+          <ScalarProperty Name="viewtype" ColumnName="viewtype" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="menuorder" ColumnName="menuorder" />
+          <ScalarProperty Name="prtmenucode" ColumnName="prtmenucode" />
+          <ScalarProperty Name="menuname" ColumnName="menuname" />
+          <ScalarProperty Name="menucode" ColumnName="menucode" />
+          <ScalarProperty Name="sysId" ColumnName="sysId" />
+          <ScalarProperty Name="menuId" ColumnName="menuId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_appmenuuser">
+      <EntityTypeMapping TypeName="PALOUPModel.core_appmenuuser">
+        <MappingFragment StoreEntitySet="core_appmenuuser">
+          <ScalarProperty Name="canopen" ColumnName="canopen" />
+          <ScalarProperty Name="canview" ColumnName="canview" />
+          <ScalarProperty Name="candelete" ColumnName="candelete" />
+          <ScalarProperty Name="canedit" ColumnName="canedit" />
+          <ScalarProperty Name="canadd" ColumnName="canadd" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="menuId" ColumnName="menuId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_appsystemuser">
+      <EntityTypeMapping TypeName="PALOUPModel.core_appsystemuser">
+        <MappingFragment StoreEntitySet="core_appsystemuser">
+          <ScalarProperty Name="createddate" ColumnName="createddate" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="sysId" ColumnName="sysId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ole_examinee">
+      <EntityTypeMapping TypeName="PALOUPModel.ole_examinee">
+        <MappingFragment StoreEntitySet="ole_examinee">
+          <ScalarProperty Name="employeeid" ColumnName="employeeid" />
+          <ScalarProperty Name="joblevel" ColumnName="joblevel" />
+          <ScalarProperty Name="hashcode" ColumnName="hashcode" />
+          <ScalarProperty Name="chnickflag" ColumnName="chnickflag" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="sbu" ColumnName="sbu" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="examineeId" ColumnName="examineeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_branchmst">
+      <EntityTypeMapping TypeName="PALOUPModel.core_branchmst">
+        <MappingFragment StoreEntitySet="core_branchmst">
+          <ScalarProperty Name="nonmatrixpm" ColumnName="nonmatrixpm" />
+          <ScalarProperty Name="nonmatrixam" ColumnName="nonmatrixam" />
+          <ScalarProperty Name="matrixpm" ColumnName="matrixpm" />
+          <ScalarProperty Name="matrixam" ColumnName="matrixam" />
+          <ScalarProperty Name="isnteonly" ColumnName="isnteonly" />
+          <ScalarProperty Name="logcapturing" ColumnName="logcapturing" />
+          <ScalarProperty Name="isreportauto" ColumnName="isreportauto" />
+          <ScalarProperty Name="projbase_notbill" ColumnName="projbase_notbill" />
+          <ScalarProperty Name="nonmatrix" ColumnName="nonmatrix" />
+          <ScalarProperty Name="reliever_absent" ColumnName="reliever_absent" />
+          <ScalarProperty Name="sunday_ops" ColumnName="sunday_ops" />
+          <ScalarProperty Name="projbase_bill" ColumnName="projbase_bill" />
+          <ScalarProperty Name="reliever_rd" ColumnName="reliever_rd" />
+          <ScalarProperty Name="additives" ColumnName="additives" />
+          <ScalarProperty Name="matrix" ColumnName="matrix" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="brancharea" ColumnName="brancharea" />
+          <ScalarProperty Name="isinclude" ColumnName="isinclude" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="hrisbranchcode" ColumnName="hrisbranchcode" />
+          <ScalarProperty Name="reportflag" ColumnName="reportflag" />
+          <ScalarProperty Name="wfmsdbId" ColumnName="wfmsdbId" />
+          <ScalarProperty Name="withwfmsdb" ColumnName="withwfmsdb" />
+          <ScalarProperty Name="withpism" ColumnName="withpism" />
+          <ScalarProperty Name="sbu" ColumnName="sbu" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="branchheademail" ColumnName="branchheademail" />
+          <ScalarProperty Name="branchheadid" ColumnName="branchheadid" />
+          <ScalarProperty Name="mapreference" ColumnName="mapreference" />
+          <ScalarProperty Name="branalias" ColumnName="branalias" />
+          <ScalarProperty Name="branchheadcontact" ColumnName="branchheadcontact" />
+          <ScalarProperty Name="branchheadname" ColumnName="branchheadname" />
+          <ScalarProperty Name="districtcode" ColumnName="districtcode" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="branname" ColumnName="branname" />
+          <ScalarProperty Name="brancode" ColumnName="brancode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_district">
+      <EntityTypeMapping TypeName="PALOUPModel.core_district">
+        <MappingFragment StoreEntitySet="core_district">
+          <ScalarProperty Name="sortorder" ColumnName="sortorder" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="districtheademail" ColumnName="districtheademail" />
+          <ScalarProperty Name="districtheadid" ColumnName="districtheadid" />
+          <ScalarProperty Name="districtheadcontact" ColumnName="districtheadcontact" />
+          <ScalarProperty Name="districtheadname" ColumnName="districtheadname" />
+          <ScalarProperty Name="districtname" ColumnName="districtname" />
+          <ScalarProperty Name="districtcode" ColumnName="districtcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_userswarehouse">
+      <EntityTypeMapping TypeName="PALOUPModel.core_userswarehouse">
+        <MappingFragment StoreEntitySet="core_userswarehouse">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="isdefault" ColumnName="isdefault" />
+          <ScalarProperty Name="sysId" ColumnName="sysId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="brancode" ColumnName="brancode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_vEmployeeNotUser">
+      <EntityTypeMapping TypeName="PALOUPModel.core_vEmployeeNotUser">
+        <MappingFragment StoreEntitySet="core_vEmployeeNotUser">
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="ImmediateLevel" ColumnName="ImmediateLevel" />
+          <ScalarProperty Name="ImmediateSection" ColumnName="ImmediateSection" />
+          <ScalarProperty Name="ImmediateDepartment" ColumnName="ImmediateDepartment" />
+          <ScalarProperty Name="ImmediatePosition" ColumnName="ImmediatePosition" />
+          <ScalarProperty Name="ImmediateBranch" ColumnName="ImmediateBranch" />
+          <ScalarProperty Name="ImmediateSBU" ColumnName="ImmediateSBU" />
+          <ScalarProperty Name="ImmediateDHired" ColumnName="ImmediateDHired" />
+          <ScalarProperty Name="ImmediateEmail" ColumnName="ImmediateEmail" />
+          <ScalarProperty Name="ImmediateStatus" ColumnName="ImmediateStatus" />
+          <ScalarProperty Name="ImmediateBDay" ColumnName="ImmediateBDay" />
+          <ScalarProperty Name="ImmediateName" ColumnName="ImmediateName" />
+          <ScalarProperty Name="ImmediateID" ColumnName="ImmediateID" />
+          <ScalarProperty Name="homecontact" ColumnName="homecontact" />
+          <ScalarProperty Name="employeepresentcontact" ColumnName="employeepresentcontact" />
+          <ScalarProperty Name="employeehomeaddress" ColumnName="employeehomeaddress" />
+          <ScalarProperty Name="employeepresentaddress" ColumnName="employeepresentaddress" />
+          <ScalarProperty Name="typedescription" ColumnName="typedescription" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="joblevelgroup" ColumnName="joblevelgroup" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="levelcode" ColumnName="levelcode" />
+          <ScalarProperty Name="sectionname" ColumnName="sectionname" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="departmentname" ColumnName="departmentname" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="positionname" ColumnName="positionname" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="brancharea" ColumnName="brancharea" />
+          <ScalarProperty Name="branchname" ColumnName="branchname" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="corporateName" ColumnName="corporateName" />
+          <ScalarProperty Name="corporate" ColumnName="corporate" />
+          <ScalarProperty Name="effectivitydate" ColumnName="effectivitydate" />
+          <ScalarProperty Name="datehired" ColumnName="datehired" />
+          <ScalarProperty Name="emailadd" ColumnName="emailadd" />
+          <ScalarProperty Name="civilstatus" ColumnName="civilstatus" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="employeename2" ColumnName="employeename2" />
+          <ScalarProperty Name="employeename" ColumnName="employeename" />
+          <ScalarProperty Name="empl_id" ColumnName="empl_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_appsettings">
+      <EntityTypeMapping TypeName="PALOUPModel.core_appsettings">
+        <MappingFragment StoreEntitySet="core_appsettings">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="SettingDescription" ColumnName="SettingDescription" />
+          <ScalarProperty Name="SittingName" ColumnName="SittingName" />
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_confirmation">
+      <EntityTypeMapping TypeName="PALOUPModel.core_confirmation">
+        <MappingFragment StoreEntitySet="core_confirmation">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="isconfirm" ColumnName="isconfirm" />
+          <ScalarProperty Name="expirydate" ColumnName="expirydate" />
+          <ScalarProperty Name="referencecode" ColumnName="referencecode" />
+          <ScalarProperty Name="confirmcode" ColumnName="confirmcode" />
+          <ScalarProperty Name="confirmtype" ColumnName="confirmtype" />
+          <ScalarProperty Name="confirmId" ColumnName="confirmId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="core_derictory">
+      <EntityTypeMapping TypeName="PALOUPModel.core_derictory">
+        <MappingFragment StoreEntitySet="core_derictory">
+          <ScalarProperty Name="crea_dte" ColumnName="crea_dte" />
+          <ScalarProperty Name="crea_by" ColumnName="crea_by" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="domain" ColumnName="domain" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="apps_file_map">
+      <EntityTypeMapping TypeName="PALOUPModel.apps_file_map">
+        <MappingFragment StoreEntitySet="apps_file_map">
+          <ScalarProperty Name="file_isdeleted" ColumnName="file_isdeleted" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="file_type" ColumnName="file_type" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="apps_sysid" ColumnName="apps_sysid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_useranalysisgroupaccess">
+      <EntityTypeMapping TypeName="PALOUPModel.rms_useranalysisgroupaccess">
+        <MappingFragment StoreEntitySet="rms_useranalysisgroupaccess">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wms_userserverwarehouse">
+      <EntityTypeMapping TypeName="PALOUPModel.wms_userserverwarehouse">
+        <MappingFragment StoreEntitySet="wms_userserverwarehouse">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="serverwarehouseId" ColumnName="serverwarehouseId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wms_serverwarehouses">
+      <EntityTypeMapping TypeName="PALOUPModel.wms_serverwarehouses">
+        <MappingFragment StoreEntitySet="wms_serverwarehouses">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="storageidentity" ColumnName="storageidentity" />
+          <ScalarProperty Name="brancode" ColumnName="brancode" />
+          <ScalarProperty Name="warehousecode" ColumnName="warehousecode" />
+          <ScalarProperty Name="serverId" ColumnName="serverId" />
+          <ScalarProperty Name="serverwarehouseId" ColumnName="serverwarehouseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wms_servers">
+      <EntityTypeMapping TypeName="PALOUPModel.wms_servers">
+        <MappingFragment StoreEntitySet="wms_servers">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="sqlpass" ColumnName="sqlpass" />
+          <ScalarProperty Name="sqluser" ColumnName="sqluser" />
+          <ScalarProperty Name="webaddress" ColumnName="webaddress" />
+          <ScalarProperty Name="ipaddress" ColumnName="ipaddress" />
+          <ScalarProperty Name="dbname" ColumnName="dbname" />
+          <ScalarProperty Name="servername" ColumnName="servername" />
+          <ScalarProperty Name="serverId" ColumnName="serverId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="app_control_no">
+      <EntityTypeMapping TypeName="PALOUPModel.app_control_no">
+        <MappingFragment StoreEntitySet="app_control_no">
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+          <ScalarProperty Name="last_seq_no" ColumnName="last_seq_no" />
+          <ScalarProperty Name="control_digit" ColumnName="control_digit" />
+          <ScalarProperty Name="control_desc" ColumnName="control_desc" />
+          <ScalarProperty Name="control_code" ColumnName="control_code" />
+          <ScalarProperty Name="control_type" ColumnName="control_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fpma_member">
+      <EntityTypeMapping TypeName="PALOUPModel.fpma_member">
+        <MappingFragment StoreEntitySet="fpma_member">
+          <ScalarProperty Name="sitecode" ColumnName="sitecode" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CatalystId" ColumnName="CatalystId" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_attendance">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_attendance">
+        <MappingFragment StoreEntitySet="mifs_attendance">
+          <ScalarProperty Name="isgoing" ColumnName="isgoing" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="isremark" ColumnName="isremark" />
+          <ScalarProperty Name="isgenerated" ColumnName="isgenerated" />
+          <ScalarProperty Name="timeout" ColumnName="timeout" />
+          <ScalarProperty Name="timein" ColumnName="timein" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="ispresent" ColumnName="ispresent" />
+          <ScalarProperty Name="ismember" ColumnName="ismember" />
+          <ScalarProperty Name="attendeephone" ColumnName="attendeephone" />
+          <ScalarProperty Name="attendeemail" ColumnName="attendeemail" />
+          <ScalarProperty Name="attendeename" ColumnName="attendeename" />
+          <ScalarProperty Name="attendeeempid" ColumnName="attendeeempid" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+          <ScalarProperty Name="attendanceId" ColumnName="attendanceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_meeting">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_meeting">
+        <MappingFragment StoreEntitySet="mifs_meeting">
+          <ScalarProperty Name="scheduledateend" ColumnName="scheduledateend" />
+          <ScalarProperty Name="scheduledatestart" ColumnName="scheduledatestart" />
+          <ScalarProperty Name="iscancel" ColumnName="iscancel" />
+          <ScalarProperty Name="isattendance" ColumnName="isattendance" />
+          <ScalarProperty Name="issent" ColumnName="issent" />
+          <ScalarProperty Name="closedate" ColumnName="closedate" />
+          <ScalarProperty Name="closedby" ColumnName="closedby" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="facilitator" ColumnName="facilitator" />
+          <ScalarProperty Name="venue" ColumnName="venue" />
+          <ScalarProperty Name="dateend" ColumnName="dateend" />
+          <ScalarProperty Name="datestart" ColumnName="datestart" />
+          <ScalarProperty Name="agenda" ColumnName="agenda" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="hashcode" ColumnName="hashcode" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_members">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_members">
+        <MappingFragment StoreEntitySet="mifs_members">
+          <ScalarProperty Name="systemname" ColumnName="systemname" />
+          <ScalarProperty Name="sysId" ColumnName="sysId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+          <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_respondent">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_respondent">
+        <MappingFragment StoreEntitySet="mifs_respondent">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="fupcounter" ColumnName="fupcounter" />
+          <ScalarProperty Name="statchangefupcounter" ColumnName="statchangefupcounter" />
+          <ScalarProperty Name="statchangetollgater" ColumnName="statchangetollgater" />
+          <ScalarProperty Name="statchangeresponsible" ColumnName="statchangeresponsible" />
+          <ScalarProperty Name="statchangeacknowledgementdate" ColumnName="statchangeacknowledgementdate" />
+          <ScalarProperty Name="commitmentdate" ColumnName="commitmentdate" />
+          <ScalarProperty Name="lastsenddate" ColumnName="lastsenddate" />
+          <ScalarProperty Name="firstsenddate" ColumnName="firstsenddate" />
+          <ScalarProperty Name="resumedate" ColumnName="resumedate" />
+          <ScalarProperty Name="parkdate" ColumnName="parkdate" />
+          <ScalarProperty Name="newstatus" ColumnName="newstatus" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="collaboratoremplid" ColumnName="collaboratoremplid" />
+          <ScalarProperty Name="collaboratorphone" ColumnName="collaboratorphone" />
+          <ScalarProperty Name="collaboratorname" ColumnName="collaboratorname" />
+          <ScalarProperty Name="collaboratoremailadd" ColumnName="collaboratoremailadd" />
+          <ScalarProperty Name="responsibleemplid" ColumnName="responsibleemplid" />
+          <ScalarProperty Name="responsiblephone" ColumnName="responsiblephone" />
+          <ScalarProperty Name="responsiblename" ColumnName="responsiblename" />
+          <ScalarProperty Name="responsibleemailadd" ColumnName="responsibleemailadd" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+          <ScalarProperty Name="respondentId" ColumnName="respondentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_response">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_response">
+        <MappingFragment StoreEntitySet="mifs_response">
+          <ScalarProperty Name="istypeaction" ColumnName="istypeaction" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="islock" ColumnName="islock" />
+          <ScalarProperty Name="responsebyemail" ColumnName="responsebyemail" />
+          <ScalarProperty Name="responsedate" ColumnName="responsedate" />
+          <ScalarProperty Name="responsebyempid" ColumnName="responsebyempid" />
+          <ScalarProperty Name="responseby" ColumnName="responseby" />
+          <ScalarProperty Name="messagedetails" ColumnName="messagedetails" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+          <ScalarProperty Name="responseId" ColumnName="responseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_topicgroup">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_topicgroup">
+        <MappingFragment StoreEntitySet="mifs_topicgroup">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_topicmembers">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_topicmembers">
+        <MappingFragment StoreEntitySet="mifs_topicmembers">
+          <ScalarProperty Name="isinclude" ColumnName="isinclude" />
+          <ScalarProperty Name="accesslevel" ColumnName="accesslevel" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_ladder">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_ladder">
+        <MappingFragment StoreEntitySet="mifs_ladder">
+          <ScalarProperty Name="rundate" ColumnName="rundate" />
+          <ScalarProperty Name="capturedweek" ColumnName="capturedweek" />
+          <ScalarProperty Name="capturedmonth" ColumnName="capturedmonth" />
+          <ScalarProperty Name="capturedyear" ColumnName="capturedyear" />
+          <ScalarProperty Name="issuedweek" ColumnName="issuedweek" />
+          <ScalarProperty Name="issuedmonth" ColumnName="issuedmonth" />
+          <ScalarProperty Name="issuedyear" ColumnName="issuedyear" />
+          <ScalarProperty Name="topicdesc" ColumnName="topicdesc" />
+          <ScalarProperty Name="topicid" ColumnName="topicid" />
+          <ScalarProperty Name="totaldropped" ColumnName="totaldropped" />
+          <ScalarProperty Name="totalparked" ColumnName="totalparked" />
+          <ScalarProperty Name="totalclosed" ColumnName="totalclosed" />
+          <ScalarProperty Name="totalopen" ColumnName="totalopen" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_parking">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_parking">
+        <MappingFragment StoreEntitySet="mifs_parking">
+          <ScalarProperty Name="rundate" ColumnName="rundate" />
+          <ScalarProperty Name="commitmentdate" ColumnName="commitmentdate" />
+          <ScalarProperty Name="parkdate" ColumnName="parkdate" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_Analytics">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_Analytics">
+        <MappingFragment StoreEntitySet="mifs_Analytics">
+          <ScalarProperty Name="EncoderBranch" ColumnName="EncoderBranch" />
+          <ScalarProperty Name="WeekCreated" ColumnName="WeekCreated" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="JobLevelGroup" ColumnName="JobLevelGroup" />
+          <ScalarProperty Name="IssueCategory" ColumnName="IssueCategory" />
+          <ScalarProperty Name="CorporateName" ColumnName="CorporateName" />
+          <ScalarProperty Name="CorporateCode" ColumnName="CorporateCode" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="LastUpdateDateByCollaborator" ColumnName="LastUpdateDateByCollaborator" />
+          <ScalarProperty Name="LastUpdateMessageByCollaborator" ColumnName="LastUpdateMessageByCollaborator" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateMessage" ColumnName="LastUpdateMessage" />
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="TollGaterImmediateHead" ColumnName="TollGaterImmediateHead" />
+          <ScalarProperty Name="ResponsibleImmediateHead" ColumnName="ResponsibleImmediateHead" />
+          <ScalarProperty Name="AcknowledgementDays" ColumnName="AcknowledgementDays" />
+          <ScalarProperty Name="TollGaterResponsiveness" ColumnName="TollGaterResponsiveness" />
+          <ScalarProperty Name="Responsiveness" ColumnName="Responsiveness" />
+          <ScalarProperty Name="LastTollgated" ColumnName="LastTollgated" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="IsOverdue" ColumnName="IsOverdue" />
+          <ScalarProperty Name="DaysElapse" ColumnName="DaysElapse" />
+          <ScalarProperty Name="referencetype" ColumnName="referencetype" />
+          <ScalarProperty Name="referenceId" ColumnName="referenceId" />
+          <ScalarProperty Name="HasResponseAttachment" ColumnName="HasResponseAttachment" />
+          <ScalarProperty Name="collaboratorempid" ColumnName="collaboratorempid" />
+          <ScalarProperty Name="collaboratoremail" ColumnName="collaboratoremail" />
+          <ScalarProperty Name="bgcolor" ColumnName="bgcolor" />
+          <ScalarProperty Name="TopicAlias" ColumnName="TopicAlias" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="TypeOfIssue" ColumnName="TypeOfIssue" />
+          <ScalarProperty Name="Collaborator" ColumnName="Collaborator" />
+          <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+          <ScalarProperty Name="PriorityFlag" ColumnName="PriorityFlag" />
+          <ScalarProperty Name="NoOfResponse" ColumnName="NoOfResponse" />
+          <ScalarProperty Name="lastsenddate" ColumnName="lastsenddate" />
+          <ScalarProperty Name="sourcetype" ColumnName="sourcetype" />
+          <ScalarProperty Name="responphone" ColumnName="responphone" />
+          <ScalarProperty Name="responempid" ColumnName="responempid" />
+          <ScalarProperty Name="responemail" ColumnName="responemail" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="raisedbyphone" ColumnName="raisedbyphone" />
+          <ScalarProperty Name="raisedbyempid" ColumnName="raisedbyempid" />
+          <ScalarProperty Name="raisedbyemail" ColumnName="raisedbyemail" />
+          <ScalarProperty Name="raisedby" ColumnName="raisedby" />
+          <ScalarProperty Name="TopicHashcode" ColumnName="TopicHashcode" />
+          <ScalarProperty Name="reference" ColumnName="reference" />
+          <ScalarProperty Name="facilitator" ColumnName="facilitator" />
+          <ScalarProperty Name="venue" ColumnName="venue" />
+          <ScalarProperty Name="dateend" ColumnName="dateend" />
+          <ScalarProperty Name="datestart" ColumnName="datestart" />
+          <ScalarProperty Name="agenda" ColumnName="agenda" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+          <ScalarProperty Name="IssueHashcode" ColumnName="IssueHashcode" />
+          <ScalarProperty Name="NoOfAttachment" ColumnName="NoOfAttachment" />
+          <ScalarProperty Name="IssueDateResumed" ColumnName="IssueDateResumed" />
+          <ScalarProperty Name="IssueDateParked" ColumnName="IssueDateParked" />
+          <ScalarProperty Name="FollowUpCounter" ColumnName="FollowUpCounter" />
+          <ScalarProperty Name="RespondentAcknowledgeDate" ColumnName="RespondentAcknowledgeDate" />
+          <ScalarProperty Name="IsAcknowledgeByRespondent" ColumnName="IsAcknowledgeByRespondent" />
+          <ScalarProperty Name="SourceAcknowledgeDate" ColumnName="SourceAcknowledgeDate" />
+          <ScalarProperty Name="IsAcknowledgeBySource" ColumnName="IsAcknowledgeBySource" />
+          <ScalarProperty Name="newstatus" ColumnName="newstatus" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IssueStatus" ColumnName="IssueStatus" />
+          <ScalarProperty Name="IsFollowUpOnSMS" ColumnName="IsFollowUpOnSMS" />
+          <ScalarProperty Name="IsFollowUpOnEmail" ColumnName="IsFollowUpOnEmail" />
+          <ScalarProperty Name="FollowUpFrequency" ColumnName="FollowUpFrequency" />
+          <ScalarProperty Name="targetcompletiondate" ColumnName="targetcompletiondate" />
+          <ScalarProperty Name="PreviousTopicDescription" ColumnName="PreviousTopicDescription" />
+          <ScalarProperty Name="PreviousTopicId" ColumnName="PreviousTopicId" />
+          <ScalarProperty Name="DateIssued" ColumnName="DateIssued" />
+          <ScalarProperty Name="actionplan" ColumnName="actionplan" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="CurrentTopicDescription" ColumnName="CurrentTopicDescription" />
+          <ScalarProperty Name="CurrentTopicId" ColumnName="CurrentTopicId" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_AnalyticsWithResponse">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_AnalyticsWithResponse">
+        <MappingFragment StoreEntitySet="mifs_AnalyticsWithResponse">
+          <ScalarProperty Name="TollGaterComment" ColumnName="TollGaterComment" />
+          <ScalarProperty Name="IssueMessageDetail" ColumnName="IssueMessageDetail" />
+          <ScalarProperty Name="istypeaction" ColumnName="istypeaction" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="islock" ColumnName="islock" />
+          <ScalarProperty Name="responsebyemail" ColumnName="responsebyemail" />
+          <ScalarProperty Name="responsedate" ColumnName="responsedate" />
+          <ScalarProperty Name="responsebyempid" ColumnName="responsebyempid" />
+          <ScalarProperty Name="responseby" ColumnName="responseby" />
+          <ScalarProperty Name="messagedetails" ColumnName="messagedetails" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="responseId" ColumnName="responseId" />
+          <ScalarProperty Name="LastTollgated" ColumnName="LastTollgated" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="IsOverdue" ColumnName="IsOverdue" />
+          <ScalarProperty Name="DaysElapse" ColumnName="DaysElapse" />
+          <ScalarProperty Name="referencetype" ColumnName="referencetype" />
+          <ScalarProperty Name="referenceId" ColumnName="referenceId" />
+          <ScalarProperty Name="HasResponseAttachment" ColumnName="HasResponseAttachment" />
+          <ScalarProperty Name="collaboratorempid" ColumnName="collaboratorempid" />
+          <ScalarProperty Name="collaboratoremail" ColumnName="collaboratoremail" />
+          <ScalarProperty Name="bgcolor" ColumnName="bgcolor" />
+          <ScalarProperty Name="TopicAlias" ColumnName="TopicAlias" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="TypeOfIssue" ColumnName="TypeOfIssue" />
+          <ScalarProperty Name="Collaborator" ColumnName="Collaborator" />
+          <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+          <ScalarProperty Name="PriorityFlag" ColumnName="PriorityFlag" />
+          <ScalarProperty Name="NoOfResponse" ColumnName="NoOfResponse" />
+          <ScalarProperty Name="lastsenddate" ColumnName="lastsenddate" />
+          <ScalarProperty Name="sourcetype" ColumnName="sourcetype" />
+          <ScalarProperty Name="responphone" ColumnName="responphone" />
+          <ScalarProperty Name="responempid" ColumnName="responempid" />
+          <ScalarProperty Name="responemail" ColumnName="responemail" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="raisedbyphone" ColumnName="raisedbyphone" />
+          <ScalarProperty Name="raisedbyempid" ColumnName="raisedbyempid" />
+          <ScalarProperty Name="raisedbyemail" ColumnName="raisedbyemail" />
+          <ScalarProperty Name="raisedby" ColumnName="raisedby" />
+          <ScalarProperty Name="TopicHashcode" ColumnName="TopicHashcode" />
+          <ScalarProperty Name="reference" ColumnName="reference" />
+          <ScalarProperty Name="facilitator" ColumnName="facilitator" />
+          <ScalarProperty Name="venue" ColumnName="venue" />
+          <ScalarProperty Name="dateend" ColumnName="dateend" />
+          <ScalarProperty Name="datestart" ColumnName="datestart" />
+          <ScalarProperty Name="agenda" ColumnName="agenda" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+          <ScalarProperty Name="IssueHashcode" ColumnName="IssueHashcode" />
+          <ScalarProperty Name="NoOfAttachment" ColumnName="NoOfAttachment" />
+          <ScalarProperty Name="IssueDateResumed" ColumnName="IssueDateResumed" />
+          <ScalarProperty Name="IssueDateParked" ColumnName="IssueDateParked" />
+          <ScalarProperty Name="FollowUpCounter" ColumnName="FollowUpCounter" />
+          <ScalarProperty Name="RespondentAcknowledgeDate" ColumnName="RespondentAcknowledgeDate" />
+          <ScalarProperty Name="IsAcknowledgeByRespondent" ColumnName="IsAcknowledgeByRespondent" />
+          <ScalarProperty Name="SourceAcknowledgeDate" ColumnName="SourceAcknowledgeDate" />
+          <ScalarProperty Name="IsAcknowledgeBySource" ColumnName="IsAcknowledgeBySource" />
+          <ScalarProperty Name="newstatus" ColumnName="newstatus" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IssueStatus" ColumnName="IssueStatus" />
+          <ScalarProperty Name="IsFollowUpOnSMS" ColumnName="IsFollowUpOnSMS" />
+          <ScalarProperty Name="IsFollowUpOnEmail" ColumnName="IsFollowUpOnEmail" />
+          <ScalarProperty Name="FollowUpFrequency" ColumnName="FollowUpFrequency" />
+          <ScalarProperty Name="targetcompletiondate" ColumnName="targetcompletiondate" />
+          <ScalarProperty Name="PreviousTopicDescription" ColumnName="PreviousTopicDescription" />
+          <ScalarProperty Name="PreviousTopicId" ColumnName="PreviousTopicId" />
+          <ScalarProperty Name="DateIssued" ColumnName="DateIssued" />
+          <ScalarProperty Name="actionplan" ColumnName="actionplan" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="CurrentTopicDescription" ColumnName="CurrentTopicDescription" />
+          <ScalarProperty Name="CurrentTopicId" ColumnName="CurrentTopicId" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mifs_DailyUtilization">
+      <EntityTypeMapping TypeName="PALOUPModel.Mifs_DailyUtilization">
+        <MappingFragment StoreEntitySet="Mifs_DailyUtilization">
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCaptured" ColumnName="DateCaptured" />
+          <ScalarProperty Name="IssueCaptured" ColumnName="IssueCaptured" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_FollowUpOpen">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_FollowUpOpen">
+        <MappingFragment StoreEntitySet="mifs_FollowUpOpen">
+          <ScalarProperty Name="followsms" ColumnName="followsms" />
+          <ScalarProperty Name="followmail" ColumnName="followmail" />
+          <ScalarProperty Name="followfrequency" ColumnName="followfrequency" />
+          <ScalarProperty Name="responphone" ColumnName="responphone" />
+          <ScalarProperty Name="responemail" ColumnName="responemail" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="raisedbyphone" ColumnName="raisedbyphone" />
+          <ScalarProperty Name="raisedbyemail" ColumnName="raisedbyemail" />
+          <ScalarProperty Name="raisedby" ColumnName="raisedby" />
+          <ScalarProperty Name="lastsenddate" ColumnName="lastsenddate" />
+          <ScalarProperty Name="targetcompletiondate" ColumnName="targetcompletiondate" />
+          <ScalarProperty Name="issuedate" ColumnName="issuedate" />
+          <ScalarProperty Name="actionplan" ColumnName="actionplan" />
+          <ScalarProperty Name="issuedetails" ColumnName="issuedetails" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_SumOfIssues">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_SumOfIssues">
+        <MappingFragment StoreEntitySet="mifs_SumOfIssues">
+          <ScalarProperty Name="SumOfIssues" ColumnName="SumOfIssues" />
+          <ScalarProperty Name="IssueStatus" ColumnName="IssueStatus" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IssueType" ColumnName="IssueType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vAccountValidation">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vAccountValidation">
+        <MappingFragment StoreEntitySet="mifs_vAccountValidation">
+          <ScalarProperty Name="CollaboratorEmail" ColumnName="CollaboratorEmail" />
+          <ScalarProperty Name="RaisedbyEmail" ColumnName="RaisedbyEmail" />
+          <ScalarProperty Name="ResponEmail" ColumnName="ResponEmail" />
+          <ScalarProperty Name="mifsMember" ColumnName="mifsMember" />
+          <ScalarProperty Name="CoreEmail" ColumnName="CoreEmail" />
+          <ScalarProperty Name="CoreUsername" ColumnName="CoreUsername" />
+          <ScalarProperty Name="HRISEmail" ColumnName="HRISEmail" />
+          <ScalarProperty Name="coreEmployeeEmail" ColumnName="coreEmployeeEmail" />
+          <ScalarProperty Name="employeename2" ColumnName="employeename2" />
+          <ScalarProperty Name="empl_id" ColumnName="empl_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vClosedPerResponsible">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vClosedPerResponsible">
+        <MappingFragment StoreEntitySet="mifs_vClosedPerResponsible">
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="YearNumber" ColumnName="YearNumber" />
+          <ScalarProperty Name="MonthNumber" ColumnName="MonthNumber" />
+          <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+          <ScalarProperty Name="issuedate" ColumnName="issuedate" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="responempid" ColumnName="responempid" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vFirmAttendance">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vFirmAttendance">
+        <MappingFragment StoreEntitySet="mifs_vFirmAttendance">
+          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+          <ScalarProperty Name="Logdate" ColumnName="Logdate" />
+          <ScalarProperty Name="Is_present" ColumnName="Is present" />
+          <ScalarProperty Name="Is_member" ColumnName="Is member" />
+          <ScalarProperty Name="Attendee" ColumnName="Attendee" />
+          <ScalarProperty Name="Topic_Created_Date" ColumnName="Topic Created Date" />
+          <ScalarProperty Name="Topic_Name" ColumnName="Topic Name" />
+          <ScalarProperty Name="Meeting_ID" ColumnName="Meeting ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vIssueClosedPerEmployeeX">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vIssueClosedPerEmployeeX">
+        <MappingFragment StoreEntitySet="mifs_vIssueClosedPerEmployeeX">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="MonthClosed" ColumnName="MonthClosed" />
+          <ScalarProperty Name="YearClosed" ColumnName="YearClosed" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="EmailAdd" ColumnName="EmailAdd" />
+          <ScalarProperty Name="TotalClosed" ColumnName="TotalClosed" />
+          <ScalarProperty Name="PaloType" ColumnName="PaloType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vIssueCount">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vIssueCount">
+        <MappingFragment StoreEntitySet="mifs_vIssueCount">
+          <ScalarProperty Name="TopicAlias" ColumnName="TopicAlias" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="collaboratoremail" ColumnName="collaboratoremail" />
+          <ScalarProperty Name="raisedbyemail" ColumnName="raisedbyemail" />
+          <ScalarProperty Name="responemail" ColumnName="responemail" />
+          <ScalarProperty Name="TotalIssues" ColumnName="TotalIssues" />
+          <ScalarProperty Name="IssueStatus" ColumnName="IssueStatus" />
+          <ScalarProperty Name="CurrentTopicDescription" ColumnName="CurrentTopicDescription" />
+          <ScalarProperty Name="CurrentTopicId" ColumnName="CurrentTopicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vIssueForAcknowledgement">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vIssueForAcknowledgement">
+        <MappingFragment StoreEntitySet="mifs_vIssueForAcknowledgement">
+          <ScalarProperty Name="LastUpdateDateByCollaborator" ColumnName="LastUpdateDateByCollaborator" />
+          <ScalarProperty Name="LastUpdateMessageByCollaborator" ColumnName="LastUpdateMessageByCollaborator" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateMessage" ColumnName="LastUpdateMessage" />
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="TollGaterImmediateHead" ColumnName="TollGaterImmediateHead" />
+          <ScalarProperty Name="ResponsibleImmediateHead" ColumnName="ResponsibleImmediateHead" />
+          <ScalarProperty Name="AcknowledgementDays" ColumnName="AcknowledgementDays" />
+          <ScalarProperty Name="TollGaterResponsiveness" ColumnName="TollGaterResponsiveness" />
+          <ScalarProperty Name="Responsiveness" ColumnName="Responsiveness" />
+          <ScalarProperty Name="LastTollgated" ColumnName="LastTollgated" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="IsOverdue" ColumnName="IsOverdue" />
+          <ScalarProperty Name="DaysElapse" ColumnName="DaysElapse" />
+          <ScalarProperty Name="referencetype" ColumnName="referencetype" />
+          <ScalarProperty Name="referenceId" ColumnName="referenceId" />
+          <ScalarProperty Name="HasResponseAttachment" ColumnName="HasResponseAttachment" />
+          <ScalarProperty Name="collaboratorempid" ColumnName="collaboratorempid" />
+          <ScalarProperty Name="collaboratoremail" ColumnName="collaboratoremail" />
+          <ScalarProperty Name="bgcolor" ColumnName="bgcolor" />
+          <ScalarProperty Name="TopicAlias" ColumnName="TopicAlias" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="TypeOfIssue" ColumnName="TypeOfIssue" />
+          <ScalarProperty Name="Collaborator" ColumnName="Collaborator" />
+          <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+          <ScalarProperty Name="PriorityFlag" ColumnName="PriorityFlag" />
+          <ScalarProperty Name="NoOfResponse" ColumnName="NoOfResponse" />
+          <ScalarProperty Name="lastsenddate" ColumnName="lastsenddate" />
+          <ScalarProperty Name="sourcetype" ColumnName="sourcetype" />
+          <ScalarProperty Name="responphone" ColumnName="responphone" />
+          <ScalarProperty Name="responempid" ColumnName="responempid" />
+          <ScalarProperty Name="responemail" ColumnName="responemail" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="raisedbyphone" ColumnName="raisedbyphone" />
+          <ScalarProperty Name="raisedbyempid" ColumnName="raisedbyempid" />
+          <ScalarProperty Name="raisedbyemail" ColumnName="raisedbyemail" />
+          <ScalarProperty Name="raisedby" ColumnName="raisedby" />
+          <ScalarProperty Name="TopicHashcode" ColumnName="TopicHashcode" />
+          <ScalarProperty Name="reference" ColumnName="reference" />
+          <ScalarProperty Name="facilitator" ColumnName="facilitator" />
+          <ScalarProperty Name="venue" ColumnName="venue" />
+          <ScalarProperty Name="dateend" ColumnName="dateend" />
+          <ScalarProperty Name="datestart" ColumnName="datestart" />
+          <ScalarProperty Name="agenda" ColumnName="agenda" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+          <ScalarProperty Name="IssueHashcode" ColumnName="IssueHashcode" />
+          <ScalarProperty Name="NoOfAttachment" ColumnName="NoOfAttachment" />
+          <ScalarProperty Name="IssueDateResumed" ColumnName="IssueDateResumed" />
+          <ScalarProperty Name="IssueDateParked" ColumnName="IssueDateParked" />
+          <ScalarProperty Name="FollowUpCounter" ColumnName="FollowUpCounter" />
+          <ScalarProperty Name="RespondentAcknowledgeDate" ColumnName="RespondentAcknowledgeDate" />
+          <ScalarProperty Name="IsAcknowledgeByRespondent" ColumnName="IsAcknowledgeByRespondent" />
+          <ScalarProperty Name="SourceAcknowledgeDate" ColumnName="SourceAcknowledgeDate" />
+          <ScalarProperty Name="IsAcknowledgeBySource" ColumnName="IsAcknowledgeBySource" />
+          <ScalarProperty Name="newstatus" ColumnName="newstatus" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IssueStatus" ColumnName="IssueStatus" />
+          <ScalarProperty Name="IsFollowUpOnSMS" ColumnName="IsFollowUpOnSMS" />
+          <ScalarProperty Name="IsFollowUpOnEmail" ColumnName="IsFollowUpOnEmail" />
+          <ScalarProperty Name="FollowUpFrequency" ColumnName="FollowUpFrequency" />
+          <ScalarProperty Name="targetcompletiondate" ColumnName="targetcompletiondate" />
+          <ScalarProperty Name="PreviousTopicDescription" ColumnName="PreviousTopicDescription" />
+          <ScalarProperty Name="PreviousTopicId" ColumnName="PreviousTopicId" />
+          <ScalarProperty Name="DateIssued" ColumnName="DateIssued" />
+          <ScalarProperty Name="actionplan" ColumnName="actionplan" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="CurrentTopicDescription" ColumnName="CurrentTopicDescription" />
+          <ScalarProperty Name="CurrentTopicId" ColumnName="CurrentTopicId" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vIssuePerBranchPerTopic">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vIssuePerBranchPerTopic">
+        <MappingFragment StoreEntitySet="mifs_vIssuePerBranchPerTopic">
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="BusinessGroup" ColumnName="BusinessGroup" />
+          <ScalarProperty Name="CorporateName" ColumnName="CorporateName" />
+          <ScalarProperty Name="CurrentWeek" ColumnName="CurrentWeek" />
+          <ScalarProperty Name="CurrentMonth" ColumnName="CurrentMonth" />
+          <ScalarProperty Name="CurrentYear" ColumnName="CurrentYear" />
+          <ScalarProperty Name="IssuedWeek" ColumnName="IssuedWeek" />
+          <ScalarProperty Name="IssuedMonth" ColumnName="IssuedMonth" />
+          <ScalarProperty Name="IssuedYear" ColumnName="IssuedYear" />
+          <ScalarProperty Name="CurrentTopicDescription" ColumnName="CurrentTopicDescription" />
+          <ScalarProperty Name="CurrentTopicId" ColumnName="CurrentTopicId" />
+          <ScalarProperty Name="TotalDropped" ColumnName="TotalDropped" />
+          <ScalarProperty Name="TotalParked" ColumnName="TotalParked" />
+          <ScalarProperty Name="TotalClosed" ColumnName="TotalClosed" />
+          <ScalarProperty Name="TotalOpen" ColumnName="TotalOpen" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vIssuePerWeekPerStatus">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vIssuePerWeekPerStatus">
+        <MappingFragment StoreEntitySet="mifs_vIssuePerWeekPerStatus">
+          <ScalarProperty Name="CurrentWeek" ColumnName="CurrentWeek" />
+          <ScalarProperty Name="CurrentMonth" ColumnName="CurrentMonth" />
+          <ScalarProperty Name="CurrentYear" ColumnName="CurrentYear" />
+          <ScalarProperty Name="IssuedWeek" ColumnName="IssuedWeek" />
+          <ScalarProperty Name="IssuedMonth" ColumnName="IssuedMonth" />
+          <ScalarProperty Name="IssuedYear" ColumnName="IssuedYear" />
+          <ScalarProperty Name="CurrentTopicDescription" ColumnName="CurrentTopicDescription" />
+          <ScalarProperty Name="CurrentTopicId" ColumnName="CurrentTopicId" />
+          <ScalarProperty Name="TotalDropped" ColumnName="TotalDropped" />
+          <ScalarProperty Name="TotalParked" ColumnName="TotalParked" />
+          <ScalarProperty Name="TotalClosed" ColumnName="TotalClosed" />
+          <ScalarProperty Name="TotalOpen" ColumnName="TotalOpen" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vIssueReport">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vIssueReport">
+        <MappingFragment StoreEntitySet="mifs_vIssueReport">
+          <ScalarProperty Name="ResponsivenessRating" ColumnName="ResponsivenessRating" />
+          <ScalarProperty Name="Updates" ColumnName="Updates" />
+          <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+          <ScalarProperty Name="referencetype" ColumnName="referencetype" />
+          <ScalarProperty Name="referenceId" ColumnName="referenceId" />
+          <ScalarProperty Name="closedate" ColumnName="closedate" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="issuetype" ColumnName="issuetype" />
+          <ScalarProperty Name="pflag" ColumnName="pflag" />
+          <ScalarProperty Name="hashcode" ColumnName="hashcode" />
+          <ScalarProperty Name="collaboratorempid" ColumnName="collaboratorempid" />
+          <ScalarProperty Name="collaboratoremail" ColumnName="collaboratoremail" />
+          <ScalarProperty Name="collaboratorname" ColumnName="collaboratorname" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+          <ScalarProperty Name="statchangefupcounter" ColumnName="statchangefupcounter" />
+          <ScalarProperty Name="lastsenddate" ColumnName="lastsenddate" />
+          <ScalarProperty Name="firstsenddate" ColumnName="firstsenddate" />
+          <ScalarProperty Name="acknowledgerespondentdate" ColumnName="acknowledgerespondentdate" />
+          <ScalarProperty Name="acknowledgebyrespondent" ColumnName="acknowledgebyrespondent" />
+          <ScalarProperty Name="acknowledgesourcedate" ColumnName="acknowledgesourcedate" />
+          <ScalarProperty Name="acknowledgedbysource" ColumnName="acknowledgedbysource" />
+          <ScalarProperty Name="newstatus" ColumnName="newstatus" />
+          <ScalarProperty Name="followmail" ColumnName="followmail" />
+          <ScalarProperty Name="followfrequency" ColumnName="followfrequency" />
+          <ScalarProperty Name="TopicAlias" ColumnName="TopicAlias" />
+          <ScalarProperty Name="sourcetype" ColumnName="sourcetype" />
+          <ScalarProperty Name="responphone" ColumnName="responphone" />
+          <ScalarProperty Name="responempid" ColumnName="responempid" />
+          <ScalarProperty Name="responemail" ColumnName="responemail" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="raisedbyphone" ColumnName="raisedbyphone" />
+          <ScalarProperty Name="raisedbyempid" ColumnName="raisedbyempid" />
+          <ScalarProperty Name="raisedbyemail" ColumnName="raisedbyemail" />
+          <ScalarProperty Name="raisedby" ColumnName="raisedby" />
+          <ScalarProperty Name="reference" ColumnName="reference" />
+          <ScalarProperty Name="IssueDateResumed" ColumnName="IssueDateResumed" />
+          <ScalarProperty Name="IssueDateParked" ColumnName="IssueDateParked" />
+          <ScalarProperty Name="FollowUpCounter" ColumnName="FollowUpCounter" />
+          <ScalarProperty Name="IssueStatus" ColumnName="IssueStatus" />
+          <ScalarProperty Name="targetcompletiondate" ColumnName="targetcompletiondate" />
+          <ScalarProperty Name="DateIssued" ColumnName="DateIssued" />
+          <ScalarProperty Name="actionplan" ColumnName="actionplan" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="CurrentTopicDescription" ColumnName="CurrentTopicDescription" />
+          <ScalarProperty Name="CurrentTopicId" ColumnName="CurrentTopicId" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vIssues">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vIssues">
+        <MappingFragment StoreEntitySet="mifs_vIssues">
+          <ScalarProperty Name="topiclevel" ColumnName="topiclevel" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="JobLevelGroup" ColumnName="JobLevelGroup" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="issuecategory" ColumnName="issuecategory" />
+          <ScalarProperty Name="refsource" ColumnName="refsource" />
+          <ScalarProperty Name="firstsenddate" ColumnName="firstsenddate" />
+          <ScalarProperty Name="statchangefupcounter" ColumnName="statchangefupcounter" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="statchangecounterlimit" ColumnName="statchangecounterlimit" />
+          <ScalarProperty Name="referencetype" ColumnName="referencetype" />
+          <ScalarProperty Name="referenceId" ColumnName="referenceId" />
+          <ScalarProperty Name="HasResponseAttachment" ColumnName="HasResponseAttachment" />
+          <ScalarProperty Name="collaboratorempid" ColumnName="collaboratorempid" />
+          <ScalarProperty Name="collaboratoremail" ColumnName="collaboratoremail" />
+          <ScalarProperty Name="bgcolor" ColumnName="bgcolor" />
+          <ScalarProperty Name="TopicAlias" ColumnName="TopicAlias" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="TypeOfIssue" ColumnName="TypeOfIssue" />
+          <ScalarProperty Name="Collaborator" ColumnName="Collaborator" />
+          <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+          <ScalarProperty Name="PriorityFlag" ColumnName="PriorityFlag" />
+          <ScalarProperty Name="NoOfResponse" ColumnName="NoOfResponse" />
+          <ScalarProperty Name="lastsenddate" ColumnName="lastsenddate" />
+          <ScalarProperty Name="sourcetype" ColumnName="sourcetype" />
+          <ScalarProperty Name="responphone" ColumnName="responphone" />
+          <ScalarProperty Name="responempid" ColumnName="responempid" />
+          <ScalarProperty Name="responemail" ColumnName="responemail" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="raisedbyphone" ColumnName="raisedbyphone" />
+          <ScalarProperty Name="raisedbyempid" ColumnName="raisedbyempid" />
+          <ScalarProperty Name="raisedbyemail" ColumnName="raisedbyemail" />
+          <ScalarProperty Name="raisedby" ColumnName="raisedby" />
+          <ScalarProperty Name="TopicHashcode" ColumnName="TopicHashcode" />
+          <ScalarProperty Name="reference" ColumnName="reference" />
+          <ScalarProperty Name="facilitator" ColumnName="facilitator" />
+          <ScalarProperty Name="venue" ColumnName="venue" />
+          <ScalarProperty Name="dateend" ColumnName="dateend" />
+          <ScalarProperty Name="datestart" ColumnName="datestart" />
+          <ScalarProperty Name="agenda" ColumnName="agenda" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+          <ScalarProperty Name="IssueHashcode" ColumnName="IssueHashcode" />
+          <ScalarProperty Name="NoOfAttachment" ColumnName="NoOfAttachment" />
+          <ScalarProperty Name="IssueDateResumed" ColumnName="IssueDateResumed" />
+          <ScalarProperty Name="IssueDateParked" ColumnName="IssueDateParked" />
+          <ScalarProperty Name="FollowUpCounter" ColumnName="FollowUpCounter" />
+          <ScalarProperty Name="RespondentAcknowledgeDate" ColumnName="RespondentAcknowledgeDate" />
+          <ScalarProperty Name="IsAcknowledgeByRespondent" ColumnName="IsAcknowledgeByRespondent" />
+          <ScalarProperty Name="SourceAcknowledgeDate" ColumnName="SourceAcknowledgeDate" />
+          <ScalarProperty Name="IsAcknowledgeBySource" ColumnName="IsAcknowledgeBySource" />
+          <ScalarProperty Name="newstatus" ColumnName="newstatus" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IssueStatus" ColumnName="IssueStatus" />
+          <ScalarProperty Name="IsFollowUpOnSMS" ColumnName="IsFollowUpOnSMS" />
+          <ScalarProperty Name="IsFollowUpOnEmail" ColumnName="IsFollowUpOnEmail" />
+          <ScalarProperty Name="FollowUpFrequency" ColumnName="FollowUpFrequency" />
+          <ScalarProperty Name="targetcompletiondate" ColumnName="targetcompletiondate" />
+          <ScalarProperty Name="PreviousTopicDescription" ColumnName="PreviousTopicDescription" />
+          <ScalarProperty Name="PreviousTopicId" ColumnName="PreviousTopicId" />
+          <ScalarProperty Name="DateIssued" ColumnName="DateIssued" />
+          <ScalarProperty Name="actionplan" ColumnName="actionplan" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="CurrentTopicDescription" ColumnName="CurrentTopicDescription" />
+          <ScalarProperty Name="CurrentTopicId" ColumnName="CurrentTopicId" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vIssueTrendMonthly">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vIssueTrendMonthly">
+        <MappingFragment StoreEntitySet="mifs_vIssueTrendMonthly">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Dropped" ColumnName="Dropped" />
+          <ScalarProperty Name="Closed" ColumnName="Closed" />
+          <ScalarProperty Name="Parked" ColumnName="Parked" />
+          <ScalarProperty Name="Open" ColumnName="Open" />
+          <ScalarProperty Name="IssuedMonth" ColumnName="IssuedMonth" />
+          <ScalarProperty Name="IssuedYear" ColumnName="IssuedYear" />
+          <ScalarProperty Name="CurrentTopicDescription" ColumnName="CurrentTopicDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vMeeting">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vMeeting">
+        <MappingFragment StoreEntitySet="mifs_vMeeting">
+          <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+          <ScalarProperty Name="MonthNumber" ColumnName="MonthNumber" />
+          <ScalarProperty Name="YearNumber" ColumnName="YearNumber" />
+          <ScalarProperty Name="TotalMinuteCaptured" ColumnName="TotalMinuteCaptured" />
+          <ScalarProperty Name="TotalActualAttendees" ColumnName="TotalActualAttendees" />
+          <ScalarProperty Name="TotalExpectedAttendees" ColumnName="TotalExpectedAttendees" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="facilitator" ColumnName="facilitator" />
+          <ScalarProperty Name="venue" ColumnName="venue" />
+          <ScalarProperty Name="agenda" ColumnName="agenda" />
+          <ScalarProperty Name="TopicDescription" ColumnName="TopicDescription" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vMeetingSchedule">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vMeetingSchedule">
+        <MappingFragment StoreEntitySet="mifs_vMeetingSchedule">
+          <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
+          <ScalarProperty Name="followuphour" ColumnName="followuphour" />
+          <ScalarProperty Name="followupday" ColumnName="followupday" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="aliascode" ColumnName="aliascode" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="yr" ColumnName="yr" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="facilitator" ColumnName="facilitator" />
+          <ScalarProperty Name="venue" ColumnName="venue" />
+          <ScalarProperty Name="dateend" ColumnName="dateend" />
+          <ScalarProperty Name="datestart" ColumnName="datestart" />
+          <ScalarProperty Name="agenda" ColumnName="agenda" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="hashcode" ColumnName="hashcode" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vNotMember">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vNotMember">
+        <MappingFragment StoreEntitySet="mifs_vNotMember">
+          <ScalarProperty Name="corporate" ColumnName="corporate" />
+          <ScalarProperty Name="employeepresentcontact" ColumnName="employeepresentcontact" />
+          <ScalarProperty Name="positionname" ColumnName="positionname" />
+          <ScalarProperty Name="emailadd" ColumnName="emailadd" />
+          <ScalarProperty Name="employeename2" ColumnName="employeename2" />
+          <ScalarProperty Name="empl_id" ColumnName="empl_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vOpenIssuePerWeek">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vOpenIssuePerWeek">
+        <MappingFragment StoreEntitySet="mifs_vOpenIssuePerWeek">
+          <ScalarProperty Name="CurrentWeek" ColumnName="CurrentWeek" />
+          <ScalarProperty Name="CurrentMonth" ColumnName="CurrentMonth" />
+          <ScalarProperty Name="CurrentYear" ColumnName="CurrentYear" />
+          <ScalarProperty Name="IssuedWeek" ColumnName="IssuedWeek" />
+          <ScalarProperty Name="IssuedMonth" ColumnName="IssuedMonth" />
+          <ScalarProperty Name="IssuedYear" ColumnName="IssuedYear" />
+          <ScalarProperty Name="CurrentTopicDescription" ColumnName="CurrentTopicDescription" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vParking">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vParking">
+        <MappingFragment StoreEntitySet="mifs_vParking">
+          <ScalarProperty Name="DateParked" ColumnName="DateParked" />
+          <ScalarProperty Name="IssueStatus" ColumnName="IssueStatus" />
+          <ScalarProperty Name="Collaborator" ColumnName="Collaborator" />
+          <ScalarProperty Name="Tollgater" ColumnName="Tollgater" />
+          <ScalarProperty Name="ActionPlan" ColumnName="ActionPlan" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+          <ScalarProperty Name="TopicDescription" ColumnName="TopicDescription" />
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <ScalarProperty Name="TrailOfCommitment" ColumnName="TrailOfCommitment" />
+          <ScalarProperty Name="IssueId" ColumnName="IssueId" />
+          <ScalarProperty Name="Responsible" ColumnName="Responsible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vResponse">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vResponse">
+        <MappingFragment StoreEntitySet="mifs_vResponse">
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="islock" ColumnName="islock" />
+          <ScalarProperty Name="NoOfAttachment" ColumnName="NoOfAttachment" />
+          <ScalarProperty Name="responphone" ColumnName="responphone" />
+          <ScalarProperty Name="responempid" ColumnName="responempid" />
+          <ScalarProperty Name="responemail" ColumnName="responemail" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="raisedby" ColumnName="raisedby" />
+          <ScalarProperty Name="raisedbyemail" ColumnName="raisedbyemail" />
+          <ScalarProperty Name="raisedbyempid" ColumnName="raisedbyempid" />
+          <ScalarProperty Name="raisedbyphone" ColumnName="raisedbyphone" />
+          <ScalarProperty Name="responsebyemail" ColumnName="responsebyemail" />
+          <ScalarProperty Name="responseby" ColumnName="responseby" />
+          <ScalarProperty Name="responsedate" ColumnName="responsedate" />
+          <ScalarProperty Name="responsebyempid" ColumnName="responsebyempid" />
+          <ScalarProperty Name="messagedetails" ColumnName="messagedetails" />
+          <ScalarProperty Name="issuedetails" ColumnName="issuedetails" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+          <ScalarProperty Name="responseId" ColumnName="responseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vTopicLevel">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vTopicLevel">
+        <MappingFragment StoreEntitySet="mifs_vTopicLevel">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="levelcode" ColumnName="levelcode" />
+          <ScalarProperty Name="child_code" ColumnName="child_code" />
+          <ScalarProperty Name="parent_code" ColumnName="parent_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_vTopicMembers">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_vTopicMembers">
+        <MappingFragment StoreEntitySet="mifs_vTopicMembers">
+          <ScalarProperty Name="isinclude" ColumnName="isinclude" />
+          <ScalarProperty Name="accesslevel" ColumnName="accesslevel" />
+          <ScalarProperty Name="bgcolor" ColumnName="bgcolor" />
+          <ScalarProperty Name="occurence" ColumnName="occurence" />
+          <ScalarProperty Name="hashcode" ColumnName="hashcode" />
+          <ScalarProperty Name="sourcelevel" ColumnName="sourcelevel" />
+          <ScalarProperty Name="fupfrequency" ColumnName="fupfrequency" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="MemberEmailAddress" ColumnName="MemberEmailAddress" />
+          <ScalarProperty Name="MemberMobileNumber" ColumnName="MemberMobileNumber" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="TopicDescription" ColumnName="TopicDescription" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Sproc_CoreSetAppMenuUser" FunctionName="PALOUPModel.Store.Sproc_CoreSetAppMenuUser" />
+    <FunctionImportMapping FunctionImportName="Sproc_CoreSetAppSystem" FunctionName="PALOUPModel.Store.Sproc_CoreSetAppSystem" />
+    <FunctionImportMapping FunctionImportName="Sproc_CoreSetAppSystemUser" FunctionName="PALOUPModel.Store.Sproc_CoreSetAppSystemUser" />
+    <FunctionImportMapping FunctionImportName="Sproc_FPMADailyTaskFunction" FunctionName="PALOUPModel.Store.Sproc_FPMADailyTaskFunction" />
+    <FunctionImportMapping FunctionImportName="Sproc_mifsClosureChart" FunctionName="PALOUPModel.Store.Sproc_mifsClosureChart">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PALOUPModel.Sproc_mifsClosureChart_Result">
+          <ScalarProperty Name="DailyPendingApproveAnalysisDate" ColumnName="DailyPendingApproveAnalysisDate" />
+          <ScalarProperty Name="DailyCountPendingforAcknowledgementbyRaised" ColumnName="DailyCountPendingforAcknowledgementbyRaised" />
+          <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sproc_mifsGetCommitment" FunctionName="PALOUPModel.Store.Sproc_mifsGetCommitment" />
+    <FunctionImportMapping FunctionImportName="Sproc_mifsGetMemberSeparated" FunctionName="PALOUPModel.Store.Sproc_mifsGetMemberSeparated">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PALOUPModel.Sproc_mifsGetMemberSeparated_Result">
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="employeename" ColumnName="employeename" />
+          <ScalarProperty Name="emailadd" ColumnName="emailadd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sproc_mifsIssuesCategoryGraph" FunctionName="PALOUPModel.Store.Sproc_mifsIssuesCategoryGraph">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PALOUPModel.Sproc_mifsIssuesCategoryGraph_Result">
+          <ScalarProperty Name="CountResponOpenTransactional" ColumnName="CountResponOpenTransactional" />
+          <ScalarProperty Name="CountResponClosedTransactional" ColumnName="CountResponClosedTransactional" />
+          <ScalarProperty Name="CountResponParkTransactional" ColumnName="CountResponParkTransactional" />
+          <ScalarProperty Name="CountResponDropTransactional" ColumnName="CountResponDropTransactional" />
+          <ScalarProperty Name="CountRaisedOpenTransactional" ColumnName="CountRaisedOpenTransactional" />
+          <ScalarProperty Name="CountRaisedClosedransactional" ColumnName="CountRaisedClosedransactional" />
+          <ScalarProperty Name="CountRaisedParkTransactional" ColumnName="CountRaisedParkTransactional" />
+          <ScalarProperty Name="CountRaisedDropTransactional" ColumnName="CountRaisedDropTransactional" />
+          <ScalarProperty Name="CountCollabOpenTransactional" ColumnName="CountCollabOpenTransactional" />
+          <ScalarProperty Name="CountCollabClosedTransactional" ColumnName="CountCollabClosedTransactional" />
+          <ScalarProperty Name="CountCollabParkTransactional" ColumnName="CountCollabParkTransactional" />
+          <ScalarProperty Name="CountCollabDropTransactional" ColumnName="CountCollabDropTransactional" />
+          <ScalarProperty Name="CountResponOpenTactical" ColumnName="CountResponOpenTactical" />
+          <ScalarProperty Name="CountResponClosedTactical" ColumnName="CountResponClosedTactical" />
+          <ScalarProperty Name="CountResponParkTactical" ColumnName="CountResponParkTactical" />
+          <ScalarProperty Name="CountResponDropTactical" ColumnName="CountResponDropTactical" />
+          <ScalarProperty Name="CountRaisedOpenTactical" ColumnName="CountRaisedOpenTactical" />
+          <ScalarProperty Name="CountRaisedclosedTactical" ColumnName="CountRaisedclosedTactical" />
+          <ScalarProperty Name="CountRaisedParkTactical" ColumnName="CountRaisedParkTactical" />
+          <ScalarProperty Name="CountRaisedDropTactical" ColumnName="CountRaisedDropTactical" />
+          <ScalarProperty Name="CountCollabOpenTactical" ColumnName="CountCollabOpenTactical" />
+          <ScalarProperty Name="CountCollabClosedTactical" ColumnName="CountCollabClosedTactical" />
+          <ScalarProperty Name="CountCollabParkTactical" ColumnName="CountCollabParkTactical" />
+          <ScalarProperty Name="CountCollabDropTactical" ColumnName="CountCollabDropTactical" />
+          <ScalarProperty Name="CountResponOpenStrategic" ColumnName="CountResponOpenStrategic" />
+          <ScalarProperty Name="CountResponClosedStrategic" ColumnName="CountResponClosedStrategic" />
+          <ScalarProperty Name="CountResponParkStrategic" ColumnName="CountResponParkStrategic" />
+          <ScalarProperty Name="CountResponDropStrategic" ColumnName="CountResponDropStrategic" />
+          <ScalarProperty Name="CountRaisedOpenStrategic" ColumnName="CountRaisedOpenStrategic" />
+          <ScalarProperty Name="CountRaisedClosedStrategic" ColumnName="CountRaisedClosedStrategic" />
+          <ScalarProperty Name="CountRaisedParkStrategic" ColumnName="CountRaisedParkStrategic" />
+          <ScalarProperty Name="CountRaisedDropStrategic" ColumnName="CountRaisedDropStrategic" />
+          <ScalarProperty Name="CountCollabOpenStrategic" ColumnName="CountCollabOpenStrategic" />
+          <ScalarProperty Name="CountCollabClosedStrategic" ColumnName="CountCollabClosedStrategic" />
+          <ScalarProperty Name="CountCollabParkStrategic" ColumnName="CountCollabParkStrategic" />
+          <ScalarProperty Name="CountCollabDropStrategic" ColumnName="CountCollabDropStrategic" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sproc_mifsLadderize" FunctionName="PALOUPModel.Store.Sproc_mifsLadderize" />
+    <FunctionImportMapping FunctionImportName="Sproc_mifsRemapEmail" FunctionName="PALOUPModel.Store.Sproc_mifsRemapEmail" />
+    <FunctionImportMapping FunctionImportName="Sproc_mifsResumeParking" FunctionName="PALOUPModel.Store.Sproc_mifsResumeParking" />
+    <FunctionImportMapping FunctionImportName="Sproc_mifsSelectAttendees" FunctionName="PALOUPModel.Store.Sproc_mifsSelectAttendees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PALOUPModel.Sproc_mifsSelectAttendees_Result">
+          <ScalarProperty Name="attendanceId" ColumnName="attendanceId" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="agenda" ColumnName="agenda" />
+          <ScalarProperty Name="venue" ColumnName="venue" />
+          <ScalarProperty Name="facilitator" ColumnName="facilitator" />
+          <ScalarProperty Name="attendeeempid" ColumnName="attendeeempid" />
+          <ScalarProperty Name="attendeename" ColumnName="attendeename" />
+          <ScalarProperty Name="attendeemail" ColumnName="attendeemail" />
+          <ScalarProperty Name="attendeephone" ColumnName="attendeephone" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="isgenerated" ColumnName="isgenerated" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sproc_mifsSetAttendance" FunctionName="PALOUPModel.Store.Sproc_mifsSetAttendance" />
+    <FunctionImportMapping FunctionImportName="Sproc_mifsSetMeeting" FunctionName="PALOUPModel.Store.Sproc_mifsSetMeeting" />
+    <FunctionImportMapping FunctionImportName="Sproc_mifsSetMembers" FunctionName="PALOUPModel.Store.Sproc_mifsSetMembers" />
+    <FunctionImportMapping FunctionImportName="Sproc_mifsSetResponse" FunctionName="PALOUPModel.Store.Sproc_mifsSetResponse" />
+    <FunctionImportMapping FunctionImportName="Sproc_mifsSetTopic" FunctionName="PALOUPModel.Store.Sproc_mifsSetTopic" />
+    <FunctionImportMapping FunctionImportName="Sproc_mifsTransferIssue" FunctionName="PALOUPModel.Store.Sproc_mifsTransferIssue" />
+    <FunctionImportMapping FunctionImportName="Sproc_SendSms" FunctionName="PALOUPModel.Store.Sproc_SendSms" />
+    <FunctionImportMapping FunctionImportName="Sproc_SyncEmployee" FunctionName="PALOUPModel.Store.Sproc_SyncEmployee" />
+    <EntitySetMapping Name="mifs_topic">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_topic">
+        <MappingFragment StoreEntitySet="mifs_topic">
+          <ScalarProperty Name="isvisible" ColumnName="isvisible" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="districtcode" ColumnName="districtcode" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="statchangecounterlimit" ColumnName="statchangecounterlimit" />
+          <ScalarProperty Name="profile" ColumnName="profile" />
+          <ScalarProperty Name="classification" ColumnName="classification" />
+          <ScalarProperty Name="bgcolor" ColumnName="bgcolor" />
+          <ScalarProperty Name="topicscope" ColumnName="topicscope" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="occurence" ColumnName="occurence" />
+          <ScalarProperty Name="fupfrequency" ColumnName="fupfrequency" />
+          <ScalarProperty Name="topiclevel" ColumnName="topiclevel" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="aliascode" ColumnName="aliascode" />
+          <ScalarProperty Name="hashcode" ColumnName="hashcode" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Sproc_mifsSetIssues" FunctionName="PALOUPModel.Store.Sproc_mifsSetIssues" />
+    <EntitySetMapping Name="mifs_dropdown">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_dropdown">
+        <MappingFragment StoreEntitySet="mifs_dropdown">
+          <ScalarProperty Name="isdelete" ColumnName="isdelete" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="lookup" ColumnName="lookup" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="createddate" ColumnName="createddate" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="sortorder" ColumnName="sortorder" />
+          <ScalarProperty Name="leadtimemax" ColumnName="leadtimemax" />
+          <ScalarProperty Name="leadtimemin" ColumnName="leadtimemin" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="display" ColumnName="display" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_dropdowngroup">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_dropdowngroup">
+        <MappingFragment StoreEntitySet="mifs_dropdowngroup">
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="createddate" ColumnName="createddate" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="isdelete" ColumnName="isdelete" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="showinuser" ColumnName="showinuser" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="dropid" ColumnName="dropid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mifs_issues">
+      <EntityTypeMapping TypeName="PALOUPModel.mifs_issues">
+        <MappingFragment StoreEntitySet="mifs_issues">
+          <ScalarProperty Name="reviewlevel" ColumnName="reviewlevel" />
+          <ScalarProperty Name="subkpi" ColumnName="subkpi" />
+          <ScalarProperty Name="quadrant" ColumnName="quadrant" />
+          <ScalarProperty Name="districtcode" ColumnName="districtcode" />
+          <ScalarProperty Name="fromissueid" ColumnName="fromissueid" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="issuecategory" ColumnName="issuecategory" />
+          <ScalarProperty Name="refsource" ColumnName="refsource" />
+          <ScalarProperty Name="referencetype" ColumnName="referencetype" />
+          <ScalarProperty Name="referenceId" ColumnName="referenceId" />
+          <ScalarProperty Name="closedate" ColumnName="closedate" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="issuetype" ColumnName="issuetype" />
+          <ScalarProperty Name="pflag" ColumnName="pflag" />
+          <ScalarProperty Name="collaboratorempid" ColumnName="collaboratorempid" />
+          <ScalarProperty Name="collaboratoremail" ColumnName="collaboratoremail" />
+          <ScalarProperty Name="collaboratorname" ColumnName="collaboratorname" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="sourcetype" ColumnName="sourcetype" />
+          <ScalarProperty Name="reference" ColumnName="reference" />
+          <ScalarProperty Name="meetingId" ColumnName="meetingId" />
+          <ScalarProperty Name="statchangefupcounter" ColumnName="statchangefupcounter" />
+          <ScalarProperty Name="lastsenddate" ColumnName="lastsenddate" />
+          <ScalarProperty Name="firstsenddate" ColumnName="firstsenddate" />
+          <ScalarProperty Name="resumedate" ColumnName="resumedate" />
+          <ScalarProperty Name="parkdate" ColumnName="parkdate" />
+          <ScalarProperty Name="fupcounter" ColumnName="fupcounter" />
+          <ScalarProperty Name="acknowledgerespondentdate" ColumnName="acknowledgerespondentdate" />
+          <ScalarProperty Name="acknowledgebyrespondent" ColumnName="acknowledgebyrespondent" />
+          <ScalarProperty Name="acknowledgesourcedate" ColumnName="acknowledgesourcedate" />
+          <ScalarProperty Name="acknowledgedbysource" ColumnName="acknowledgedbysource" />
+          <ScalarProperty Name="newstatus" ColumnName="newstatus" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="followsms" ColumnName="followsms" />
+          <ScalarProperty Name="followmail" ColumnName="followmail" />
+          <ScalarProperty Name="followfrequency" ColumnName="followfrequency" />
+          <ScalarProperty Name="responphone" ColumnName="responphone" />
+          <ScalarProperty Name="responempid" ColumnName="responempid" />
+          <ScalarProperty Name="responemail" ColumnName="responemail" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="raisedbyphone" ColumnName="raisedbyphone" />
+          <ScalarProperty Name="raisedbyempid" ColumnName="raisedbyempid" />
+          <ScalarProperty Name="raisedbyemail" ColumnName="raisedbyemail" />
+          <ScalarProperty Name="raisedby" ColumnName="raisedby" />
+          <ScalarProperty Name="targetcompletiondate" ColumnName="targetcompletiondate" />
+          <ScalarProperty Name="fromtopicId" ColumnName="fromtopicId" />
+          <ScalarProperty Name="issuedate" ColumnName="issuedate" />
+          <ScalarProperty Name="actionplan" ColumnName="actionplan" />
+          <ScalarProperty Name="issuedetails" ColumnName="issuedetails" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="hashcode" ColumnName="hashcode" />
+          <ScalarProperty Name="issueId" ColumnName="issueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
