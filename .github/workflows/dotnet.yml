@@ -15,14 +15,10 @@ jobs:
     - name: Setup .NET Framework
       run: choco install dotnetframework --version=4.6.1 -y
         dotnet --version  # Replace with your desired .NET Framework version
-        
-    - name: Install Build Tools
-      run: choco install visualstudio2019buildtools -y --package-parameters "--add Microsoft.VisualStudio.Component.MSBuild"
+
     - name: Restore NuGet Packages
       run: nuget restore PaloUpAPI.sln
-      
-    - name: Build
-      run: msbuild /p:Configuration=Release PaloUpAPI.csproj
+
 
     - name: Entity Framework Migrations
       run: dotnet ef database update --project PaloUpAPI.csproj
