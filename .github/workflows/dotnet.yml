@@ -13,14 +13,11 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Setup .NET Framework
-      run: |
-        choco install dotnetframework --version=4.6.1 -y
+      run: choco install dotnetframework --version=4.6.1 -y
         dotnet --version  # Replace with your desired .NET Framework version
         
-    - name: Set up MSBuild
-      run: |
-        choco install visualstudio2019buildtools -y --package-parameters "--add Microsoft.VisualStudio.Component.MSBuild"
-
+    - name: Install Build Tools
+      run: choco install visualstudio2019buildtools -y --package-parameters "--add Microsoft.VisualStudio.Component.MSBuild"
     - name: Restore NuGet Packages
       run: nuget restore PaloUpAPI.sln
       
